@@ -78,14 +78,7 @@ class ColorPickerView: UIView {
         pointer.frame = CGRect(origin: CGPoint(x: point.x-15,
                                                y: point.y-15),
                                size: CGSize(width: 30, height: 30))
-
-        var r:CGFloat = 0
-        var g:CGFloat = 0
-        var b:CGFloat = 0
-        var a:CGFloat = 0
-        
-        pickedColor.getHue(&r, saturation: &g, brightness: &b, alpha: &a)
-        brightnessSlider.setValue(Float(b), animated: false)
+        brightnessSlider.setValue(getBrightness(pickedColor), animated: false)
 
     }
     
@@ -126,7 +119,6 @@ class ColorPickerView: UIView {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        setupPointer()
         let isHitPalette = touches.contains { (touch) -> Bool in
             let touchPoint = touch.location(in: self)
             return palette.frame.contains(touchPoint) }
@@ -141,10 +133,8 @@ class ColorPickerView: UIView {
         }
     }
     
- 
     private func setupViews() {
-        palette.addSubview(pointer)
-        addSubview(palette)
+        setupPointer()
         addSubview(pickedColorView)
         addSubview(pickedColorHashLabel)
         addSubview(brightnessSlider)
@@ -158,11 +148,7 @@ class ColorPickerView: UIView {
         addSubview(palette)
     }
     
-    
-    private func updateUI() {
-    }
-    
-    func uiColorToHex(_ color: UIColor) -> String {
+    private func uiColorToHex(_ color: UIColor) -> String {
         var r:CGFloat = 0
         var g:CGFloat = 0
         var b:CGFloat = 0
@@ -174,17 +160,20 @@ class ColorPickerView: UIView {
         return String(format:"#%06x", rgb)
     }
     
-    func updatePickedColor (_ color: UIColor) {
-        pickedColor = color
-        pickedColorView.backgroundColor = pickedColor
-        
+    private func getBrightness(_ color: UIColor) -> Float {
         var h:CGFloat = 0
         var s:CGFloat = 0
         var b:CGFloat = 0
         var a:CGFloat = 0
         
         pickedColor.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
-        brightnessSlider.setValue(Float(b), animated: false)
+        return Float(b)
+    }
+    
+    private func updatePickedColor (_ color: UIColor) {
+        pickedColor = color
+        pickedColorView.backgroundColor = pickedColor
+        brightnessSlider.setValue(getBrightness(pickedColor), animated: false)
         
         setupPointer()
     }
