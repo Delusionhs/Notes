@@ -13,6 +13,7 @@ import UIKit
 class ColorPickerView: UIView {
    
     private let palette = Palette()
+    private let pointer = Pointer()
     private let pickedColorView = UIView()
     private let pickedColorHashLabel = UILabel()
     private let brightnessSlider = UISlider()
@@ -53,7 +54,8 @@ class ColorPickerView: UIView {
         pickedColorHashLabel.textAlignment = .center
         pickedColorHashLabel.font = pickedColorHashLabel.font.withSize(18)
         
-        palette.frame = CGRect(origin: CGPoint(x: bounds.minX+8, y: pickedColorHashLabel.frame.maxY+10),
+        palette.frame = CGRect(origin: CGPoint(x: bounds.minX+8,
+                                               y: pickedColorHashLabel.frame.maxY+10),
                                size: CGSize(width: self.frame.width-16,
                                             height: self.frame.height-130))
         
@@ -146,7 +148,6 @@ class ColorPickerView: UIView {
     
     
     private func updateUI() {
-        //timeLabel.text = "Осталось"
         pickedColorHashLabel.text = "#000000"
     }
     
