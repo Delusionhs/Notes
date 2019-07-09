@@ -64,7 +64,7 @@ class ColorPickerView: UIView {
                                                         y: pickedColorView.bounds.maxY/2),
                                         size: CGSize(width: self.frame.width-pickedColorView.frame.width-40,
                                                      height: 20))
-        brightnessSlider.minimumValue = 0.01
+        brightnessSlider.minimumValue = 0.001
         brightnessSlider.maximumValue = 1
         brightnessSlider.setValue(0.5, animated: false)
         
@@ -75,9 +75,9 @@ class ColorPickerView: UIView {
                                        size: CGSize(width: 120, height: 20))
         
         let point = palette.getPointForColor(color: pickedColor)
-        pointer.frame = CGRect(origin: CGPoint(x: point.x + palette.frame.origin.x-20,
-                                               y: point.y + palette.frame.origin.y-20),
-                               size: CGSize(width: 40, height: 40))
+        pointer.frame = CGRect(origin: CGPoint(x: point.x-15,
+                                               y: point.y-15),
+                               size: CGSize(width: 30, height: 30))
 
         var r:CGFloat = 0
         var g:CGFloat = 0
@@ -126,6 +126,7 @@ class ColorPickerView: UIView {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        setupPointer()
         let isHitPalette = touches.contains { (touch) -> Bool in
             let touchPoint = touch.location(in: self)
             return palette.frame.contains(touchPoint) }
@@ -142,6 +143,7 @@ class ColorPickerView: UIView {
     
  
     private func setupViews() {
+        palette.addSubview(pointer)
         addSubview(palette)
         addSubview(pickedColorView)
         addSubview(pickedColorHashLabel)
@@ -152,7 +154,8 @@ class ColorPickerView: UIView {
     }
     
     private func setupPointer() {
-        addSubview(pointer)
+        palette.addSubview(pointer)
+        addSubview(palette)
     }
     
     
