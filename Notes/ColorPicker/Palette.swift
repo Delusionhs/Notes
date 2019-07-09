@@ -12,8 +12,7 @@ import UIKit
 
 @IBDesignable
 class Palette: UIView {
-    let saturationExponentTop:Float = 1.5
-    let saturationExponentBottom:Float = 3
+    let saturationExponent:Float = 0.8
     
     @IBInspectable var elementSize: CGFloat = 2.0 {
         didSet {
@@ -36,16 +35,14 @@ class Palette: UIView {
         initialize()
     }
     
-    
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         for y : CGFloat in stride(from: 0.0 ,to: rect.height, by: elementSize) {
-            var saturation = y < rect.height / 2.0 ? CGFloat(2 * y) / rect.height : 2.0 * CGFloat(rect.height - y) / rect.height
-            saturation = CGFloat(powf(Float(saturation), y < rect.height / 2.0 ? saturationExponentTop : saturationExponentBottom))
-            let brightness = y < rect.height / 2.0 ? CGFloat(1.0) : 2.0 * CGFloat(rect.height - y) / rect.height
+            var saturation = CGFloat(y) / rect.height
+            saturation = CGFloat(powf(Float(saturation), saturationExponent))
             for x : CGFloat in stride(from: 0.0 ,to: rect.width, by: elementSize) {
                 let hue = x / rect.width
-                let color = UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1.0)
+                let color = UIColor(hue: hue, saturation: saturation, brightness: 1.0, alpha: 1.0)
                 context!.setFillColor(color.cgColor)
                 context!.fill(CGRect(x:x, y:y, width:elementSize,height:elementSize))
             }
@@ -59,12 +56,10 @@ class Palette: UIView {
     func getColorAtPoint(point:CGPoint) -> UIColor {
         let roundedPoint = CGPoint(x:elementSize * CGFloat(Int(point.x / elementSize)),
                                    y:elementSize * CGFloat(Int(point.y / elementSize)))
-        var saturation = roundedPoint.y < self.bounds.height / 2.0 ? CGFloat(2 * roundedPoint.y) / self.bounds.height
-            : 2.0 * CGFloat(self.bounds.height - roundedPoint.y) / self.bounds.height
-        saturation = CGFloat(powf(Float(saturation), roundedPoint.y < self.bounds.height / 2.0 ? saturationExponentTop : saturationExponentBottom))
-        let brightness = roundedPoint.y < self.bounds.height / 2.0 ? CGFloat(1.0) : 2.0 * CGFloat(self.bounds.height - roundedPoint.y) / self.bounds.height
+        var saturation = CGFloat(roundedPoint.y) / self.bounds.height
+        saturation = CGFloat(powf(Float(saturation), saturationExponent))
         let hue = roundedPoint.x / self.bounds.width
-        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1.0)
+        return UIColor(hue: hue, saturation: saturation, brightness: 1.0, alpha: 1.0)
     }
     
     func getPointForColor(color:UIColor) -> CGPoint {
@@ -74,14 +69,8 @@ class Palette: UIView {
         color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: nil);
         
         var yPos:CGFloat = 0
-        let halfHeight = (self.bounds.height / 2)
-        if (brightness >= 0.99) {
-            let percentageY = powf(Float(saturation), 1.0 / saturationExponentTop)
-            yPos = CGFloat(percentageY) * halfHeight
-        } else {
-            //use brightness to get Y
-            yPos = halfHeight + halfHeight * (1.0 - brightness)
-        }
+        let percentageY = powf(Float(saturation), 1.0 / saturationExponent)
+            yPos = CGFloat(percentageY) * self.bounds.height
         let xPos = hue * self.bounds.width
         return CGPoint(x: xPos, y: yPos)
     }
