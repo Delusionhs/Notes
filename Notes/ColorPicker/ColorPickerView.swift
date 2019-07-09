@@ -35,14 +35,13 @@ class ColorPickerView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+        ///////////////////////////////////////////////////////////////////////////////////////////
         let pickedColorViewSize = pickedColorView.intrinsicContentSize
         pickedColorView.frame = CGRect(origin: CGPoint(x: bounds.minX+8, y:  bounds.minY + pickedColorViewSize.height+20),
                                    size: CGSize(width: 80, height: 80))
         pickedColorView.layer.cornerRadius = 7
-        pickedColorView.layer.masksToBounds = true
         pickedColorView.layer.borderWidth = 1
-        
+        ///////////////////////////////////////////////////////////////////////////////////////////
         pickedColorHashLabel.frame = CGRect(origin: CGPoint(x: bounds.minX+8,
                                                             y:  pickedColorView.frame.maxY - 15),
                                             size: CGSize(width: 80, height: 20))
@@ -53,31 +52,31 @@ class ColorPickerView: UIView {
         pickedColorHashLabel.textAlignment = .center
         pickedColorHashLabel.font = pickedColorHashLabel.font.withSize(18)
         pickedColorHashLabel.text = uiColorToHex(pickedColor)
-        
+        ///////////////////////////////////////////////////////////////////////////////////////////
         palette.frame = CGRect(origin: CGPoint(x: bounds.minX+8,
                                                y: pickedColorHashLabel.frame.maxY+20),
                                size: CGSize(width: self.frame.width-16,
                                             height: self.frame.height-130))
-        
+        ///////////////////////////////////////////////////////////////////////////////////////////
         brightnessSlider.frame = CGRect(origin: CGPoint(x: pickedColorView.bounds.maxX+20,
                                                         y: pickedColorHashLabel.frame.minY),
                                         size: CGSize(width: self.frame.width-pickedColorView.frame.width-40,
                                                      height: 20))
         brightnessSlider.minimumValue = 0.001
         brightnessSlider.maximumValue = 1
-        
-        brightnessLabel.text = "Brightness"
-        brightnessLabel.font = brightnessLabel.font.withSize(20)
+        ///////////////////////////////////////////////////////////////////////////////////////////
         brightnessLabel.frame = CGRect(origin: CGPoint(x: pickedColorView.bounds.maxX+20,
                                                        y: pickedColorView.bounds.maxY/2),
                                        size: CGSize(width: 120, height: 35))
-        
+        brightnessSlider.addTarget(self, action: #selector(changeVlaue), for: .valueChanged)
+        brightnessLabel.text = "Brightness"
+        brightnessLabel.font = brightnessLabel.font.withSize(20)
+        ///////////////////////////////////////////////////////////////////////////////////////////
         let point = palette.getPointForColor(color: pickedColor)
         pointer.frame = CGRect(origin: CGPoint(x: point.x-15,
                                                y: point.y-15),
                                size: CGSize(width: 30, height: 30))
         brightnessSlider.setValue(getBrightness(pickedColor), animated: false)
-
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -136,8 +135,6 @@ class ColorPickerView: UIView {
         addSubview(pickedColorHashLabel)
         addSubview(brightnessSlider)
         addSubview(brightnessLabel)
-        palette.translatesAutoresizingMaskIntoConstraints = false
-        brightnessSlider.addTarget(self, action: #selector(changeVlaue), for: .valueChanged)
     }
     
     private func setupPointer() {
@@ -157,7 +154,7 @@ class ColorPickerView: UIView {
         var g:CGFloat = 0
         var b:CGFloat = 0
         var a:CGFloat = 0
-        
+
         color.getRed(&r, green: &g, blue: &b, alpha: &a)
         let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
         

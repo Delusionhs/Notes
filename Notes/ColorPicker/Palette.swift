@@ -49,10 +49,6 @@ class Palette: UIView {
         }
     }
     
-    class func drawPalette() {
-        
-    }
-    
     func getColorAtPoint(point:CGPoint) -> UIColor {
         let roundedPoint = CGPoint(x:elementSize * CGFloat(Int(point.x / elementSize)),
                                    y:elementSize * CGFloat(Int(point.y / elementSize)))
