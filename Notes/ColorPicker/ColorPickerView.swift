@@ -103,7 +103,6 @@ class ColorPickerView: UIView {
             let touchPoint = touch.location(in: self)
             return palette.frame.contains(touchPoint) }
 
-            
         if isHitPalette {
             let touch = touches.first!
             let touchPoint = touch.location(in: self)
@@ -117,7 +116,6 @@ class ColorPickerView: UIView {
         let isHitPalette = touches.contains { (touch) -> Bool in
             let touchPoint = touch.location(in: self)
             return palette.frame.contains(touchPoint) }
-        
         
         if isHitPalette {
             let touch = touches.first!
