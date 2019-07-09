@@ -53,6 +53,7 @@ class ColorPickerView: UIView {
         pickedColorHashLabel.layer.borderWidth = 1
         pickedColorHashLabel.textAlignment = .center
         pickedColorHashLabel.font = pickedColorHashLabel.font.withSize(18)
+        pickedColorHashLabel.text = uiColorToHex(pickedColor)
         
         palette.frame = CGRect(origin: CGPoint(x: bounds.minX+8,
                                                y: pickedColorHashLabel.frame.maxY+10),
@@ -72,6 +73,11 @@ class ColorPickerView: UIView {
         brightnessLabel.frame = CGRect(origin: CGPoint(x: pickedColorView.bounds.maxX+20,
                                                        y: brightnessSlider.bounds.maxY),
                                        size: CGSize(width: 120, height: 20))
+        
+        let point = palette.getPointForColor(color: pickedColor)
+        pointer.frame = CGRect(origin: CGPoint(x: point.x + palette.frame.origin.x-20,
+                                               y: point.y + palette.frame.origin.y-20),
+                               size: CGSize(width: 40, height: 40))
 
         var r:CGFloat = 0
         var g:CGFloat = 0
@@ -143,12 +149,14 @@ class ColorPickerView: UIView {
         addSubview(brightnessLabel)
         palette.translatesAutoresizingMaskIntoConstraints = false
         brightnessSlider.addTarget(self, action: #selector(changeVlaue), for: .valueChanged)
-        updateUI()
+    }
+    
+    private func setupPointer() {
+        addSubview(pointer)
     }
     
     
     private func updateUI() {
-        pickedColorHashLabel.text = "#000000"
     }
     
     func uiColorToHex(_ color: UIColor) -> String {
@@ -166,7 +174,6 @@ class ColorPickerView: UIView {
     func updatePickedColor (_ color: UIColor) {
         pickedColor = color
         pickedColorView.backgroundColor = pickedColor
-        pickedColorHashLabel.text = uiColorToHex(color)
         
         var h:CGFloat = 0
         var s:CGFloat = 0
@@ -175,6 +182,8 @@ class ColorPickerView: UIView {
         
         pickedColor.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
         brightnessSlider.setValue(Float(b), animated: false)
+        
+        setupPointer()
     }
     
 }

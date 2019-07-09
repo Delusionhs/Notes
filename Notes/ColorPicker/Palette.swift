@@ -12,8 +12,8 @@ import UIKit
 
 @IBDesignable
 class Palette: UIView {
-    let saturationExponentTop:Float = 1
-    let saturationExponentBottom:Float = 2
+    let saturationExponentTop:Float = 1.5
+    let saturationExponentBottom:Float = 3
     
     @IBInspectable var elementSize: CGFloat = 2.0 {
         didSet {
