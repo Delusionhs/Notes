@@ -6,8 +6,6 @@
 //  Copyright © 2019 Igor Podolskiy. All rights reserved.
 //
 
-
-import Foundation
 import UIKit
 
 @IBDesignable
