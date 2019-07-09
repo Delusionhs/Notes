@@ -43,36 +43,34 @@ class ColorPickerView: UIView {
         pickedColorView.layer.masksToBounds = true
         pickedColorView.layer.borderWidth = 1
         
-        let pickedColorHashLabelSize = pickedColorHashLabel.intrinsicContentSize
         pickedColorHashLabel.frame = CGRect(origin: CGPoint(x: bounds.minX+8,
-                                                            y:  pickedColorView.frame.maxY - pickedColorHashLabelSize.height/2),
+                                                            y:  pickedColorView.frame.maxY - 15),
                                             size: CGSize(width: 80, height: 20))
         pickedColorHashLabel.backgroundColor = .white
         pickedColorHashLabel.layer.cornerRadius = 7
-        pickedColorHashLabel.clipsToBounds = true
+        pickedColorHashLabel.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         pickedColorHashLabel.layer.borderWidth = 1
         pickedColorHashLabel.textAlignment = .center
         pickedColorHashLabel.font = pickedColorHashLabel.font.withSize(18)
         pickedColorHashLabel.text = uiColorToHex(pickedColor)
         
         palette.frame = CGRect(origin: CGPoint(x: bounds.minX+8,
-                                               y: pickedColorHashLabel.frame.maxY+10),
+                                               y: pickedColorHashLabel.frame.maxY+20),
                                size: CGSize(width: self.frame.width-16,
                                             height: self.frame.height-130))
         
         brightnessSlider.frame = CGRect(origin: CGPoint(x: pickedColorView.bounds.maxX+20,
-                                                        y: pickedColorView.bounds.maxY/2),
+                                                        y: pickedColorHashLabel.frame.minY),
                                         size: CGSize(width: self.frame.width-pickedColorView.frame.width-40,
                                                      height: 20))
         brightnessSlider.minimumValue = 0.001
         brightnessSlider.maximumValue = 1
-        brightnessSlider.setValue(0.5, animated: false)
         
         brightnessLabel.text = "Brightness"
-        brightnessLabel.font = brightnessLabel.font.withSize(18)
+        brightnessLabel.font = brightnessLabel.font.withSize(20)
         brightnessLabel.frame = CGRect(origin: CGPoint(x: pickedColorView.bounds.maxX+20,
-                                                       y: brightnessSlider.bounds.maxY),
-                                       size: CGSize(width: 120, height: 20))
+                                                       y: pickedColorView.bounds.maxY/2),
+                                       size: CGSize(width: 120, height: 35))
         
         let point = palette.getPointForColor(color: pickedColor)
         pointer.frame = CGRect(origin: CGPoint(x: point.x-15,
@@ -95,10 +93,9 @@ class ColorPickerView: UIView {
     @objc func changeVlaue(_ sender: UISlider) {
         var h:CGFloat = 0
         var s:CGFloat = 0
-        var b:CGFloat = 0
         var a:CGFloat = 0
         
-        pickedColor.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+        pickedColor.getHue(&h, saturation: &s, brightness: nil, alpha: &a)
         let color = UIColor(hue: h, saturation: s, brightness: CGFloat(sender.value), alpha: a)
         updatePickedColor(color)
     }
@@ -148,6 +145,13 @@ class ColorPickerView: UIView {
         addSubview(palette)
     }
     
+    private func updatePickedColor (_ color: UIColor) {
+        pickedColor = color
+        pickedColorView.backgroundColor = pickedColor
+        brightnessSlider.setValue(getBrightness(pickedColor), animated: false)
+        setupPointer()
+    }
+    
     private func uiColorToHex(_ color: UIColor) -> String {
         var r:CGFloat = 0
         var g:CGFloat = 0
@@ -161,21 +165,9 @@ class ColorPickerView: UIView {
     }
     
     private func getBrightness(_ color: UIColor) -> Float {
-        var h:CGFloat = 0
-        var s:CGFloat = 0
         var b:CGFloat = 0
-        var a:CGFloat = 0
-        
-        pickedColor.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+        pickedColor.getHue(nil, saturation: nil, brightness: &b, alpha: nil)
         return Float(b)
-    }
-    
-    private func updatePickedColor (_ color: UIColor) {
-        pickedColor = color
-        pickedColorView.backgroundColor = pickedColor
-        brightnessSlider.setValue(getBrightness(pickedColor), animated: false)
-        
-        setupPointer()
     }
     
 }
