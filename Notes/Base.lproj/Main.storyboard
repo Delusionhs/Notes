@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,51 +15,48 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6WY-S8-SpQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a5j-V2-axH">
-                                <rect key="frame" x="20" y="116" width="374" height="183.5"/>
+                                <rect key="frame" x="20" y="116" width="335" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5es-1b-gRw">
-                                <rect key="frame" x="20" y="69" width="374" height="30"/>
+                                <rect key="frame" x="20" y="69" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IQu-iA-bHc">
-                                <rect key="frame" x="199" y="337" width="51" height="31"/>
+                                <rect key="frame" x="199" y="353.66666666666669" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Destroy Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tec-vt-Q19">
-                                <rect key="frame" x="20" y="339.5" width="160" height="26"/>
+                                <rect key="frame" x="20" y="356" width="160" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0L-kZ-3b4">
-                                <rect key="frame" x="20" y="425.5" width="70" height="70"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V0L-kZ-3b4">
+                                <rect key="frame" x="20" y="442" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="AyS-FJ-sDq"/>
-                                    <constraint firstAttribute="width" constant="70" id="N0j-Rr-46I"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9HR-ub-hYr">
-                                <rect key="frame" x="221" y="425" width="70" height="70"/>
+                                <rect key="frame" x="199" y="441" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ceZ-og-MQ5">
-                                <rect key="frame" x="324" y="425" width="70" height="70"/>
+                                <rect key="frame" x="285" y="441" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bCX-ug-vu5">
-                                <rect key="frame" x="118" y="425" width="70" height="70"/>
+                                <rect key="frame" x="110" y="441" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -73,11 +70,9 @@
                             <constraint firstItem="5es-1b-gRw" firstAttribute="leading" secondItem="n0a-4G-Wz4" secondAttribute="leading" constant="20" id="OZB-7E-pHd"/>
                             <constraint firstItem="a5j-V2-axH" firstAttribute="top" secondItem="5es-1b-gRw" secondAttribute="bottom" constant="17" id="VZE-4g-7QL"/>
                             <constraint firstItem="n0a-4G-Wz4" firstAttribute="trailing" secondItem="5es-1b-gRw" secondAttribute="trailing" constant="20" id="aY6-l1-bS4"/>
-                            <constraint firstItem="V0L-kZ-3b4" firstAttribute="top" secondItem="Tec-vt-Q19" secondAttribute="bottom" constant="60" id="cSo-NL-xHY"/>
                             <constraint firstItem="Tec-vt-Q19" firstAttribute="top" secondItem="a5j-V2-axH" secondAttribute="bottom" constant="40" id="fdv-3D-ZBT"/>
                             <constraint firstItem="IQu-iA-bHc" firstAttribute="top" secondItem="a5j-V2-axH" secondAttribute="bottom" constant="37.5" id="jc8-cU-rV0"/>
                             <constraint firstItem="Tec-vt-Q19" firstAttribute="leading" secondItem="n0a-4G-Wz4" secondAttribute="leading" constant="20" id="qca-ko-qa4"/>
-                            <constraint firstItem="V0L-kZ-3b4" firstAttribute="leading" secondItem="n0a-4G-Wz4" secondAttribute="leading" constant="20" id="vfL-LQ-WJq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n0a-4G-Wz4"/>
                     </view>
@@ -91,22 +86,27 @@
             <objects>
                 <viewController id="wwn-K0-l2p" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tXG-Ld-A5p">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vNX-ix-vqa" customClass="ColorPickerView" customModule="Notes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNX-ix-vqa" customClass="ColorPickerView" customModule="Notes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vNX-ix-vqa" firstAttribute="trailing" secondItem="ETt-Xc-aSq" secondAttribute="trailing" id="Nas-fJ-nNY"/>
+                            <constraint firstItem="vNX-ix-vqa" firstAttribute="top" secondItem="ETt-Xc-aSq" secondAttribute="top" id="aPl-43-4py"/>
+                            <constraint firstItem="vNX-ix-vqa" firstAttribute="leading" secondItem="ETt-Xc-aSq" secondAttribute="leading" id="bLj-tM-6Dr"/>
+                            <constraint firstItem="vNX-ix-vqa" firstAttribute="bottom" secondItem="ETt-Xc-aSq" secondAttribute="bottom" id="cRQ-VV-OHs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ETt-Xc-aSq"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6n-8F-0ck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="139"/>
+            <point key="canvasLocation" x="885.60000000000002" y="138.91625615763547"/>
         </scene>
     </scenes>
 </document>
