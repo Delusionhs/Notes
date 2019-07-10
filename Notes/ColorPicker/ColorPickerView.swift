@@ -113,6 +113,11 @@ class ColorPickerView: UIView {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        setupPointer()
+        let point = palette.getPointForColor(color: pickedColor)
+        pointer.frame = CGRect(origin: CGPoint(x: point.x-15,
+                                               y: point.y-15),
+                               size: CGSize(width: 30, height: 30))
         let isHitPalette = touches.contains { (touch) -> Bool in
             let touchPoint = touch.location(in: self)
             return palette.frame.contains(touchPoint) }
