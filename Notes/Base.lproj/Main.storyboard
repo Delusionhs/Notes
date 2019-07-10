@@ -18,9 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Lorem ipsum dolor sit er " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bGL-4J-jon">
-                                <rect key="frame" x="20" y="96" width="335" height="33"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bGL-4J-jon">
+                                <rect key="frame" x="20" y="93.999999999999986" width="335" height="166.66666666666663"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis ante gravida, vulputate augue at, pulvinar arcu. Integer purus tellus, tempus eu sem sagittis, sodales tincidunt leo. In elit metus, vehicula et rhoncus quis, fermentum at nulla. Nulla facilisi. Curabitur dictum metus lectus, et condimentum erat gravida at. Duis porta iaculis felis et viverra. Cras sit amet dapibus diam.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -30,12 +31,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GXb-cK-DkN">
-                                <rect key="frame" x="213" y="163" width="51" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="JKa-Fd-4As">
-                                <rect key="frame" x="24" y="237" width="335" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Destroy Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKC-Vg-sZA">
+                                <rect key="frame" x="20" y="296.66666666666669" width="159.33333333333334" height="25.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="JKa-Fd-4As">
+                                <rect key="frame" x="24" y="370.66666666666669" width="335" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8OP-gu-wgI">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -49,7 +52,7 @@
                                         <rect key="frame" x="176" y="0.0" width="70" height="70"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-Dl-Gku">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-Dl-Gku">
                                         <rect key="frame" x="264" y="0.0" width="71" height="70"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
@@ -61,22 +64,25 @@
                                     <constraint firstItem="ndi-Dl-Gku" firstAttribute="leading" secondItem="JKa-Fd-4As" secondAttribute="leading" constant="264" id="SbO-ly-vVj"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use Destroy Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKC-Vg-sZA">
-                                <rect key="frame" x="20" y="165" width="159.33333333333334" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GXb-cK-DkN">
+                                <rect key="frame" x="214" y="296.66666666666669" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Pcx-B9-X6r" firstAttribute="trailing" secondItem="bGL-4J-jon" secondAttribute="trailing" constant="20" id="1Uc-xF-c2q"/>
                             <constraint firstItem="Pcx-B9-X6r" firstAttribute="trailing" secondItem="y5M-6I-xbo" secondAttribute="trailing" constant="20" id="39x-VP-EfT"/>
+                            <constraint firstItem="oKC-Vg-sZA" firstAttribute="top" secondItem="bGL-4J-jon" secondAttribute="bottom" constant="36" id="6pD-d0-ZcU"/>
+                            <constraint firstItem="JKa-Fd-4As" firstAttribute="top" secondItem="oKC-Vg-sZA" secondAttribute="bottom" constant="48.666666666666657" id="E5U-2m-iRB"/>
+                            <constraint firstItem="Pcx-B9-X6r" firstAttribute="trailing" secondItem="ndi-Dl-Gku" secondAttribute="trailing" constant="16" id="GHm-2d-N54"/>
                             <constraint firstItem="y5M-6I-xbo" firstAttribute="top" secondItem="Pcx-B9-X6r" secondAttribute="top" id="H6f-bl-ysD"/>
+                            <constraint firstItem="GXb-cK-DkN" firstAttribute="top" secondItem="bGL-4J-jon" secondAttribute="bottom" constant="36" id="XAn-Xr-23j"/>
                             <constraint firstItem="bGL-4J-jon" firstAttribute="leading" secondItem="Pcx-B9-X6r" secondAttribute="leading" constant="20" id="Yf2-Cb-0qG"/>
+                            <constraint firstItem="oKC-Vg-sZA" firstAttribute="leading" secondItem="Pcx-B9-X6r" secondAttribute="leading" constant="20" id="eDp-Wj-iFq"/>
                             <constraint firstItem="y5M-6I-xbo" firstAttribute="leading" secondItem="Pcx-B9-X6r" secondAttribute="leading" constant="20" id="k5P-ty-A7i"/>
-                            <constraint firstItem="bGL-4J-jon" firstAttribute="top" secondItem="y5M-6I-xbo" secondAttribute="bottom" constant="22" id="ojA-b9-frT"/>
+                            <constraint firstItem="bGL-4J-jon" firstAttribute="top" secondItem="y5M-6I-xbo" secondAttribute="bottom" constant="20" id="ojA-b9-frT"/>
+                            <constraint firstItem="7mJ-xL-cIl" firstAttribute="leading" secondItem="Pcx-B9-X6r" secondAttribute="leading" constant="112" id="wt5-1g-NYi"/>
+                            <constraint firstItem="GXb-cK-DkN" firstAttribute="leading" secondItem="oKC-Vg-sZA" secondAttribute="trailing" constant="34.666666666666657" id="zOe-QX-g7d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pcx-B9-X6r"/>
                     </view>
