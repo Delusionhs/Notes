@@ -18,8 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5es-1b-gRw">
+                                <rect key="frame" x="20" y="69" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a5j-V2-axH">
-                                <rect key="frame" x="20" y="44" width="374" height="183.5"/>
+                                <rect key="frame" x="20" y="116" width="374" height="183.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -28,9 +34,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="a5j-V2-axH" firstAttribute="top" secondItem="n0a-4G-Wz4" secondAttribute="top" id="0kF-Fy-itG"/>
                             <constraint firstItem="a5j-V2-axH" firstAttribute="leading" secondItem="n0a-4G-Wz4" secondAttribute="leading" constant="20" id="92a-Ur-HwS"/>
                             <constraint firstItem="n0a-4G-Wz4" firstAttribute="trailing" secondItem="a5j-V2-axH" secondAttribute="trailing" constant="20" id="CLw-8z-ZLi"/>
+                            <constraint firstItem="5es-1b-gRw" firstAttribute="top" secondItem="n0a-4G-Wz4" secondAttribute="top" constant="25" id="HEG-xY-WGe"/>
+                            <constraint firstItem="5es-1b-gRw" firstAttribute="leading" secondItem="n0a-4G-Wz4" secondAttribute="leading" constant="20" id="OZB-7E-pHd"/>
+                            <constraint firstItem="a5j-V2-axH" firstAttribute="top" secondItem="5es-1b-gRw" secondAttribute="bottom" constant="17" id="VZE-4g-7QL"/>
+                            <constraint firstItem="n0a-4G-Wz4" firstAttribute="trailing" secondItem="5es-1b-gRw" secondAttribute="trailing" constant="20" id="aY6-l1-bS4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n0a-4G-Wz4"/>
                     </view>
