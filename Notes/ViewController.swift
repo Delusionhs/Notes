@@ -19,6 +19,9 @@ class ViewController: UIViewController {
         view.endEditing(true)
         pickerChangeVisible()
     }
+    @IBAction func longPressCPButton(_ sender: UILongPressGestureRecognizer) {
+        print("lel")
+    }
     
     private func pickerChangeVisible() {
         datePicker.isHidden = datePicker.isHidden
@@ -36,12 +39,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         //pickerChangeVisible()
         
         //datePicker = UIDatePicker()
         //datePicker?.datePickerMode = .date
         //self.view.addSubview(datePicker!)
         
+    }
+    
+    func longPressed(sender: UILongPressGestureRecognizer)
+    {
+        print("longpressed")
     }
     
     override func viewWillAppear(_ animated: Bool) {
