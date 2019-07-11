@@ -44,7 +44,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="eso-SV-dwL">
-                                                <rect key="frame" x="20" y="348" width="335" height="70"/>
+                                                <rect key="frame" x="28" y="601" width="335" height="70"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ia4-IQ-Ac3">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -70,13 +70,16 @@
                                                     <constraint firstItem="4Wq-kV-yGn" firstAttribute="leading" secondItem="eso-SV-dwL" secondAttribute="leading" constant="176" id="BWY-q8-xPC"/>
                                                 </constraints>
                                             </stackView>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xh-tA-dSl">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9xh-tA-dSl">
                                                 <rect key="frame" x="204" y="292.66666666666669" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="destroyDateValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="fHq-ry-OBQ"/>
+                                                </connections>
                                             </switch>
-                                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="N4K-rW-8IJ">
-                                                <rect key="frame" x="0.0" y="455" width="375" height="216"/>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="N4K-rW-8IJ">
+                                                <rect key="frame" x="0.0" y="331" width="375" height="0.0"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="216" id="kLz-Of-GRj"/>
+                                                    <constraint firstAttribute="height" id="kLz-Of-GRj"/>
                                                 </constraints>
                                                 <date key="date" timeIntervalSinceReferenceDate="584531886.77060401">
                                                     <!--2019-07-11 09:58:06 +0000-->
@@ -86,17 +89,19 @@
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="9xh-tA-dSl" firstAttribute="top" secondItem="LlQ-cY-UWL" secondAttribute="bottom" constant="40" id="6Mp-Xk-IjH"/>
+                                            <constraint firstAttribute="trailing" secondItem="N4K-rW-8IJ" secondAttribute="trailing" id="8Tt-N6-8Be"/>
                                             <constraint firstItem="R0h-Ct-sIL" firstAttribute="leading" secondItem="KlC-0K-yHn" secondAttribute="leading" constant="20" id="8ym-EL-Iso"/>
                                             <constraint firstItem="LlQ-cY-UWL" firstAttribute="top" secondItem="R0h-Ct-sIL" secondAttribute="bottom" constant="17" id="9fU-Zi-0gB"/>
                                             <constraint firstItem="9xh-tA-dSl" firstAttribute="leading" secondItem="BZy-RH-onp" secondAttribute="trailing" constant="16.666666666666657" id="Dox-6G-yro"/>
+                                            <constraint firstItem="N4K-rW-8IJ" firstAttribute="leading" secondItem="KlC-0K-yHn" secondAttribute="leading" id="GOp-xO-E60"/>
                                             <constraint firstItem="eso-SV-dwL" firstAttribute="leading" secondItem="KlC-0K-yHn" secondAttribute="leading" constant="20" id="IDJ-Nu-PwX"/>
                                             <constraint firstAttribute="trailing" secondItem="LlQ-cY-UWL" secondAttribute="trailing" constant="20" id="Pwf-50-ArO"/>
+                                            <constraint firstItem="N4K-rW-8IJ" firstAttribute="top" secondItem="BZy-RH-onp" secondAttribute="bottom" constant="13" id="Qeb-1A-exS"/>
                                             <constraint firstItem="LlQ-cY-UWL" firstAttribute="leading" secondItem="KlC-0K-yHn" secondAttribute="leading" constant="20" id="UdI-H6-jvU"/>
                                             <constraint firstItem="BZy-RH-onp" firstAttribute="top" secondItem="LlQ-cY-UWL" secondAttribute="bottom" constant="40" id="ZHM-rh-eD8"/>
                                             <constraint firstItem="BZy-RH-onp" firstAttribute="leading" secondItem="KlC-0K-yHn" secondAttribute="leading" constant="28" id="ccp-O3-c6D"/>
                                             <constraint firstAttribute="trailing" secondItem="R0h-Ct-sIL" secondAttribute="trailing" constant="20" id="i5n-GT-iQG"/>
                                             <constraint firstItem="R0h-Ct-sIL" firstAttribute="top" secondItem="KlC-0K-yHn" secondAttribute="top" constant="39" id="iLa-F1-igc"/>
-                                            <constraint firstItem="eso-SV-dwL" firstAttribute="top" secondItem="BZy-RH-onp" secondAttribute="bottom" constant="30" id="wEv-wA-34x"/>
                                         </constraints>
                                     </view>
                                 </subviews>
