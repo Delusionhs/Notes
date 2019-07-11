@@ -58,7 +58,7 @@
                                                     <!--2019-07-11 09:58:06 +0000-->
                                                 </date>
                                             </datePicker>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="eso-SV-dwL">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="eso-SV-dwL">
                                                 <rect key="frame" x="20" y="351" width="335" height="70"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ia4-IQ-Ac3">
@@ -73,7 +73,7 @@
                                                         <rect key="frame" x="176" y="0.0" width="70" height="70"/>
                                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B8P-vU-r0M">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8P-vU-r0M">
                                                         <rect key="frame" x="264" y="0.0" width="71" height="70"/>
                                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </view>
@@ -83,26 +83,27 @@
                                                     <constraint firstItem="3mn-kd-qx5" firstAttribute="leading" secondItem="eso-SV-dwL" secondAttribute="leading" constant="88" id="40Y-9L-G3d"/>
                                                     <constraint firstAttribute="height" constant="70" id="8Zd-Zw-N07"/>
                                                     <constraint firstItem="4Wq-kV-yGn" firstAttribute="leading" secondItem="eso-SV-dwL" secondAttribute="leading" constant="176" id="BWY-q8-xPC"/>
+                                                    <constraint firstAttribute="width" constant="335" id="PPO-cB-IV8"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="9xh-tA-dSl" firstAttribute="top" secondItem="LlQ-cY-UWL" secondAttribute="bottom" constant="40" id="6Mp-Xk-IjH"/>
+                                            <constraint firstItem="eso-SV-dwL" firstAttribute="top" secondItem="N4K-rW-8IJ" secondAttribute="bottom" constant="20" id="88L-oM-Ebo"/>
                                             <constraint firstAttribute="trailing" secondItem="N4K-rW-8IJ" secondAttribute="trailing" id="8Tt-N6-8Be"/>
                                             <constraint firstItem="R0h-Ct-sIL" firstAttribute="leading" secondItem="KlC-0K-yHn" secondAttribute="leading" constant="20" id="8ym-EL-Iso"/>
                                             <constraint firstItem="LlQ-cY-UWL" firstAttribute="top" secondItem="R0h-Ct-sIL" secondAttribute="bottom" constant="17" id="9fU-Zi-0gB"/>
                                             <constraint firstItem="9xh-tA-dSl" firstAttribute="leading" secondItem="BZy-RH-onp" secondAttribute="trailing" constant="16.666666666666657" id="Dox-6G-yro"/>
                                             <constraint firstItem="N4K-rW-8IJ" firstAttribute="leading" secondItem="KlC-0K-yHn" secondAttribute="leading" id="GOp-xO-E60"/>
-                                            <constraint firstItem="eso-SV-dwL" firstAttribute="leading" secondItem="KlC-0K-yHn" secondAttribute="leading" constant="20" id="IDJ-Nu-PwX"/>
                                             <constraint firstAttribute="trailing" secondItem="LlQ-cY-UWL" secondAttribute="trailing" constant="20" id="Pwf-50-ArO"/>
                                             <constraint firstItem="N4K-rW-8IJ" firstAttribute="top" secondItem="BZy-RH-onp" secondAttribute="bottom" constant="13" id="Qeb-1A-exS"/>
+                                            <constraint firstItem="eso-SV-dwL" firstAttribute="centerX" secondItem="KlC-0K-yHn" secondAttribute="centerX" id="T4f-eP-fYX"/>
                                             <constraint firstItem="LlQ-cY-UWL" firstAttribute="leading" secondItem="KlC-0K-yHn" secondAttribute="leading" constant="20" id="UdI-H6-jvU"/>
                                             <constraint firstItem="BZy-RH-onp" firstAttribute="top" secondItem="LlQ-cY-UWL" secondAttribute="bottom" constant="40" id="ZHM-rh-eD8"/>
                                             <constraint firstItem="BZy-RH-onp" firstAttribute="leading" secondItem="KlC-0K-yHn" secondAttribute="leading" constant="28" id="ccp-O3-c6D"/>
                                             <constraint firstAttribute="trailing" secondItem="R0h-Ct-sIL" secondAttribute="trailing" constant="20" id="i5n-GT-iQG"/>
                                             <constraint firstItem="R0h-Ct-sIL" firstAttribute="top" secondItem="KlC-0K-yHn" secondAttribute="top" constant="39" id="iLa-F1-igc"/>
-                                            <constraint firstItem="eso-SV-dwL" firstAttribute="top" secondItem="N4K-rW-8IJ" secondAttribute="bottom" constant="20" id="opk-N3-S4P"/>
                                         </constraints>
                                     </view>
                                 </subviews>
