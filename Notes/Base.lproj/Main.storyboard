@@ -44,7 +44,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Sxe-cs-Det">
-                                                <rect key="frame" x="20" y="387" width="335" height="70"/>
+                                                <rect key="frame" x="20" y="589" width="335" height="70"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBC-dO-Jel">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -93,6 +93,24 @@
                                                     <action selector="destroyDateValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="YiJ-qR-8ZL"/>
                                                 </connections>
                                             </switch>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kc6-GV-U62">
+                                                <rect key="frame" x="27.666666666666657" y="354" width="320" height="216"/>
+                                                <subviews>
+                                                    <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZYt-XR-4ic">
+                                                        <rect key="frame" x="26" y="0.0" width="302" height="191"/>
+                                                        <date key="date" timeIntervalSinceReferenceDate="584518777.45716703">
+                                                            <!--2019-07-11 06:19:37 +0000-->
+                                                        </date>
+                                                    </datePicker>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="ZYt-XR-4ic" firstAttribute="leading" secondItem="Kc6-GV-U62" secondAttribute="leading" id="IW0-lq-aeL"/>
+                                                    <constraint firstItem="ZYt-XR-4ic" firstAttribute="centerY" secondItem="Kc6-GV-U62" secondAttribute="centerY" id="QsQ-cp-kcn"/>
+                                                    <constraint firstAttribute="height" priority="999" constant="216" id="aIC-jE-HY4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ZYt-XR-4ic" secondAttribute="trailing" id="mrV-fI-9Hz"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -100,14 +118,16 @@
                                             <constraint firstItem="Sxe-cs-Det" firstAttribute="centerX" secondItem="KdZ-LE-4FL" secondAttribute="centerX" id="9mB-ay-5O6"/>
                                             <constraint firstItem="TeU-0X-MUe" firstAttribute="top" secondItem="Y7h-vi-EpQ" secondAttribute="bottom" constant="62.333333333333371" id="Fr9-4Y-ojO"/>
                                             <constraint firstItem="SiM-ji-zhz" firstAttribute="top" secondItem="KdZ-LE-4FL" secondAttribute="top" constant="39" id="HHq-s8-jNC"/>
+                                            <constraint firstItem="Sxe-cs-Det" firstAttribute="top" secondItem="Kc6-GV-U62" secondAttribute="bottom" constant="19" id="IIF-NT-FhI"/>
                                             <constraint firstItem="Vsd-iI-TXU" firstAttribute="top" secondItem="Y7h-vi-EpQ" secondAttribute="bottom" constant="62.333333333333371" id="Nun-oH-AeJ"/>
                                             <constraint firstItem="SiM-ji-zhz" firstAttribute="leading" secondItem="KdZ-LE-4FL" secondAttribute="leading" constant="20" id="U4E-Bf-3Aa"/>
                                             <constraint firstItem="TeU-0X-MUe" firstAttribute="leading" secondItem="Vsd-iI-TXU" secondAttribute="trailing" constant="16.666666666666657" id="VZr-XD-bdZ"/>
                                             <constraint firstItem="Vsd-iI-TXU" firstAttribute="leading" secondItem="KdZ-LE-4FL" secondAttribute="leading" constant="28" id="YkH-jq-vSU"/>
+                                            <constraint firstItem="Kc6-GV-U62" firstAttribute="centerX" secondItem="KdZ-LE-4FL" secondAttribute="centerX" id="amB-QX-aTc"/>
+                                            <constraint firstAttribute="bottom" secondItem="Kc6-GV-U62" secondAttribute="bottom" constant="164" id="i3W-o2-3jR"/>
                                             <constraint firstItem="Y7h-vi-EpQ" firstAttribute="leading" secondItem="KdZ-LE-4FL" secondAttribute="leading" constant="20" id="i4l-58-lqy"/>
                                             <constraint firstAttribute="trailing" secondItem="Y7h-vi-EpQ" secondAttribute="trailing" constant="20" id="rAi-Xa-JFL"/>
                                             <constraint firstItem="Y7h-vi-EpQ" firstAttribute="top" secondItem="SiM-ji-zhz" secondAttribute="bottom" constant="17" id="wbv-cb-qlM"/>
-                                            <constraint firstItem="Sxe-cs-Det" firstAttribute="top" secondItem="TeU-0X-MUe" secondAttribute="bottom" constant="41" id="wcI-PP-QCe"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -132,6 +152,7 @@
                     </view>
                     <connections>
                         <outlet property="destoyDateSwitch" destination="TeU-0X-MUe" id="4Vv-nB-gDG"/>
+                        <outlet property="pickerView" destination="Kc6-GV-U62" id="5rV-i5-j2E"/>
                         <outlet property="scrollView" destination="qfK-bd-rnf" id="92V-ee-nN6"/>
                     </connections>
                 </viewController>

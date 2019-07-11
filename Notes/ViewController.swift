@@ -12,20 +12,23 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var destoyDateSwitch: UISwitch!
+    @IBOutlet weak var pickerView: UIView!
     
     @IBAction func destroyDateValueChange(_ sender: UISwitch) {
         view.endEditing(true)
-        datePicker?.isHidden = !datePicker!.isHidden
+        //datePicker?.isHidden = !datePicker!.isHidden
+        pickerView.isHidden = !pickerView.isHidden
+
     }
     
-    private var datePicker: UIDatePicker?
+    //private var datePicker: UIDatePicker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        datePicker = UIDatePicker()
-        datePicker?.datePickerMode = .date
-        self.view.addSubview(datePicker!)
+        //datePicker = UIDatePicker()
+        //datePicker?.datePickerMode = .date
+        //self.view.addSubview(datePicker!)
         
     }
     
