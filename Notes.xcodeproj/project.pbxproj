@@ -21,6 +21,7 @@
 		78A7E9CD22C87C5800D11AEC /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9CC22C87C5800D11AEC /* Note.swift */; };
 		78A7E9CF22C87C7100D11AEC /* NoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9CE22C87C7100D11AEC /* NoteExtension.swift */; };
 		78A7E9D122C87C7D00D11AEC /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9D022C87C7D00D11AEC /* FileNotebook.swift */; };
+		78F42EDD22D75BE2008E950C /* CheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F42EDC22D75BE2008E950C /* CheckMark.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		78A7E9CC22C87C5800D11AEC /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		78A7E9CE22C87C7100D11AEC /* NoteExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteExtension.swift; sourceTree = "<group>"; };
 		78A7E9D022C87C7D00D11AEC /* FileNotebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
+		78F42EDC22D75BE2008E950C /* CheckMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMark.swift; sourceTree = "<group>"; };
 		98F216286F61B712AB82F08B /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
 		BE3A425CBAD5476BBF7B9EEB /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
 		CD8A0CD3584CAF5C08732240 /* Pods-NotesTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotesTests.test.xcconfig"; path = "Target Support Files/Pods-NotesTests/Pods-NotesTests.test.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				782D772822D41864009E31D9 /* ColorPicker */,
 				78A7E9CB22C87C2B00D11AEC /* Model */,
 				78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */,
+				78F42EDC22D75BE2008E950C /* CheckMark.swift */,
 				78A7E9AD22C87C2100D11AEC /* ViewController.swift */,
 				78A7E9AF22C87C2100D11AEC /* Main.storyboard */,
 				78A7E9B222C87C2200D11AEC /* Assets.xcassets */,
@@ -319,6 +322,7 @@
 				78A7E9D122C87C7D00D11AEC /* FileNotebook.swift in Sources */,
 				782D772E22D49D9F009E31D9 /* Pointer.swift in Sources */,
 				78A7E9AE22C87C2100D11AEC /* ViewController.swift in Sources */,
+				78F42EDD22D75BE2008E950C /* CheckMark.swift in Sources */,
 				78A7E9CF22C87C7100D11AEC /* NoteExtension.swift in Sources */,
 				782D772C22D41883009E31D9 /* ColorPickerView.swift in Sources */,
 				782D772A22D41878009E31D9 /* Palette.swift in Sources */,
