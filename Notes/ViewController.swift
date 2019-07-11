@@ -34,6 +34,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerChangeVisible()
+        
+        scrollView.contentInset.bottom = 1000
         //datePicker = UIDatePicker()
         //datePicker?.datePickerMode = .date
         //self.view.addSubview(datePicker!)
