@@ -11,6 +11,23 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var destoyDateSwitch: UISwitch!
+    
+    @IBAction func destroyDateValueChange(_ sender: UISwitch) {
+        view.endEditing(true)
+        datePicker?.isHidden = !datePicker!.isHidden
+    }
+    
+    private var datePicker: UIDatePicker?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .date
+        self.view.addSubview(datePicker!)
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
