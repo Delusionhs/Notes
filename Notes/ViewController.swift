@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         pickerChangeVisible()
     }
     @IBAction func longPressCPButton(_ sender: UILongPressGestureRecognizer) {
-        print("lel")
         colorPickBox.defaultColor = .blue
         
     }
