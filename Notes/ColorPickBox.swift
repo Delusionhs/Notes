@@ -17,8 +17,11 @@ class colorPickBox: UIView {
         }
     }
     
-    private let defaultColor:UIColor? = nil
-    private let isColorPicker = false
+     var defaultColor:UIColor = .white {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     private let isPicked = false
     
@@ -49,7 +52,17 @@ class colorPickBox: UIView {
                 context!.fill(CGRect(x:x, y:y, width:elementSize,height:elementSize))
                 }
             }
+        
+        if defaultColor != .white {
+            context!.clear(rect)
+            let color:UIColor = .white
+            context!.setFillColor(color.cgColor)
+            context!.fill(rect)
+
         }
+        }
+    
+    
     
         //context!.clear(rect)
         //let color:UIColor = .white

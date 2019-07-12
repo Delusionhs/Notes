@@ -122,6 +122,7 @@
                         <viewLayoutGuide key="safeArea" id="v62-S5-A88"/>
                     </view>
                     <connections>
+                        <outlet property="colorPickBox" destination="ia4-IQ-Ac3" id="sGe-Uf-cCz"/>
                         <outlet property="datePicker" destination="N4K-rW-8IJ" id="fDe-jE-BnE"/>
                         <outlet property="datePickerHeight" destination="kLz-Of-GRj" id="tDM-JE-qcv"/>
                         <outlet property="destoyDateSwitch" destination="9xh-tA-dSl" id="rKl-70-qxD"/>

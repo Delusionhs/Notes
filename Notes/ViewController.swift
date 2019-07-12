@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var destoyDateSwitch: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var datePickerHeight: NSLayoutConstraint!
+    @IBOutlet weak var colorPickBox: colorPickBox!
     
     @IBAction func destroyDateValueChange(_ sender: UISwitch) {
         view.endEditing(true)
@@ -21,6 +22,8 @@ class ViewController: UIViewController {
     }
     @IBAction func longPressCPButton(_ sender: UILongPressGestureRecognizer) {
         print("lel")
+        colorPickBox.defaultColor = .blue
+        
     }
     
     private func pickerChangeVisible() {
