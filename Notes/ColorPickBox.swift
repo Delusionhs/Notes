@@ -42,34 +42,28 @@ class colorPickBox: UIView {
     
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
-        for y : CGFloat in stride(from: 0.0 ,to: rect.height, by: elementSize) {
-            var saturation = CGFloat(y) / rect.height
-            saturation = CGFloat(powf(Float(saturation), saturationExponent))
-            for x : CGFloat in stride(from: 0.0 ,to: rect.width, by: elementSize) {
-                let hue = x / rect.width
-                let color = UIColor(hue: hue, saturation: saturation, brightness: 1.0, alpha: 1.0)
-                context!.setFillColor(color.cgColor)
-                context!.fill(CGRect(x:x, y:y, width:elementSize,height:elementSize))
-                }
-            }
-        
         if let defaultColor = defaultColor {
             context!.clear(rect)
             let color:UIColor = defaultColor
             context!.setFillColor(color.cgColor)
             context!.fill(rect)
-
+        } else {
+            for y : CGFloat in stride(from: 0.0 ,to: rect.height, by: elementSize) {
+                var saturation = CGFloat(y) / rect.height
+                saturation = CGFloat(powf(Float(saturation), saturationExponent))
+                for x : CGFloat in stride(from: 0.0 ,to: rect.width, by: elementSize) {
+                    let hue = x / rect.width
+                    let color = UIColor(hue: hue, saturation: saturation, brightness: 1.0, alpha: 1.0)
+                    context!.setFillColor(color.cgColor)
+                    context!.fill(CGRect(x:x, y:y, width:elementSize,height:elementSize))
+                    }
+                }
+            }
         }
-        }
-    
-    
-    
         //context!.clear(rect)
         //let color:UIColor = .white
         //context!.setFillColor(color.cgColor)
         //context!.fill(rect)
-
-    
     
 }
 
