@@ -17,6 +17,7 @@ class ColorPickerView: UIView {
     private let pickedColorHashLabel = UILabel()
     private let brightnessSlider = UISlider()
     private let brightnessLabel = UILabel()
+    private let doneButton = UIButton()
     
     private let timeToStepperMargin: CGFloat = 8
     private let actionButtonTopMargin: CGFloat = 8
@@ -55,7 +56,7 @@ class ColorPickerView: UIView {
         palette.frame = CGRect(origin: CGPoint(x: bounds.minX+8,
                                                y: pickedColorHashLabel.frame.maxY+20),
                                size: CGSize(width: self.frame.width-16,
-                                            height: self.frame.height-130))
+                                            height: self.frame.height-130))//self.frame.height/3))
         ///////////////////////////////////////////////////////////////////////////////////////////
         brightnessSlider.frame = CGRect(origin: CGPoint(x: pickedColorView.bounds.maxX+20,
                                                         y: pickedColorHashLabel.frame.minY),
@@ -70,12 +71,18 @@ class ColorPickerView: UIView {
         brightnessSlider.addTarget(self, action: #selector(changeVlaue), for: .valueChanged)
         brightnessLabel.text = "Brightness"
         brightnessLabel.font = brightnessLabel.font.withSize(20)
-        ///////////////////////////////////////////////////////////////////////////////////////////
         let point = palette.getPointForColor(color: pickedColor)
         pointer.frame = CGRect(origin: CGPoint(x: point.x-15,
                                                y: point.y-15),
                                size: CGSize(width: 30, height: 30))
         brightnessSlider.setValue(getBrightness(pickedColor), animated: false)
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        let doneButtonSize = doneButton.intrinsicContentSize
+        doneButton.frame = CGRect(origin: CGPoint(x: palette.frame.maxX-doneButtonSize.width-8,
+                                               y: pickedColorView.frame.minX),
+                               size: doneButtonSize)
+        doneButton.setTitleColor(doneButton.tintColor, for: .normal)
+        doneButton.setTitle("Done", for: .normal)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -137,6 +144,7 @@ class ColorPickerView: UIView {
         addSubview(pickedColorHashLabel)
         addSubview(brightnessSlider)
         addSubview(brightnessLabel)
+        addSubview(doneButton)
     }
     
     private func setupPointer() {
