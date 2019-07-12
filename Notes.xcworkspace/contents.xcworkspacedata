@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/igor/Desktop/Notes/Notes/ColorPickBox.swift">
+   </FileRef>
+   <FileRef
       location = "group:Notes.xcodeproj">
    </FileRef>
    <FileRef
