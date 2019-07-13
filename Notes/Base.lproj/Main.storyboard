@@ -30,26 +30,27 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Lorem ipsum dolor sit " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LlQ-cY-UWL">
-                                                <rect key="frame" x="20" y="86" width="374" height="33"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LlQ-cY-UWL">
+                                                <rect key="frame" x="20" y="86" width="374" height="150"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis ante gravida, vulputate augue at, pulvinar arcu. Integer purus tellus, tempus eu sem sagittis, sodales tincidunt leo. In elit metus, vehicula et rhoncus quis, fermentum at nulla. Nulla facilisi. Curabitur dictum metus lectus, et condimentum erat gravida at. Duis porta iaculis felis et viverra. Cras sit amet dapibus diam.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Destroy Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZy-RH-onp">
-                                                <rect key="frame" x="28" y="159" width="159.5" height="25.5"/>
+                                                <rect key="frame" x="28" y="276" width="159.5" height="25.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9xh-tA-dSl">
-                                                <rect key="frame" x="204" y="159" width="51" height="31"/>
+                                                <rect key="frame" x="204" y="276" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="destroyDateValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="fHq-ry-OBQ"/>
                                                 </connections>
                                             </switch>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="N4K-rW-8IJ">
-                                                <rect key="frame" x="0.0" y="197.5" width="414" height="216"/>
+                                                <rect key="frame" x="0.0" y="314.5" width="414" height="216"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="216" id="kLz-Of-GRj"/>
                                                 </constraints>
@@ -137,7 +138,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Z8t-4h-OB7" firstAttribute="top" secondItem="N4K-rW-8IJ" secondAttribute="bottom" constant="137" id="1SE-aW-SMe"/>
+                                    <constraint firstItem="Z8t-4h-OB7" firstAttribute="top" secondItem="N4K-rW-8IJ" secondAttribute="bottom" constant="20" id="1SE-aW-SMe"/>
                                     <constraint firstItem="KlC-0K-yHn" firstAttribute="width" secondItem="yIQ-i9-FeJ" secondAttribute="width" id="8Hf-6k-mQS"/>
                                     <constraint firstItem="KlC-0K-yHn" firstAttribute="leading" secondItem="yIQ-i9-FeJ" secondAttribute="leading" id="DJ8-67-fbK"/>
                                     <constraint firstAttribute="bottom" secondItem="KlC-0K-yHn" secondAttribute="bottom" id="DPF-Ww-ybB"/>
