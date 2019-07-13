@@ -66,13 +66,13 @@ class ColorPickBox: UIView {
         }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        checkMarkAdd(size: CGSize(width: 20, height: 20))
+        checkMarkAdd()
         //deleteCheckMark()
     }
     
-    func checkMarkAdd(size: CGSize) {
-        checkMark.frame = CGRect(origin: CGPoint(x: bounds.maxX-size.height, y:  bounds.minY),
-                                 size: CGSize(width: 20, height: 20))
+    func checkMarkAdd() {
+        checkMark.frame = CGRect(origin: CGPoint(x: bounds.maxX-self.frame.size.height/3, y:  bounds.minY),
+                                 size: CGSize(width: self.frame.size.height/3, height: self.frame.size.width/3))
         self.addSubview(checkMark)
     }
     
