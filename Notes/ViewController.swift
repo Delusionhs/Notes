@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         guard segue.identifier == "unwindToData" else { return }
         guard let svc = segue.source as? ColorPickerVC else { return }
         colorPickBox.defaultColor = svc.colorPickerView.pickedColor
+        pickerdColor = svc.colorPickerView.pickedColor
     }
     
     @IBAction func destroyDateValueChange(_ sender: UISwitch) {
