@@ -157,6 +157,7 @@
                         <outlet property="redBox" destination="4Wq-kV-yGn" id="McA-SC-LoL"/>
                         <outlet property="scrollView" destination="yIQ-i9-FeJ" id="gr0-hE-bvw"/>
                         <outlet property="whiteBox" destination="B8P-vU-r0M" id="HTT-h7-kTt"/>
+                        <segue destination="wwn-K0-l2p" kind="show" id="iTM-Zo-AyE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var redBox: ColorPickBox!
     @IBOutlet weak var greenBox: ColorPickBox!
     
+    var pickerdColor: UIColor = .white
+    
     @IBAction func unwindToDataScreen (segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToData" else { return }
         guard let svc = segue.source as? ColorPickerVC else { return }
@@ -40,16 +42,19 @@ class ViewController: UIViewController {
     @IBAction func greenBoxTapped(_ sender: UITapGestureRecognizer) {
         clearMarks()
         greenBox.checkMarkAdd()
+        pickerdColor = greenBox.defaultColor!
     }
     
     @IBAction func whiteBoxTapped(_ sender: UITapGestureRecognizer) {
         clearMarks()
         whiteBox.checkMarkAdd()
+        pickerdColor = whiteBox.defaultColor!
     }
     
     @IBAction func redBoxTapped(_ sender: UITapGestureRecognizer) {
         clearMarks()
         redBox.checkMarkAdd()
+        pickerdColor = redBox.defaultColor!
     }
     
     private func pickerChangeVisible() {
@@ -86,6 +91,7 @@ class ViewController: UIViewController {
         super.viewDidDisappear(animated)
         unregisterNotifications()
     }
+    
     
     private func registerNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
