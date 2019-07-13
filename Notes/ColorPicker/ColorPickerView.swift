@@ -77,12 +77,12 @@ class ColorPickerView: UIView {
                                size: CGSize(width: 30, height: 30))
         brightnessSlider.setValue(getBrightness(pickedColor), animated: false)
         ///////////////////////////////////////////////////////////////////////////////////////////
+        doneButton.setTitle("Done", for: .normal)
         let doneButtonSize = doneButton.intrinsicContentSize
         doneButton.frame = CGRect(origin: CGPoint(x: palette.frame.maxX-doneButtonSize.width-8,
                                                y: pickedColorView.frame.minX+8),
                                size: doneButtonSize)
         doneButton.setTitleColor(doneButton.tintColor, for: .normal)
-        doneButton.setTitle("Done", for: .normal)
     }
     
     required init?(coder aDecoder: NSCoder) {
