@@ -75,10 +75,5 @@ class ColorPickBox: UIView {
         checkMark.removeFromSuperview()
     }
     
-        //context!.clear(rect)
-        //let color:UIColor = .white
-        //context!.setFillColor(color.cgColor)
-        //context!.fill(rect)
-    
 }
 
