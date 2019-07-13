@@ -175,18 +175,14 @@
                         <action selector="greenBoxTapped:" destination="BYZ-38-t0r" id="qY9-Ip-8eC"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="rei-S3-eh8">
-                    <connections>
-                        <action selector="redBoxTapped:" destination="BYZ-38-t0r" id="lyF-6V-B2m"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="rei-S3-eh8"/>
             </objects>
             <point key="canvasLocation" x="128.98550724637681" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Color PickerVC-->
         <scene sceneID="sYh-4v-v6B">
             <objects>
-                <viewController id="wwn-K0-l2p" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorPickerVC" id="wwn-K0-l2p" customClass="ColorPickerVC" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tXG-Ld-A5p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,8 +201,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ETt-Xc-aSq"/>
                     </view>
+                    <connections>
+                        <outlet property="colorPickerView" destination="vNX-ix-vqa" id="0Rm-0p-P0r"/>
+                        <segue destination="fDs-pv-g34" kind="unwind" identifier="unwindToData" unwindAction="unwindToDataScreenWithSegue:" id="8Ik-qu-A00"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6n-8F-0ck" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fDs-pv-g34" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="885.60000000000002" y="138.91625615763547"/>
         </scene>

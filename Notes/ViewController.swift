@@ -19,14 +19,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var redBox: ColorPickBox!
     @IBOutlet weak var greenBox: ColorPickBox!
     
+    @IBAction func unwindToDataScreen (segue: UIStoryboardSegue) {
+        guard segue.identifier == "unwindToData" else { return }
+        guard let svc = segue.source as? ColorPickerVC else { return }
+        colorPickBox.defaultColor = svc.colorPickerView.pickedColor
+    }
+    
     @IBAction func destroyDateValueChange(_ sender: UISwitch) {
         view.endEditing(true)
         pickerChangeVisible()
     }
     @IBAction func longPressCPButton(_ sender: UILongPressGestureRecognizer) {
-        colorPickBox.defaultColor = .blue
         clearMarks()
         colorPickBox.checkMarkAdd()
+        let controller = storyboard?.instantiateViewController(withIdentifier: "ColorPickerVC")
+        self.present(controller!, animated: true, completion: nil)
         
     }
     

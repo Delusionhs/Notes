@@ -17,7 +17,7 @@ class ColorPickerView: UIView {
     private let pickedColorHashLabel = UILabel()
     private let brightnessSlider = UISlider()
     private let brightnessLabel = UILabel()
-    private let doneButton = UIButton()
+    let doneButton = UIButton()
     
     private let timeToStepperMargin: CGFloat = 8
     private let actionButtonTopMargin: CGFloat = 8
