@@ -11,11 +11,13 @@ import UIKit
 class ColorPickerVC: UIViewController {
     
     @IBOutlet weak var colorPickerView: ColorPickerView!
+    var sendedColor:UIColor = .white
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         colorPickerView.doneButton.addTarget(self, action: #selector(doneButtonAction), for: .touchUpInside)
+        colorPickerView.updatePickedColor(sendedColor)
         
         //pickerChangeVisible()
         

@@ -32,11 +32,12 @@ class ViewController: UIViewController {
         pickerChangeVisible()
     }
     @IBAction func longPressCPButton(_ sender: UILongPressGestureRecognizer) {
-        clearMarks()
-        colorPickBox.checkMarkAdd()
-        performSegue(withIdentifier: "ShowColorPickerSegue", sender: self)
-        //let controller = storyboard?.instantiateViewController(withIdentifier: "ColorPickerVC")
-        //self.present(controller!, animated: true, completion: nil)
+        if (sender.state == .ended) {
+        } else if (sender.state == .began) {
+            clearMarks()
+            colorPickBox.checkMarkAdd()
+            performSegue(withIdentifier: "ShowColorPickerSegue", sender: self)
+        }
     }
     
     @IBAction func greenBoxTapped(_ sender: UITapGestureRecognizer) {
@@ -94,7 +95,9 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowColorPickerSegue",
             let destinationVC = segue.destination as? ColorPickerVC {
-            print("test")
+            if let color = colorPickBox.defaultColor {
+                destinationVC.sendedColor = color
+            }
         }
     }
     
