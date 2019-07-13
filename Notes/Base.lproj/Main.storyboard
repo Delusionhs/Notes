@@ -49,49 +49,6 @@
                                                     <action selector="destroyDateValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="fHq-ry-OBQ"/>
                                                 </connections>
                                             </switch>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3mn-kd-qx5" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
-                                                <rect key="frame" x="185" y="468" width="70" height="70"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <gestureRecognizers/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
-                                                        <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="FxB-uj-jeq" appends="YES" id="pXO-Fn-lmh"/>
-                                                </connections>
-                                            </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Wq-kV-yGn" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
-                                                <rect key="frame" x="107" y="468" width="70" height="70"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <gestureRecognizers/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
-                                                        <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="rei-S3-eh8" appends="YES" id="6ut-lP-syp"/>
-                                                </connections>
-                                            </view>
-                                            <view alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B8P-vU-r0M" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="468" width="70" height="70"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <gestureRecognizers/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
-                                                        <color key="value" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="KvO-ap-fSf" appends="YES" id="btu-r6-KNK"/>
-                                                </connections>
-                                            </view>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="N4K-rW-8IJ">
                                                 <rect key="frame" x="0.0" y="314.5" width="414" height="0.0"/>
                                                 <constraints>
@@ -101,15 +58,6 @@
                                                     <!--2019-07-11 09:58:06 +0000-->
                                                 </date>
                                             </datePicker>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ia4-IQ-Ac3" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
-                                                <rect key="frame" x="263" y="468" width="70" height="70"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <gestureRecognizers/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="wHQ-cS-vfP" appends="YES" id="cQW-dg-tR4"/>
-                                                </connections>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -128,6 +76,64 @@
                                             <constraint firstItem="R0h-Ct-sIL" firstAttribute="top" secondItem="KlC-0K-yHn" secondAttribute="top" constant="39" id="iLa-F1-igc"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z8t-4h-OB7">
+                                        <rect key="frame" x="55" y="374" width="304" height="70"/>
+                                        <subviews>
+                                            <view alpha="0.94999999999999996" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B8P-vU-r0M" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
+                                                        <color key="value" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="KvO-ap-fSf" appends="YES" id="btu-r6-KNK"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Wq-kV-yGn" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
+                                                <rect key="frame" x="78" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
+                                                        <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="rei-S3-eh8" appends="YES" id="6ut-lP-syp"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3mn-kd-qx5" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
+                                                <rect key="frame" x="156" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
+                                                        <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="FxB-uj-jeq" appends="YES" id="pXO-Fn-lmh"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ia4-IQ-Ac3" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
+                                                <rect key="frame" x="234" y="0.0" width="70" height="70"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="wHQ-cS-vfP" appends="YES" id="cQW-dg-tR4"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ia4-IQ-Ac3" firstAttribute="leading" secondItem="Z8t-4h-OB7" secondAttribute="leading" constant="234" id="OYz-nz-AzL"/>
+                                            <constraint firstItem="4Wq-kV-yGn" firstAttribute="leading" secondItem="Z8t-4h-OB7" secondAttribute="leading" constant="78" id="Oh1-1R-eLR"/>
+                                            <constraint firstItem="3mn-kd-qx5" firstAttribute="leading" secondItem="Z8t-4h-OB7" secondAttribute="leading" constant="156" id="fV1-pz-4N1"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="KlC-0K-yHn" firstAttribute="centerY" secondItem="yIQ-i9-FeJ" secondAttribute="centerY" id="FeF-kC-fDr"/>
