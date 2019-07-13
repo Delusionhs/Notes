@@ -1,6 +1,6 @@
 //
 //  ColorPickBox.swift
-//  
+//
 //
 //  Created by Igor Podolskiy on 12/07/2019.
 //
@@ -58,12 +58,12 @@ class ColorPickBox: UIView {
                     let color = UIColor(hue: hue, saturation: saturation, brightness: 1.0, alpha: 1.0)
                     context!.setFillColor(color.cgColor)
                     context!.fill(CGRect(x:x, y:y, width:elementSize,height:elementSize))
-                    }
                 }
             }
-        
-
         }
+        
+        
+    }
     
     func checkMarkAdd() {
         checkMark.frame = CGRect(origin: CGPoint(x: bounds.maxX-self.frame.size.height/3, y:  bounds.minY),
