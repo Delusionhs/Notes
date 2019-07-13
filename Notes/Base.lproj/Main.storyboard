@@ -30,29 +30,28 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LlQ-cY-UWL">
-                                                <rect key="frame" x="20" y="86" width="374" height="150"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Lorem ipsum dolor sit " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LlQ-cY-UWL">
+                                                <rect key="frame" x="20" y="86" width="374" height="33"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis ante gravida, vulputate augue at, pulvinar arcu. Integer purus tellus, tempus eu sem sagittis, sodales tincidunt leo. In elit metus, vehicula et rhoncus quis, fermentum at nulla. Nulla facilisi. Curabitur dictum metus lectus, et condimentum erat gravida at. Duis porta iaculis felis et viverra. Cras sit amet dapibus diam.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Destroy Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZy-RH-onp">
-                                                <rect key="frame" x="28" y="276" width="159.5" height="25.5"/>
+                                                <rect key="frame" x="28" y="159" width="159.5" height="25.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9xh-tA-dSl">
-                                                <rect key="frame" x="204" y="276" width="51" height="31"/>
+                                                <rect key="frame" x="204" y="159" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="destroyDateValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="fHq-ry-OBQ"/>
                                                 </connections>
                                             </switch>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="N4K-rW-8IJ">
-                                                <rect key="frame" x="0.0" y="314.5" width="414" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="197.5" width="414" height="216"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" id="kLz-Of-GRj"/>
+                                                    <constraint firstAttribute="height" constant="216" id="kLz-Of-GRj"/>
                                                 </constraints>
                                                 <date key="date" timeIntervalSinceReferenceDate="584531886.77060401">
                                                     <!--2019-07-11 09:58:06 +0000-->
@@ -76,10 +75,10 @@
                                             <constraint firstItem="R0h-Ct-sIL" firstAttribute="top" secondItem="KlC-0K-yHn" secondAttribute="top" constant="39" id="iLa-F1-igc"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z8t-4h-OB7">
-                                        <rect key="frame" x="55" y="374" width="304" height="70"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z8t-4h-OB7">
+                                        <rect key="frame" x="55" y="550.5" width="304" height="70"/>
                                         <subviews>
-                                            <view alpha="0.94999999999999996" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B8P-vU-r0M" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
+                                            <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8P-vU-r0M" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,7 +92,7 @@
                                                     <outletCollection property="gestureRecognizers" destination="KvO-ap-fSf" appends="YES" id="btu-r6-KNK"/>
                                                 </connections>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Wq-kV-yGn" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wq-kV-yGn" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
                                                 <rect key="frame" x="78" y="0.0" width="70" height="70"/>
                                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
@@ -106,7 +105,7 @@
                                                     <outletCollection property="gestureRecognizers" destination="rei-S3-eh8" appends="YES" id="6ut-lP-syp"/>
                                                 </connections>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3mn-kd-qx5" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mn-kd-qx5" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
                                                 <rect key="frame" x="156" y="0.0" width="70" height="70"/>
                                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
@@ -119,7 +118,7 @@
                                                     <outletCollection property="gestureRecognizers" destination="FxB-uj-jeq" appends="YES" id="pXO-Fn-lmh"/>
                                                 </connections>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ia4-IQ-Ac3" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ia4-IQ-Ac3" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
                                                 <rect key="frame" x="234" y="0.0" width="70" height="70"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <gestureRecognizers/>
@@ -129,19 +128,23 @@
                                             </view>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="304" id="Eje-1y-4co"/>
                                             <constraint firstItem="ia4-IQ-Ac3" firstAttribute="leading" secondItem="Z8t-4h-OB7" secondAttribute="leading" constant="234" id="OYz-nz-AzL"/>
                                             <constraint firstItem="4Wq-kV-yGn" firstAttribute="leading" secondItem="Z8t-4h-OB7" secondAttribute="leading" constant="78" id="Oh1-1R-eLR"/>
                                             <constraint firstItem="3mn-kd-qx5" firstAttribute="leading" secondItem="Z8t-4h-OB7" secondAttribute="leading" constant="156" id="fV1-pz-4N1"/>
+                                            <constraint firstAttribute="height" constant="70" id="lRv-sy-d2q"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="KlC-0K-yHn" firstAttribute="centerY" secondItem="yIQ-i9-FeJ" secondAttribute="centerY" id="FeF-kC-fDr"/>
-                                    <constraint firstItem="KlC-0K-yHn" firstAttribute="centerX" secondItem="yIQ-i9-FeJ" secondAttribute="centerX" id="Kmh-Ou-BM6"/>
-                                    <constraint firstAttribute="trailing" secondItem="KlC-0K-yHn" secondAttribute="trailing" id="Xf1-zu-77q"/>
-                                    <constraint firstItem="KlC-0K-yHn" firstAttribute="leading" secondItem="yIQ-i9-FeJ" secondAttribute="leading" id="c3z-QQ-cuR"/>
-                                    <constraint firstAttribute="bottom" secondItem="KlC-0K-yHn" secondAttribute="bottom" id="hdJ-Bt-kqM"/>
-                                    <constraint firstItem="KlC-0K-yHn" firstAttribute="top" secondItem="yIQ-i9-FeJ" secondAttribute="top" id="qry-b7-Qul"/>
+                                    <constraint firstItem="Z8t-4h-OB7" firstAttribute="top" secondItem="N4K-rW-8IJ" secondAttribute="bottom" constant="137" id="1SE-aW-SMe"/>
+                                    <constraint firstItem="KlC-0K-yHn" firstAttribute="width" secondItem="yIQ-i9-FeJ" secondAttribute="width" id="8Hf-6k-mQS"/>
+                                    <constraint firstItem="KlC-0K-yHn" firstAttribute="leading" secondItem="yIQ-i9-FeJ" secondAttribute="leading" id="DJ8-67-fbK"/>
+                                    <constraint firstAttribute="bottom" secondItem="KlC-0K-yHn" secondAttribute="bottom" id="DPF-Ww-ybB"/>
+                                    <constraint firstItem="KlC-0K-yHn" firstAttribute="top" secondItem="yIQ-i9-FeJ" secondAttribute="top" id="fuP-tO-4IQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="KlC-0K-yHn" secondAttribute="trailing" id="pr1-j5-wrv"/>
+                                    <constraint firstItem="Z8t-4h-OB7" firstAttribute="centerX" secondItem="KlC-0K-yHn" secondAttribute="centerX" id="t2n-V1-VAi"/>
+                                    <constraint firstItem="Z8t-4h-OB7" firstAttribute="top" secondItem="KlC-0K-yHn" secondAttribute="bottom" constant="-267.5" id="wcd-1i-eqN"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
