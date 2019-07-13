@@ -35,9 +35,9 @@ class ViewController: UIViewController {
     @IBAction func longPressCPButton(_ sender: UILongPressGestureRecognizer) {
         if (sender.state == .ended) {
         } else if (sender.state == .began) {
+            performSegue(withIdentifier: "ShowColorPickerSegue", sender: self)
             clearMarks()
             colorPickBox.checkMarkAdd()
-            performSegue(withIdentifier: "ShowColorPickerSegue", sender: self)
         }
     }
     
@@ -71,17 +71,8 @@ class ViewController: UIViewController {
         }
     }
     
-    //private var datePicker: UIDatePicker?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        //pickerChangeVisible()
-        
-        //datePicker = UIDatePicker()
-        //datePicker?.datePickerMode = .date
-        //self.view.addSubview(datePicker!)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
