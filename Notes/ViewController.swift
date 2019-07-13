@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var destoyDateSwitch: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var datePickerHeight: NSLayoutConstraint!
-    @IBOutlet weak var colorPickBox: colorPickBox!
+    @IBOutlet weak var colorPickBox: ColorPickBox!
     
     @IBAction func destroyDateValueChange(_ sender: UISwitch) {
         view.endEditing(true)

@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class checkMark: UIView {
+class CheckMark: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

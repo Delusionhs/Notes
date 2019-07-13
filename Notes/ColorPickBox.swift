@@ -8,8 +8,10 @@
 import UIKit
 
 @IBDesignable
-class colorPickBox: UIView {
+class ColorPickBox: UIView {
     let saturationExponent:Float = 0.8
+    
+    private let checkMark = CheckMark()
     
     @IBInspectable var elementSize: CGFloat = 2.0 {
         didSet {
@@ -17,7 +19,7 @@ class colorPickBox: UIView {
         }
     }
     
-     var defaultColor:UIColor? = nil {
+    @IBInspectable var defaultColor:UIColor? = nil {
         didSet {
             setNeedsDisplay()
         }
@@ -59,7 +61,25 @@ class colorPickBox: UIView {
                     }
                 }
             }
+        
+
         }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        checkMarkAdd(size: CGSize(width: 20, height: 20))
+        //deleteCheckMark()
+    }
+    
+    func checkMarkAdd(size: CGSize) {
+        checkMark.frame = CGRect(origin: CGPoint(x: bounds.maxX-size.height, y:  bounds.minY),
+                                 size: CGSize(width: 20, height: 20))
+        self.addSubview(checkMark)
+    }
+    
+    func deleteCheckMark() {
+        checkMark.removeFromSuperview()
+    }
+    
         //context!.clear(rect)
         //let color:UIColor = .white
         //context!.setFillColor(color.cgColor)
