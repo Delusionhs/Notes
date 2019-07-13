@@ -175,7 +175,11 @@
                         <action selector="greenBoxTapped:" destination="BYZ-38-t0r" id="qY9-Ip-8eC"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="rei-S3-eh8"/>
+                <tapGestureRecognizer id="rei-S3-eh8">
+                    <connections>
+                        <action selector="redBoxTapped:" destination="BYZ-38-t0r" id="Sy4-ve-vfJ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="128.98550724637681" y="137.94642857142856"/>
         </scene>
