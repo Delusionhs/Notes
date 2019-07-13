@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var datePickerHeight: NSLayoutConstraint!
     @IBOutlet weak var colorPickBox: ColorPickBox!
+    @IBOutlet weak var whiteBox: ColorPickBox!
+    @IBOutlet weak var redBox: ColorPickBox!
+    @IBOutlet weak var greenBox: ColorPickBox!
     
     @IBAction func destroyDateValueChange(_ sender: UISwitch) {
         view.endEditing(true)
@@ -22,7 +25,24 @@ class ViewController: UIViewController {
     }
     @IBAction func longPressCPButton(_ sender: UILongPressGestureRecognizer) {
         colorPickBox.defaultColor = .blue
+        clearMarks()
+        colorPickBox.checkMarkAdd()
         
+    }
+    
+    @IBAction func greenBoxTapped(_ sender: UITapGestureRecognizer) {
+        clearMarks()
+        greenBox.checkMarkAdd()
+    }
+    
+    @IBAction func whiteBoxTapped(_ sender: UITapGestureRecognizer) {
+        clearMarks()
+        whiteBox.checkMarkAdd()
+    }
+    
+    @IBAction func redBoxTapped(_ sender: UITapGestureRecognizer) {
+        clearMarks()
+        redBox.checkMarkAdd()
     }
     
     private func pickerChangeVisible() {
@@ -48,11 +68,6 @@ class ViewController: UIViewController {
         //datePicker?.datePickerMode = .date
         //self.view.addSubview(datePicker!)
         
-    }
-    
-    func longPressed(sender: UILongPressGestureRecognizer)
-    {
-        print("longpressed")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,6 +98,13 @@ class ViewController: UIViewController {
     
     @objc private func keyboardWillHide(notification: NSNotification){
         scrollView.contentInset.bottom = 0
+    }
+    
+    private func clearMarks() {
+        redBox.deleteCheckMark()
+        greenBox.deleteCheckMark()
+        whiteBox.deleteCheckMark()
+        colorPickBox.deleteCheckMark()
     }
 }
 

@@ -53,32 +53,44 @@
                                                 <rect key="frame" x="185" y="468" width="70" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
                                                         <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="FxB-uj-jeq" appends="YES" id="pXO-Fn-lmh"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Wq-kV-yGn" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
                                                 <rect key="frame" x="107" y="468" width="70" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
                                                         <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="rei-S3-eh8" appends="YES" id="6ut-lP-syp"/>
+                                                </connections>
                                             </view>
                                             <view alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B8P-vU-r0M" customClass="ColorPickBox" customModule="Notes" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="468" width="70" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
                                                         <color key="value" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="KvO-ap-fSf" appends="YES" id="btu-r6-KNK"/>
+                                                </connections>
                                             </view>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="N4K-rW-8IJ">
                                                 <rect key="frame" x="0.0" y="314.5" width="414" height="0.0"/>
@@ -141,7 +153,10 @@
                         <outlet property="datePicker" destination="N4K-rW-8IJ" id="fDe-jE-BnE"/>
                         <outlet property="datePickerHeight" destination="kLz-Of-GRj" id="tDM-JE-qcv"/>
                         <outlet property="destoyDateSwitch" destination="9xh-tA-dSl" id="rKl-70-qxD"/>
+                        <outlet property="greenBox" destination="3mn-kd-qx5" id="ofP-ao-Sk1"/>
+                        <outlet property="redBox" destination="4Wq-kV-yGn" id="McA-SC-LoL"/>
                         <outlet property="scrollView" destination="yIQ-i9-FeJ" id="gr0-hE-bvw"/>
+                        <outlet property="whiteBox" destination="B8P-vU-r0M" id="HTT-h7-kTt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -150,6 +165,21 @@
                         <action selector="longPressCPButton:" destination="BYZ-38-t0r" id="ehZ-4A-Pwq"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="KvO-ap-fSf">
+                    <connections>
+                        <action selector="whiteBoxTapped:" destination="BYZ-38-t0r" id="gFz-on-12B"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="FxB-uj-jeq">
+                    <connections>
+                        <action selector="greenBoxTapped:" destination="BYZ-38-t0r" id="qY9-Ip-8eC"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="rei-S3-eh8">
+                    <connections>
+                        <action selector="redBoxTapped:" destination="BYZ-38-t0r" id="lyF-6V-B2m"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="128.98550724637681" y="137.94642857142856"/>
         </scene>
