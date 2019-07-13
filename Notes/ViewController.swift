@@ -63,11 +63,9 @@ class ViewController: UIViewController {
         datePicker.isHidden = datePicker.isHidden
         if datePickerHeight.constant != 0 {
             datePickerHeight.constant = 0
-            scrollView.contentInset.bottom = 0
         } else {
             let dataPickerHeight:CGFloat = 216.0
             datePickerHeight.constant = dataPickerHeight
-            scrollView.contentInset.bottom = dataPickerHeight
         }
     }
     
