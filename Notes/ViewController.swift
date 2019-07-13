@@ -34,9 +34,9 @@ class ViewController: UIViewController {
     @IBAction func longPressCPButton(_ sender: UILongPressGestureRecognizer) {
         clearMarks()
         colorPickBox.checkMarkAdd()
-        let controller = storyboard?.instantiateViewController(withIdentifier: "ColorPickerVC")
-        self.present(controller!, animated: true, completion: nil)
-        
+        performSegue(withIdentifier: "ShowColorPickerSegue", sender: self)
+        //let controller = storyboard?.instantiateViewController(withIdentifier: "ColorPickerVC")
+        //self.present(controller!, animated: true, completion: nil)
     }
     
     @IBAction func greenBoxTapped(_ sender: UITapGestureRecognizer) {
@@ -91,7 +91,12 @@ class ViewController: UIViewController {
         super.viewDidDisappear(animated)
         unregisterNotifications()
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowColorPickerSegue",
+            let destinationVC = segue.destination as? ColorPickerVC {
+            print("test")
+        }
+    }
     
     private func registerNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)

@@ -152,7 +152,7 @@ class ColorPickerView: UIView {
         addSubview(palette)
     }
     
-    private func updatePickedColor (_ color: UIColor) {
+    func updatePickedColor (_ color: UIColor) {
         pickedColor = color
         pickedColorView.backgroundColor = pickedColor
         brightnessSlider.setValue(getBrightness(pickedColor), animated: false)
