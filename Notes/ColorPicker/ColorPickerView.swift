@@ -79,7 +79,7 @@ class ColorPickerView: UIView {
         ///////////////////////////////////////////////////////////////////////////////////////////
         doneButton.setTitle("Done", for: .normal)
         let doneButtonSize = doneButton.intrinsicContentSize
-        doneButton.frame = CGRect(origin: CGPoint(x: palette.frame.maxX-doneButtonSize.width-8,
+        doneButton.frame = CGRect(origin: CGPoint(x: palette.frame.maxX-doneButtonSize.width-12,
                                                y: pickedColorView.frame.minX+8),
                                size: doneButtonSize)
         doneButton.setTitleColor(doneButton.tintColor, for: .normal)
