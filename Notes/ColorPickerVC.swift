@@ -18,13 +18,6 @@ class ColorPickerVC: UIViewController {
         super.viewDidLoad()
         colorPickerView.doneButton.addTarget(self, action: #selector(doneButtonAction), for: .touchUpInside)
         colorPickerView.updatePickedColor(sendedColor)
-        
-        //pickerChangeVisible()
-        
-        //datePicker = UIDatePicker()
-        //datePicker?.datePickerMode = .date
-        //self.view.addSubview(datePicker!)
-        
     }
     
     @objc func doneButtonAction() {

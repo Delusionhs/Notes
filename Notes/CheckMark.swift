@@ -31,7 +31,7 @@ class CheckMark: UIView {
             path.move(to: CGPoint(x: center.x-radius, y: center.y))
             path.addLine(to: CGPoint(x: center.x, y: center.y+radius))
             path.addLine(to: CGPoint(x: frame.size.width-radius/2, y: 0-radius/2))
-            path.lineWidth = 1
+            path.lineWidth = 1.5
             path.stroke()
             context.strokePath()
         }
