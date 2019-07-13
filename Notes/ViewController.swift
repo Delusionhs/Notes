@@ -71,6 +71,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        whiteBox.checkMarkAdd()
+        pickerdColor = whiteBox.defaultColor!
     }
     
     override func viewWillAppear(_ animated: Bool) {
