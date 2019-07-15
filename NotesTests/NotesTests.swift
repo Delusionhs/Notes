@@ -33,15 +33,15 @@ class NotesTests: XCTestCase {
     }
     
     func testFileNotebookNotebookIsEmpty() {
-        XCTAssertTrue(notebook.notebook.isEmpty)
+        XCTAssertTrue(notebook.notes.isEmpty)
     }
     
     func testFileNotebookAddNote() {
         notebook.add(note)
-        XCTAssertEqual(notebook.notebook[0].uid, note.uid)
+        XCTAssertEqual(notebook.notes[0].uid, note.uid)
         
         notebook.add(note)
-        XCTAssertEqual(notebook.notebook.count, 1)
+        XCTAssertEqual(notebook.notes.count, 1)
     }
     
     func testPerformanceExample() {

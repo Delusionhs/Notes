@@ -45,7 +45,7 @@
         <!--Item 1-->
         <scene sceneID="u4q-QZ-y9i">
             <objects>
-                <viewController id="jN9-X7-4Au" sceneMemberID="viewController">
+                <viewController id="jN9-X7-4Au" customClass="NotebookViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h0y-YS-c0y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,6 +65,9 @@
                         <viewLayoutGuide key="safeArea" id="NHI-QY-SrG"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="5Ef-Y2-Dx6"/>
+                    <connections>
+                        <outlet property="notebookTableView" destination="gX6-7g-isY" id="Z28-BJ-8lD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZyZ-QZ-gmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

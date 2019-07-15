@@ -3,7 +3,7 @@ import UIKit
 
 class FileNotebook {
     
-    private(set) var notebook: [Note] = []
+    private(set) var notes: [Note] = []
     
     init() {
         //DDLog.add(DDOSLogger.sharedInstance)
@@ -11,20 +11,20 @@ class FileNotebook {
     }
     
     init(withNotes: [Note]) {
-        self.notebook = withNotes
+        self.notes = withNotes
     }
     
     public func add(_ note: Note) {
-        if let noteOffset = self.notebook.firstIndex(where: {$0.uid == note.uid}) {
-            self.notebook[noteOffset] = note
+        if let noteOffset = self.notes.firstIndex(where: {$0.uid == note.uid}) {
+            self.notes[noteOffset] = note
         } else {
-            self.notebook.append(note)
+            self.notes.append(note)
         }
     }
     
     public func remove(with uid: String) {
-        if let noteOffset = self.notebook.firstIndex(where: {$0.uid == uid}) {
-            self.notebook.remove(at: noteOffset)
+        if let noteOffset = self.notes.firstIndex(where: {$0.uid == uid}) {
+            self.notes.remove(at: noteOffset)
         }
     }
     
@@ -32,7 +32,7 @@ class FileNotebook {
         var json: Data = Data()
         var jsonArr: [[String: Any]] = []
         
-        for notes in self.notebook {
+        for notes in self.notes {
             jsonArr.append(notes.json)
         }
         
@@ -76,7 +76,7 @@ class FileNotebook {
                 let data = try Data(contentsOf: url)
                 let object = try JSONSerialization.jsonObject(with: data, options: [])
                 if let dictionary = object as? [[String: Any]] {
-                    self.notebook = []
+                    self.notes = []
                     for dict in dictionary {
                         self.add(Note.parse(json: dict)!)
                     }
