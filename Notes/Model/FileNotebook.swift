@@ -10,6 +10,10 @@ class FileNotebook {
         //DDLogInfo("Init")
     }
     
+    init(withNotes: [Note]) {
+        self.notebook = withNotes
+    }
+    
     public func add(_ note: Note) {
         if let noteOffset = self.notebook.firstIndex(where: {$0.uid == note.uid}) {
             self.notebook[noteOffset] = note
@@ -84,5 +88,22 @@ class FileNotebook {
             //DDLogError("No file at dir")
             return
         }
+    }
+}
+
+extension FileNotebook {
+    static var myNotebook: FileNotebook {
+        let notes = [Note(title: "Первая заметка",
+                          content: "Очень важная заметка",
+                          importance: .important),
+                     Note(title: "Вторая заметка",
+                          content: "Обычная заметка",
+                          importance: .ordinary),
+                     Note(title: "Третья заметка",
+                          content: "Совсем не важная заметка но синяя",
+                          color: .blue,
+                          importance: .unimportant,
+                          selfDestructionDate: nil)]
+        return FileNotebook(withNotes: notes)
     }
 }

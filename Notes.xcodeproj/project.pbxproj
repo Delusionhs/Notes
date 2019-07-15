@@ -20,6 +20,7 @@
 		78A7E9CD22C87C5800D11AEC /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9CC22C87C5800D11AEC /* Note.swift */; };
 		78A7E9CF22C87C7100D11AEC /* NoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9CE22C87C7100D11AEC /* NoteExtension.swift */; };
 		78A7E9D122C87C7D00D11AEC /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9D022C87C7D00D11AEC /* FileNotebook.swift */; };
+		78E33D1822DCA7BC000786E5 /* NotebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E33D1722DCA7BC000786E5 /* NotebookViewController.swift */; };
 		78F42EDD22D75BE2008E950C /* CheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F42EDC22D75BE2008E950C /* CheckMark.swift */; };
 		78F42EE322D9D4B5008E950C /* ColorPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F42EE222D9D4B5008E950C /* ColorPickerVC.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		78A7E9CC22C87C5800D11AEC /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		78A7E9CE22C87C7100D11AEC /* NoteExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteExtension.swift; sourceTree = "<group>"; };
 		78A7E9D022C87C7D00D11AEC /* FileNotebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
+		78E33D1722DCA7BC000786E5 /* NotebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookViewController.swift; sourceTree = "<group>"; };
 		78F42EDC22D75BE2008E950C /* CheckMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMark.swift; sourceTree = "<group>"; };
 		78F42EE222D9D4B5008E950C /* ColorPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerVC.swift; sourceTree = "<group>"; };
 		98F216286F61B712AB82F08B /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		78A7E9AA22C87C2100D11AEC /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				78E33D1622DCA703000786E5 /* View Conrollers */,
 				782D772822D41864009E31D9 /* ColorPicker */,
 				78A7E9CB22C87C2B00D11AEC /* Model */,
 				78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */,
@@ -158,6 +161,14 @@
 				78A7E9CC22C87C5800D11AEC /* Note.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		78E33D1622DCA703000786E5 /* View Conrollers */ = {
+			isa = PBXGroup;
+			children = (
+				78E33D1722DCA7BC000786E5 /* NotebookViewController.swift */,
+			);
+			path = "View Conrollers";
 			sourceTree = "<group>";
 		};
 		FE1A75A2D937464F6DDBE2D6 /* Frameworks */ = {
@@ -322,6 +333,7 @@
 				78A7E9D122C87C7D00D11AEC /* FileNotebook.swift in Sources */,
 				78A7E9AE22C87C2100D11AEC /* ViewController.swift in Sources */,
 				789386D722DA04A800D8EFBB /* ColorPickBox.swift in Sources */,
+				78E33D1822DCA7BC000786E5 /* NotebookViewController.swift in Sources */,
 				78F42EDD22D75BE2008E950C /* CheckMark.swift in Sources */,
 				78A7E9CF22C87C7100D11AEC /* NoteExtension.swift in Sources */,
 				782D772C22D41883009E31D9 /* ColorPickerView.swift in Sources */,
