@@ -47,21 +47,15 @@ class NoteEditViewController: UIViewController {
     }
     
     @IBAction func greenBoxTapped(_ sender: UITapGestureRecognizer) {
-        clearMarks()
-        greenBox.checkMarkAdd()
-        pickerdColor = greenBox.defaultColor!
+        caseDefaultColor(color: .green)
     }
     
     @IBAction func whiteBoxTapped(_ sender: UITapGestureRecognizer) {
-        clearMarks()
-        whiteBox.checkMarkAdd()
-        pickerdColor = whiteBox.defaultColor!
+        caseDefaultColor(color: .white)
     }
     
     @IBAction func redBoxTapped(_ sender: UITapGestureRecognizer) {
-        clearMarks()
-        redBox.checkMarkAdd()
-        pickerdColor = redBox.defaultColor!
+        caseDefaultColor(color: .red)
     }
     
     override func viewDidLoad() {
