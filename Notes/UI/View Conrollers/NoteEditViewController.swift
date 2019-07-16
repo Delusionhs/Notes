@@ -19,6 +19,9 @@ class NoteEditViewController: UIViewController {
     @IBOutlet weak var redBox: ColorPickBox!
     @IBOutlet weak var greenBox: ColorPickBox!
     
+    @IBOutlet weak var noteTitleText: UITextField!
+    @IBOutlet weak var noteTextView: UITextView!
+    
     var note: Note?
     
     var pickerdColor: UIColor = .white
@@ -61,6 +64,16 @@ class NoteEditViewController: UIViewController {
         pickerdColor = redBox.defaultColor!
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        whiteBox.checkMarkAdd()
+        pickerdColor = whiteBox.defaultColor!
+        if let note = self.note {
+            noteTitleText.text = note.title
+            noteTextView.text = note.content
+        }
+    }
+    
     private func pickerChangeVisible() {
         datePicker.isHidden = datePicker.isHidden
         if datePickerHeight.constant != 0 {
@@ -69,12 +82,6 @@ class NoteEditViewController: UIViewController {
             let dataPickerHeight:CGFloat = 216.0
             datePickerHeight.constant = dataPickerHeight
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        whiteBox.checkMarkAdd()
-        pickerdColor = whiteBox.defaultColor!
     }
     
     override func viewWillAppear(_ animated: Bool) {

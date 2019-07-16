@@ -251,6 +251,8 @@
                         <outlet property="datePickerHeight" destination="kLz-Of-GRj" id="tDM-JE-qcv"/>
                         <outlet property="destoyDateSwitch" destination="9xh-tA-dSl" id="rKl-70-qxD"/>
                         <outlet property="greenBox" destination="3mn-kd-qx5" id="ofP-ao-Sk1"/>
+                        <outlet property="noteTextView" destination="LlQ-cY-UWL" id="jfJ-ab-QwQ"/>
+                        <outlet property="noteTitleText" destination="R0h-Ct-sIL" id="9q7-Oh-w7h"/>
                         <outlet property="redBox" destination="4Wq-kV-yGn" id="McA-SC-LoL"/>
                         <outlet property="scrollView" destination="yIQ-i9-FeJ" id="gr0-hE-bvw"/>
                         <outlet property="whiteBox" destination="B8P-vU-r0M" id="HTT-h7-kTt"/>
