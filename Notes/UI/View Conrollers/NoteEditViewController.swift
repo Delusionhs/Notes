@@ -74,8 +74,9 @@ class NoteEditViewController: UIViewController {
             if let date = note.selfDestructionDate {
                 destoyDateSwitch.isOn = true
                 changePickerHeight()
-                datePicker.date = note.selfDestructionDate!
+                datePicker.date = date
             }
+        caseDefaultColor(color: note.color)
         }
     }
     
@@ -137,5 +138,23 @@ class NoteEditViewController: UIViewController {
         whiteBox.deleteCheckMark()
         colorPickBox.deleteCheckMark()
     }
+    
+    private func caseDefaultColor (color: UIColor) {
+        clearMarks()
+        switch color {
+        case UIColor.white:
+            whiteBox.checkMarkAdd()
+            pickerdColor = color
+        case UIColor.red:
+            redBox.checkMarkAdd()
+            pickerdColor = color
+        case UIColor.green:
+            greenBox.checkMarkAdd()
+            pickerdColor = color
+        default:
+            colorPickBox.checkMarkAdd()
+            colorPickBox.defaultColor = color
+            pickerdColor = color
+        }
+    }
 }
-
