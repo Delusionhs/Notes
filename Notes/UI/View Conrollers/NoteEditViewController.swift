@@ -19,6 +19,8 @@ class NoteEditViewController: UIViewController {
     @IBOutlet weak var redBox: ColorPickBox!
     @IBOutlet weak var greenBox: ColorPickBox!
     
+    var note: Note?
+    
     var pickerdColor: UIColor = .white
     
     @IBAction func unwindToDataScreen (segue: UIStoryboardSegue) {

@@ -15,6 +15,7 @@ class NotebookViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Заметки"
         notebookTableView.delegate = self
         notebookTableView.dataSource = self
         notebookTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil),
@@ -42,4 +43,17 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
         return UITableView.automaticDimension
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showNoteEdit", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? NoteEditViewController {
+            guard let indexPath = notebookTableView.indexPathForSelectedRow else { return }
+            controller.note = notebook.notes[indexPath.row]
+            print(notebook.notes[indexPath.row])
+        }
+    }
 }
