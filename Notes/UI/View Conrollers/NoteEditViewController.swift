@@ -60,6 +60,7 @@ class NoteEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePicker.isHidden = true
         whiteBox.checkMarkAdd()
         pickerdColor = whiteBox.defaultColor!
         if let note = self.note {
@@ -67,7 +68,7 @@ class NoteEditViewController: UIViewController {
             noteTextView.text = note.content
             if let date = note.selfDestructionDate {
                 destoyDateSwitch.isOn = true
-                changePickerHeight()
+                pickerChangeVisible()
                 datePicker.date = date
             }
         caseDefaultColor(color: note.color)
@@ -75,7 +76,7 @@ class NoteEditViewController: UIViewController {
     }
     
     private func pickerChangeVisible() {
-        datePicker.isHidden = datePicker.isHidden
+        datePicker.isHidden = !datePicker.isHidden
         changePickerHeight()
     }
     
