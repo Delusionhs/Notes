@@ -104,6 +104,8 @@
 		782D772822D41864009E31D9 /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
+				789386D622DA04A800D8EFBB /* ColorPickBox.swift */,
+				78F42EDC22D75BE2008E950C /* CheckMark.swift */,
 				782D772B22D41883009E31D9 /* ColorPickerView.swift */,
 			);
 			path = ColorPicker;
@@ -132,13 +134,9 @@
 		78A7E9AA22C87C2100D11AEC /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				78E33D1622DCA703000786E5 /* View Conrollers */,
-				782D772822D41864009E31D9 /* ColorPicker */,
+				78E33D8722DDA13E000786E5 /* UI */,
 				78A7E9CB22C87C2B00D11AEC /* Model */,
 				78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */,
-				78F42EDC22D75BE2008E950C /* CheckMark.swift */,
-				78F42EE222D9D4B5008E950C /* ColorPickerVC.swift */,
-				789386D622DA04A800D8EFBB /* ColorPickBox.swift */,
 				78A7E9AF22C87C2100D11AEC /* Main.storyboard */,
 				78A7E9B222C87C2200D11AEC /* Assets.xcassets */,
 				78A7E9B422C87C2200D11AEC /* LaunchScreen.storyboard */,
@@ -170,11 +168,29 @@
 			isa = PBXGroup;
 			children = (
 				78A7E9AD22C87C2100D11AEC /* NoteEditViewController.swift */,
+				78F42EE222D9D4B5008E950C /* ColorPickerVC.swift */,
 				78E33D1722DCA7BC000786E5 /* NotebookViewController.swift */,
 				78E33D8122DD7F8B000786E5 /* NoteTableViewCell.swift */,
 				78E33D8222DD7F8B000786E5 /* NoteTableViewCell.xib */,
 			);
 			path = "View Conrollers";
+			sourceTree = "<group>";
+		};
+		78E33D8722DDA13E000786E5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				78E33D8822DDA14B000786E5 /* Views */,
+				78E33D1622DCA703000786E5 /* View Conrollers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		78E33D8822DDA14B000786E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				782D772822D41864009E31D9 /* ColorPicker */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FE1A75A2D937464F6DDBE2D6 /* Frameworks */ = {
