@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f6Z-Un-gkS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="htO-md-KoT">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,21 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="dlt-RX-iDV">
             <objects>
                 <navigationController id="f6Z-Un-gkS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="5nc-FZ-ooo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1H1-Hf-Jvb">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="htO-md-KoT" kind="relationship" relationship="rootViewController" id="2bg-lB-uo7"/>
+                        <segue destination="jN9-X7-4Au" kind="relationship" relationship="rootViewController" id="TkF-th-Nnx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Wt-Sa-qDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2287" y="-843"/>
+            <point key="canvasLocation" x="-1698" y="-1170"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="HJy-yB-39B">
@@ -37,6 +38,7 @@
                         <viewLayoutGuide key="safeArea" id="8Ef-4R-3Fz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="IwK-Af-5ZX"/>
+                    <navigationItem key="navigationItem" id="yfF-wH-DTx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fum-BQ-zya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,6 +67,7 @@
                         <viewLayoutGuide key="safeArea" id="NHI-QY-SrG"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="5Ef-Y2-Dx6"/>
+                    <navigationItem key="navigationItem" id="OH2-vg-dCE"/>
                     <connections>
                         <outlet property="notebookTableView" destination="gX6-7g-isY" id="Z28-BJ-8lD"/>
                     </connections>
@@ -84,13 +87,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="jN9-X7-4Au" kind="relationship" relationship="viewControllers" id="f4h-Iu-ypw"/>
-                        <segue destination="vD6-6J-HFL" kind="relationship" relationship="viewControllers" id="QSi-AF-tZZ"/>
+                        <segue destination="f6Z-Un-gkS" kind="relationship" relationship="viewControllers" id="YfT-El-Qme"/>
+                        <segue destination="djX-J4-mzR" kind="relationship" relationship="viewControllers" id="JRy-SQ-Lcc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eRM-Jt-y28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1545" y="-842"/>
+            <point key="canvasLocation" x="-2665" y="-869"/>
         </scene>
         <!--Note Edit View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -307,6 +310,23 @@
                 <exit id="fDs-pv-g34" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="978" y="-938"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Q1z-EH-2X5">
+            <objects>
+                <navigationController id="djX-J4-mzR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="o69-ES-G6Q"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S7s-2H-WN9">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vD6-6J-HFL" kind="relationship" relationship="rootViewController" id="Apn-fZ-tss"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZk-ST-DW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1698" y="-517"/>
         </scene>
     </scenes>
 </document>
