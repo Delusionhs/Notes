@@ -19,7 +19,6 @@ class NotebookViewController: UIViewController {
         notebookTableView.dataSource = self
         notebookTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "note")
-        // Do any additional setup after loading the view.
     }
 
 }
