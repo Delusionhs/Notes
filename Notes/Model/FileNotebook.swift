@@ -104,7 +104,29 @@ extension FileNotebook {
                           content: "Совсем не важная заметка но синяя",
                           color: .blue,
                           importance: .unimportant,
-                          selfDestructionDate: nil)]
+                          selfDestructionDate: nil),
+                    Note(title: "Четвертая заметка", content: "С необычным цветом и датой уничтожения завтра", color: .purple, importance: .important, selfDestructionDate: Date().dayAfter)]
         return FileNotebook(withNotes: notes)
+    }
+}
+
+
+extension Date {
+    static var yesterday: Date { return Date().dayBefore }
+    static var tomorrow:  Date { return Date().dayAfter }
+    var dayBefore: Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
+    }
+    var dayAfter: Date {
+        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
+    }
+    var noon: Date {
+        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+    }
+    var month: Int {
+        return Calendar.current.component(.month,  from: self)
+    }
+    var isLastDayOfMonth: Bool {
+        return dayAfter.month != month
     }
 }

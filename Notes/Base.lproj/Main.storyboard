@@ -135,7 +135,7 @@
                                                     <action selector="destroyDateValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="fHq-ry-OBQ"/>
                                                 </connections>
                                             </switch>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="N4K-rW-8IJ">
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="N4K-rW-8IJ">
                                                 <rect key="frame" x="0.0" y="331" width="375" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="kLz-Of-GRj"/>

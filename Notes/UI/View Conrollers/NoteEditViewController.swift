@@ -71,11 +71,20 @@ class NoteEditViewController: UIViewController {
         if let note = self.note {
             noteTitleText.text = note.title
             noteTextView.text = note.content
+            if let date = note.selfDestructionDate {
+                destoyDateSwitch.isOn = true
+                changePickerHeight()
+                datePicker.date = note.selfDestructionDate!
+            }
         }
     }
     
     private func pickerChangeVisible() {
         datePicker.isHidden = datePicker.isHidden
+        changePickerHeight()
+    }
+    
+    private func changePickerHeight() {
         if datePickerHeight.constant != 0 {
             datePickerHeight.constant = 0
         } else {
