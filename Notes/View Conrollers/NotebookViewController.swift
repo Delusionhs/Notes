@@ -29,9 +29,9 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        cell.textLabel?.text = notebook.notes[indexPath.row].content
+        cell.textLabel?.text = notebook.notes[indexPath.row].title
+        cell.detailTextLabel?.text = notebook.notes[indexPath.row].content
         return cell
     }
-    
     
 }

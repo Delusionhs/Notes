@@ -134,12 +134,12 @@
 				78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */,
 				78F42EDC22D75BE2008E950C /* CheckMark.swift */,
 				78F42EE222D9D4B5008E950C /* ColorPickerVC.swift */,
+				789386D622DA04A800D8EFBB /* ColorPickBox.swift */,
 				78A7E9AD22C87C2100D11AEC /* ViewController.swift */,
 				78A7E9AF22C87C2100D11AEC /* Main.storyboard */,
 				78A7E9B222C87C2200D11AEC /* Assets.xcassets */,
 				78A7E9B422C87C2200D11AEC /* LaunchScreen.storyboard */,
 				78A7E9B722C87C2200D11AEC /* Info.plist */,
-				789386D622DA04A800D8EFBB /* ColorPickBox.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
