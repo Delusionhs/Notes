@@ -14,16 +14,17 @@ class NoteTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    
     @IBOutlet weak var dataLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        colorBox.layer.borderWidth = 1
+        dataLabel.textColor = .lightGray
         // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     

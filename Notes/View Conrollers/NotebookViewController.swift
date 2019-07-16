@@ -17,6 +17,8 @@ class NotebookViewController: UIViewController {
         super.viewDidLoad()
         notebookTableView.delegate = self
         notebookTableView.dataSource = self
+        notebookTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "note")
         // Do any additional setup after loading the view.
     }
 
@@ -28,10 +30,17 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        cell.textLabel?.text = notebook.notes[indexPath.row].title
-        cell.detailTextLabel?.text = notebook.notes[indexPath.row].content
+        //let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "note", for: indexPath) as! NoteTableViewCell
+        //let cell = NoteTableViewCell()
+        cell.colorBox.backgroundColor = notebook.notes[indexPath.row].color
+        cell.titleLabel?.text = notebook.notes[indexPath.row].title
+        cell.dataLabel?.text = notebook.notes[indexPath.row].content
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
 }
