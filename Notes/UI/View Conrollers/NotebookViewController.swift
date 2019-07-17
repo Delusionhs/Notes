@@ -38,7 +38,8 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     
     func reviceNote(note: Note) {
         self.notebook.add(note)
-        //print(notebook.notes)
+        self.notebookTableView.reloadData()
+        //print("test")
     }
     
 }
