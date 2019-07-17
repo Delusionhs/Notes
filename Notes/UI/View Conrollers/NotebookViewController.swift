@@ -34,7 +34,17 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     }
     
     @objc func editNotebook(_ sender: Any) {
-        self.notebookTableView.isEditing = true
+       // self.notebookTableView.isEditing = !self.notebookTableView.isEditing
+        if(self.notebookTableView.isEditing == true)
+        {
+            self.notebookTableView.isEditing = false
+            self.navigationItem.leftBarButtonItem?.title = "Edit"
+        }
+        else
+        {
+            self.notebookTableView.isEditing = true
+            self.navigationItem.leftBarButtonItem?.title = "Done"
+        }
     }
     
     func reviceNote(note: Note) {
@@ -85,4 +95,5 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
             controller.note = notebook.notes[indexPath.row]
         }
     }
+    
 }
