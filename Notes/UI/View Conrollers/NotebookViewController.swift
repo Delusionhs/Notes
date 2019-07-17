@@ -40,7 +40,6 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     func reviceNote(note: Note) {
         self.notebook.add(note)
         self.notebookTableView.reloadData()
-        print(notebook.notes)
     }
     
 }
@@ -59,8 +58,10 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        print("test")
+        return nil
     }
     
     
@@ -71,7 +72,8 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            print("1")
+            //notebook.notes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
     
