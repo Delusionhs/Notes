@@ -37,6 +37,7 @@ class NoteEditViewController: UIViewController {
         view.endEditing(true)
         pickerChangeVisible()
     }
+    
     @IBAction func longPressCPButton(_ sender: UILongPressGestureRecognizer) {
         if (sender.state == .ended) {
         } else if (sender.state == .began) {
@@ -74,10 +75,11 @@ class NoteEditViewController: UIViewController {
         caseDefaultColor(color: note.color)
         }
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveNote(_:)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNote(_:)))
     }
     
     @objc func saveNote(_ sender: Any) {
+        saveNote()
         navigationController?.popViewController(animated: true)
     }
     
@@ -138,6 +140,18 @@ class NoteEditViewController: UIViewController {
         greenBox.deleteCheckMark()
         whiteBox.deleteCheckMark()
         colorPickBox.deleteCheckMark()
+    }
+    
+    private func saveNote() {
+        if let note = self.note {
+            let newNote: Note? = Note(uid: note.uid,
+                                      title: noteTitleText.text!,
+                                      content: noteTextView.text!,
+                                      color: pickerdColor,
+                                      importance: note.importance,
+                                      selfDestructionDate: destoyDateSwitch.isOn == true ? datePicker.date : nil)
+            self.note = newNote
+        }
     }
     
     private func caseDefaultColor (color: UIColor) {
