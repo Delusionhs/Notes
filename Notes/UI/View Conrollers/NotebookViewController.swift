@@ -43,9 +43,7 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
         let cell = tableView.dequeueReusableCell(withIdentifier: "note", for: indexPath) as! NoteTableViewCell
-        //let cell = NoteTableViewCell()
         cell.colorBox.backgroundColor = notebook.notes[indexPath.row].color
         cell.titleLabel?.text = notebook.notes[indexPath.row].title
         cell.dataLabel?.text = notebook.notes[indexPath.row].content
