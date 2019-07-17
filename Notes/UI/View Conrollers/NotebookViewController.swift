@@ -25,7 +25,7 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewNote(_:)))
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action:#selector(editNotebook(_:)))
-        notebookTableView.tableFooterView = UIView()
+        notebookTableView.tableFooterView = UIView() // not show empty cells
 
     }
     
