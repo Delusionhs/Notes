@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol NoteEditViewControllerDelegate: class {
+    func reviceNote(note: Note)
+}
+
 class NoteEditViewController: UIViewController {
+    
+    weak var delegate: NoteEditViewControllerDelegate?
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var destoyDateSwitch: UISwitch!
@@ -150,7 +156,7 @@ class NoteEditViewController: UIViewController {
                                       color: pickerdColor,
                                       importance: note.importance,
                                       selfDestructionDate: destoyDateSwitch.isOn == true ? datePicker.date : nil)
-            self.note = newNote
+            delegate?.reviceNote(note: newNote!)
         }
     }
     

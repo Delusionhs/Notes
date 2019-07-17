@@ -8,7 +8,8 @@
 
 import UIKit
 
-class NotebookViewController: UIViewController {
+
+class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     
     @IBOutlet weak var notebookTableView: UITableView!
     var notebook = FileNotebook.myNotebook
@@ -34,6 +35,12 @@ class NotebookViewController: UIViewController {
     @objc func editNotebook(_ sender: Any) {
         //performSegue(withIdentifier: "showNoteEdit", sender: nil)
     }
+    
+    func reviceNote(note: Note) {
+        self.notebook.add(note)
+        //print(notebook.notes)
+    }
+    
 }
 
 
@@ -64,6 +71,7 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
         if let controller = segue.destination as? NoteEditViewController {
             guard let indexPath = notebookTableView.indexPathForSelectedRow else { return }
             controller.note = notebook.notes[indexPath.row]
+            controller.delegate = self
         }
     }
 }
