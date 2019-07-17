@@ -3,7 +3,7 @@ import UIKit
 
 class FileNotebook {
     
-    private(set) var notes: [Note] = []
+    /*private(set)*/ var notes: [Note] = []
     
     init() {
         //DDLog.add(DDOSLogger.sharedInstance)
