@@ -34,7 +34,7 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     }
     
     @objc func editNotebook(_ sender: Any) {
-        //performSegue(withIdentifier: "showNoteEdit", sender: nil)
+        self.notebookTableView.isEditing = true
     }
     
     func reviceNote(note: Note) {
@@ -69,6 +69,13 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("1")
+        }
+    }
+    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? NoteEditViewController {
             controller.delegate = self
