@@ -22,11 +22,17 @@ class NotebookViewController: UIViewController {
                            forCellReuseIdentifier: "note")
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewNote(_:)))
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action:#selector(editNotebook(_:)))
 
     }
     
     @objc func addNewNote(_ sender: Any) {
         performSegue(withIdentifier: "showNoteEdit", sender: nil)
+    }
+    
+    @objc func editNotebook(_ sender: Any) {
+        //performSegue(withIdentifier: "showNoteEdit", sender: nil)
     }
 }
 
