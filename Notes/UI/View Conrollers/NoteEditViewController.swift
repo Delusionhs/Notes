@@ -73,6 +73,13 @@ class NoteEditViewController: UIViewController {
             }
         caseDefaultColor(color: note.color)
         }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveNote(_:)))
+    }
+    
+    @objc func saveNote(_ sender: Any) {
+        print("test")
+        navigationController?.popViewController(animated: true)
     }
     
     private func pickerChangeVisible() {

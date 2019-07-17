@@ -105,8 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				789386D622DA04A800D8EFBB /* ColorPickBox.swift */,
-				78F42EDC22D75BE2008E950C /* CheckMark.swift */,
-				782D772B22D41883009E31D9 /* ColorPickerView.swift */,
 			);
 			path = ColorPicker;
 			sourceTree = "<group>";
@@ -188,6 +186,8 @@
 		78E33D8822DDA14B000786E5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				78F42EDC22D75BE2008E950C /* CheckMark.swift */,
+				782D772B22D41883009E31D9 /* ColorPickerView.swift */,
 				782D772822D41864009E31D9 /* ColorPicker */,
 			);
 			path = Views;

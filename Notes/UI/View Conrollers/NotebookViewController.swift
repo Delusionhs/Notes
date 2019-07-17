@@ -21,8 +21,8 @@ class NotebookViewController: UIViewController {
         notebookTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "note")
     }
-
 }
+
 
 extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,7 +53,6 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
         if let controller = segue.destination as? NoteEditViewController {
             guard let indexPath = notebookTableView.indexPathForSelectedRow else { return }
             controller.note = notebook.notes[indexPath.row]
-            print(notebook.notes[indexPath.row])
         }
     }
 }
