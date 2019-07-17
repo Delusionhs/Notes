@@ -20,6 +20,13 @@ class NotebookViewController: UIViewController {
         notebookTableView.dataSource = self
         notebookTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "note")
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewNote(_:)))
+
+    }
+    
+    @objc func addNewNote(_ sender: Any) {
+        performSegue(withIdentifier: "showNoteEdit", sender: nil)
     }
 }
 

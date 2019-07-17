@@ -78,7 +78,6 @@ class NoteEditViewController: UIViewController {
     }
     
     @objc func saveNote(_ sender: Any) {
-        print("test")
         navigationController?.popViewController(animated: true)
     }
     
