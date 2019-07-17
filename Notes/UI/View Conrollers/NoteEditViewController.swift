@@ -157,6 +157,14 @@ class NoteEditViewController: UIViewController {
                                       importance: note.importance,
                                       selfDestructionDate: destoyDateSwitch.isOn == true ? datePicker.date : nil)
             delegate?.reviceNote(note: newNote!)
+        } else {
+            let newNote: Note? = Note(
+                                      title: noteTitleText.text!,
+                                      content: noteTextView.text!,
+                                      color: pickerdColor,
+                                      importance: Importance.ordinary,
+                                      selfDestructionDate: destoyDateSwitch.isOn == true ? datePicker.date : nil)
+            delegate?.reviceNote(note: newNote!)
         }
     }
     

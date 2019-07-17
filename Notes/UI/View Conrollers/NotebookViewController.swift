@@ -39,7 +39,7 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     func reviceNote(note: Note) {
         self.notebook.add(note)
         self.notebookTableView.reloadData()
-        //print("test")
+        print(notebook.notes)
     }
     
 }
@@ -70,9 +70,9 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? NoteEditViewController {
+            controller.delegate = self
             guard let indexPath = notebookTableView.indexPathForSelectedRow else { return }
             controller.note = notebook.notes[indexPath.row]
-            controller.delegate = self
         }
     }
 }
