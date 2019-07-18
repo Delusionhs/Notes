@@ -11,6 +11,7 @@ import UIKit
 class GalleryViewController: UIViewController {
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
+    private var images: [String] = ["screen_1", "screen_2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +31,12 @@ class GalleryViewController: UIViewController {
 
 extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! GalleryCollectionViewCell
+        cell.imageView.image = UIImage(named: images[indexPath.row])
         return cell
     }
     
