@@ -19,17 +19,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaO-oP-EVu">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ztl-Rz-yWK">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                        <color key="backgroundColor" red="0.43791263200000002" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="OaO-oP-EVu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="F65-jt-hMp"/>
-                <constraint firstItem="OaO-oP-EVu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Jb3-uH-ErE"/>
-                <constraint firstAttribute="trailing" secondItem="OaO-oP-EVu" secondAttribute="trailing" id="bv9-ba-vNs"/>
-                <constraint firstAttribute="bottom" secondItem="OaO-oP-EVu" secondAttribute="bottom" id="sPs-Wv-DB1"/>
+                <constraint firstAttribute="bottom" secondItem="ztl-Rz-yWK" secondAttribute="bottom" id="PxY-fj-Nm8"/>
+                <constraint firstItem="ztl-Rz-yWK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ru0-sC-mbp"/>
+                <constraint firstAttribute="trailing" secondItem="ztl-Rz-yWK" secondAttribute="trailing" id="YzB-lW-WDt"/>
+                <constraint firstItem="ztl-Rz-yWK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xqh-bR-BoM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <point key="canvasLocation" x="131.8840579710145" y="136.60714285714286"/>
