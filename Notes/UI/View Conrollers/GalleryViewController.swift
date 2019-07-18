@@ -9,22 +9,27 @@
 import UIKit
 
 class GalleryViewController: UIViewController {
-
+    
+    @IBOutlet weak var imageCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageCollectionView.delegate = self
+        imageCollectionView.dataSource = self
         self.title = "Галерея"
+        imageCollectionView.register(UINib(nibName: "GalleryCollectionViewCell", bundle: nil),
+                                     forCellWithReuseIdentifier: "Cell")
         // Do any additional setup after loading the view.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 100
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! GalleryCollectionViewCell
+        return cell
+    }
 }
