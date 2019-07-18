@@ -25,7 +25,7 @@ class GalleryBigImageViewController: UIViewController {
         scrollView.contentSize = CGSize(width: scrollViewRect.size.width * 3, height: scrollViewRect.size.height)
         view.addSubview(scrollView)
         
-        if let images = self.images {
+        if let images = self.images, images.count > 0 {
             for imageName in images {
                 addNewImageView(imageName: imageName)
             }
