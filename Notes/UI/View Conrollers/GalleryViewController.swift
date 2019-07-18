@@ -19,7 +19,7 @@ class GalleryViewController: UIViewController {
         self.title = "Галерея"
         imageCollectionView.register(UINib(nibName: "GalleryCollectionViewCell", bundle: nil),
                                      forCellWithReuseIdentifier: "Cell")
-        imageCollectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10) // offset
+        imageCollectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20) // offset
     }
 }
 
