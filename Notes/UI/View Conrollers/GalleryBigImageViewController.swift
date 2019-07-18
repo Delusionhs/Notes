@@ -11,6 +11,7 @@ import UIKit
 class GalleryBigImageViewController: UIViewController {
     
     var images: [String]?
+    var page: Int = 0
     
     var scrollView = UIScrollView()
     
@@ -32,6 +33,8 @@ class GalleryBigImageViewController: UIViewController {
                 addNewImageView(imageName: imageName)
             }
         }
+        
+        self.scrollToPage(page: self.page)
         // Do any additional setup after loading the view.
     }
     
@@ -53,6 +56,13 @@ class GalleryBigImageViewController: UIViewController {
         result.image = paramImage
         
         return result
+    }
+    
+    func scrollToPage(page: Int) {
+        var frame: CGRect = self.scrollView.frame
+        frame.origin.x = frame.size.width * CGFloat(page)
+        frame.origin.y = 0
+        self.scrollView.scrollRectToVisible(frame, animated: true)
     }
 
 

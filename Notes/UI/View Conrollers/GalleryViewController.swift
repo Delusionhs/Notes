@@ -21,7 +21,6 @@ class GalleryViewController: UIViewController {
         imageCollectionView.register(UINib(nibName: "GalleryCollectionViewCell", bundle: nil),
                                      forCellWithReuseIdentifier: "cell")
         imageCollectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20) // offset
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewImage(_:)))
     }
     
@@ -47,6 +46,9 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? GalleryBigImageViewController {
             controller.images = self.images
+            if let indexPath = self.imageCollectionView.indexPathsForSelectedItems?.first {
+                controller.page = indexPath.row
+            }
             controller.hidesBottomBarWhenPushed = true
         }
     }
