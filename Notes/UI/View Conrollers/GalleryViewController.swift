@@ -25,6 +25,28 @@ class GalleryViewController: UIViewController {
     }
     
     @objc func addNewImage(_ sender: Any) {
+        let actionSheet = UIAlertController(title: nil,
+                                            message: nil,
+                                            preferredStyle: .actionSheet)
+        let camera = UIAlertAction(title: "Camera", style: .default) { _ in
+            self.chooseImagePicker(source: .camera)
+        }
+        
+        camera.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+        
+        let photo = UIAlertAction(title: "Photo",style: .default) { _ in
+            self.chooseImagePicker(source: .photoLibrary)
+        }
+        
+        photo.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        actionSheet.addAction(camera)
+        actionSheet.addAction(photo)
+        actionSheet.addAction(cancel)
+        
+        present(actionSheet, animated: true)
     }
 }
 
@@ -51,5 +73,24 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
             }
             controller.hidesBottomBarWhenPushed = true
         }
+    }
+}
+
+extension GalleryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func chooseImagePicker (source: UIImagePickerController.SourceType) {
+        if UIImagePickerController.isSourceTypeAvailable(source) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = source
+            present(imagePicker,animated: true)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+      
+        dismiss(animated: true, completion: nil)
+        
     }
 }

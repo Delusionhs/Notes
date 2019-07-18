@@ -27,7 +27,7 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action:#selector(editNotebook(_:)))
         notebookTableView.tableFooterView = UIView() // not show empty cells
-        notebookTableView.allowsSelectionDuringEditing = true
+        //notebookTableView.allowsSelectionDuringEditing = true
     }
     
     @objc func addNewNote(_ sender: Any) {
