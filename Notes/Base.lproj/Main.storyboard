@@ -76,25 +76,14 @@
             </objects>
             <point key="canvasLocation" x="-594.39999999999998" y="-516.50246305418716"/>
         </scene>
-        <!--View Controller-->
+        <!--Gallery Big Image View Controller-->
         <scene sceneID="aKc-DA-BnT">
             <objects>
-                <viewController id="hoZ-j3-Zul" sceneMemberID="viewController">
+                <viewController id="hoZ-j3-Zul" customClass="GalleryBigImageViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uAg-v5-Ntn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2m-OT-XN9">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
-                            </scrollView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="q2m-OT-XN9" firstAttribute="trailing" secondItem="871-6v-OXl" secondAttribute="trailing" id="FjN-da-YMy"/>
-                            <constraint firstItem="q2m-OT-XN9" firstAttribute="bottom" secondItem="871-6v-OXl" secondAttribute="bottom" id="kB2-HO-qZS"/>
-                            <constraint firstItem="q2m-OT-XN9" firstAttribute="top" secondItem="871-6v-OXl" secondAttribute="top" id="yuI-tm-c4m"/>
-                            <constraint firstItem="q2m-OT-XN9" firstAttribute="leading" secondItem="871-6v-OXl" secondAttribute="leading" id="zPc-Vp-mBT"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="871-6v-OXl"/>
                     </view>
                 </viewController>

@@ -178,9 +178,9 @@
 				78E33D1722DCA7BC000786E5 /* NotebookViewController.swift */,
 				78E33D8122DD7F8B000786E5 /* NoteTableViewCell.swift */,
 				78E33D8222DD7F8B000786E5 /* NoteTableViewCell.xib */,
-				78F9D98922E026F000C0A2BA /* GalleryViewController.swift */,
 				78F9D98B22E027BA00C0A2BA /* GalleryCollectionViewCell.swift */,
 				78F9D98C22E027BA00C0A2BA /* GalleryCollectionViewCell.xib */,
+				78F9D98922E026F000C0A2BA /* GalleryViewController.swift */,
 				78F9D98F22E0495200C0A2BA /* GalleryBigImageViewController.swift */,
 			);
 			path = "View Conrollers";
