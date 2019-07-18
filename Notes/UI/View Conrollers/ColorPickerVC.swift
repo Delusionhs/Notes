@@ -24,8 +24,5 @@ class ColorPickerVC: UIViewController {
     @objc func doneButtonAction() {
        performSegue(withIdentifier: "unwindToData", sender: nil)
     }
-    
-    
-    
 }
 

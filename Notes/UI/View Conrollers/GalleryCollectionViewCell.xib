@@ -32,6 +32,9 @@
                 <constraint firstItem="ztl-Rz-yWK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xqh-bR-BoM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="imageView" destination="ztl-Rz-yWK" id="qLA-Uc-pdx"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="136.60714285714286"/>
         </collectionViewCell>
     </objects>
