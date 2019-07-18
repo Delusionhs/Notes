@@ -11,7 +11,7 @@ import UIKit
 class GalleryViewController: UIViewController {
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
-    private var images: [String] = ["screen_1", "screen_2"]
+    private var images: [String] = ["Foggy", "MilkyWay", "Rainbow", "Star", "Bridge","CityNight","CitySun"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

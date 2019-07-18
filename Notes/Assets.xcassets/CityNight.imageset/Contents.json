@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "CityNight.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "screen_1.png",
       "scale" : "2x"
     },
     {

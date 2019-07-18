@@ -83,7 +83,18 @@
                     <view key="view" contentMode="scaleToFill" id="uAg-v5-Ntn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMn-TT-Kdq">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bMn-TT-Kdq" firstAttribute="trailing" secondItem="871-6v-OXl" secondAttribute="trailing" id="AYB-yA-YfD"/>
+                            <constraint firstItem="bMn-TT-Kdq" firstAttribute="bottom" secondItem="871-6v-OXl" secondAttribute="bottom" id="Nxs-C3-1EU"/>
+                            <constraint firstItem="bMn-TT-Kdq" firstAttribute="leading" secondItem="871-6v-OXl" secondAttribute="leading" id="P6L-Py-6DH"/>
+                            <constraint firstItem="bMn-TT-Kdq" firstAttribute="top" secondItem="871-6v-OXl" secondAttribute="top" id="gUi-AD-elx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="871-6v-OXl"/>
                     </view>
                 </viewController>

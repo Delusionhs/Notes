@@ -17,12 +17,14 @@ class GalleryBigImageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = .black
         let scrollViewRect = view.bounds
         
         scrollView = UIScrollView(frame: scrollViewRect)
         scrollView.isPagingEnabled = true
-        scrollView.contentSize = CGSize(width: scrollViewRect.size.width * 3, height: scrollViewRect.size.height)
+        if let images = self.images {
+            scrollView.contentSize = CGSize(width: scrollViewRect.size.width * CGFloat(images.count), height: scrollViewRect.size.height)
+        }
         view.addSubview(scrollView)
         
         if let images = self.images, images.count > 0 {
