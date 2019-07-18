@@ -25,6 +25,7 @@
 		78E33D8422DD7F8B000786E5 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E33D8222DD7F8B000786E5 /* NoteTableViewCell.xib */; };
 		78F42EDD22D75BE2008E950C /* CheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F42EDC22D75BE2008E950C /* CheckMark.swift */; };
 		78F42EE322D9D4B5008E950C /* ColorPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F42EE222D9D4B5008E950C /* ColorPickerVC.swift */; };
+		78F9D98822E01FB100C0A2BA /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F9D98722E01FB100C0A2BA /* GalleryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		78E33D8222DD7F8B000786E5 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
 		78F42EDC22D75BE2008E950C /* CheckMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMark.swift; sourceTree = "<group>"; };
 		78F42EE222D9D4B5008E950C /* ColorPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerVC.swift; sourceTree = "<group>"; };
+		78F9D98722E01FB100C0A2BA /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		98F216286F61B712AB82F08B /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
 		BE3A425CBAD5476BBF7B9EEB /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
 		CD8A0CD3584CAF5C08732240 /* Pods-NotesTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotesTests.test.xcconfig"; path = "Target Support Files/Pods-NotesTests/Pods-NotesTests.test.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				78E33D1722DCA7BC000786E5 /* NotebookViewController.swift */,
 				78E33D8122DD7F8B000786E5 /* NoteTableViewCell.swift */,
 				78E33D8222DD7F8B000786E5 /* NoteTableViewCell.xib */,
+				78F9D98722E01FB100C0A2BA /* GalleryViewController.swift */,
 			);
 			path = "View Conrollers";
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				782D772C22D41883009E31D9 /* ColorPickerView.swift in Sources */,
 				78F42EE322D9D4B5008E950C /* ColorPickerVC.swift in Sources */,
 				78A7E9AC22C87C2100D11AEC /* AppDelegate.swift in Sources */,
+				78F9D98822E01FB100C0A2BA /* GalleryViewController.swift in Sources */,
 				78A7E9CD22C87C5800D11AEC /* Note.swift in Sources */,
 				78E33D8322DD7F8B000786E5 /* NoteTableViewCell.swift in Sources */,
 			);

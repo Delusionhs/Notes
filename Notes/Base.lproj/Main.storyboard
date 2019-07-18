@@ -30,11 +30,39 @@
         <!--Item 2-->
         <scene sceneID="HJy-yB-39B">
             <objects>
-                <viewController id="vD6-6J-HFL" sceneMemberID="viewController">
+                <viewController id="vD6-6J-HFL" customClass="GalleryViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5YK-p6-DC0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qnb-1s-7tn">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Al1-2N-bk4">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="t55-b3-Wi0">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qnb-1s-7tn" firstAttribute="leading" secondItem="8Ef-4R-3Fz" secondAttribute="leading" id="2vq-h9-bI2"/>
+                            <constraint firstItem="Qnb-1s-7tn" firstAttribute="top" secondItem="8Ef-4R-3Fz" secondAttribute="top" id="3RC-j6-Vot"/>
+                            <constraint firstItem="Qnb-1s-7tn" firstAttribute="bottom" secondItem="8Ef-4R-3Fz" secondAttribute="bottom" id="p7q-12-IQJ"/>
+                            <constraint firstItem="Qnb-1s-7tn" firstAttribute="trailing" secondItem="8Ef-4R-3Fz" secondAttribute="trailing" id="uGA-eE-Boz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8Ef-4R-3Fz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="IwK-Af-5ZX"/>
@@ -42,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fum-BQ-zya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-593" y="-516"/>
+            <point key="canvasLocation" x="-594.39999999999998" y="-516.50246305418716"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="u4q-QZ-y9i">

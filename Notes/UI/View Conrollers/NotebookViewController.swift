@@ -17,6 +17,7 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Заметки"
+        tabBarController?.tabBar.items![1].title = "Галерея" // update gallery tabbar name
         notebookTableView.delegate = self
         notebookTableView.dataSource = self
         notebookTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil),
@@ -26,7 +27,7 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action:#selector(editNotebook(_:)))
         notebookTableView.tableFooterView = UIView() // not show empty cells
-
+        notebookTableView.allowsSelectionDuringEditing = true
     }
     
     @objc func addNewNote(_ sender: Any) {
@@ -34,7 +35,6 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     }
     
     @objc func editNotebook(_ sender: Any) {
-       // self.notebookTableView.isEditing = !self.notebookTableView.isEditing
         if(self.notebookTableView.isEditing == true)
         {
             self.notebookTableView.isEditing = false
@@ -68,26 +68,32 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        print("test")
-        return nil
-    }
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showNoteEdit", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if isEditing != true {
+            return true
+        }
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle { //disable delete action on noediting
+            if tableView.isEditing {
+                return .delete
+            }
+            return .none
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+        if editingStyle == .delete, tableView.isEditing == true {
             notebook.notes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
     
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? NoteEditViewController {
             controller.delegate = self
