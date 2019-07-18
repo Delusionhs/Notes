@@ -18,8 +18,13 @@ class GalleryViewController: UIViewController {
         imageCollectionView.dataSource = self
         self.title = "Галерея"
         imageCollectionView.register(UINib(nibName: "GalleryCollectionViewCell", bundle: nil),
-                                     forCellWithReuseIdentifier: "Cell")
+                                     forCellWithReuseIdentifier: "cell")
         imageCollectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20) // offset
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewImage(_:)))
+    }
+    
+    @objc func addNewImage(_ sender: Any) {
     }
 }
 
@@ -29,7 +34,11 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! GalleryCollectionViewCell
+        let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! GalleryCollectionViewCell
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showBigImage", sender: nil)
     }
 }

@@ -45,7 +45,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="t55-b3-Wi0" customClass="GalleryCollectionViewCell" customModule="Notes" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="t55-b3-Wi0" customClass="GalleryCollectionViewCell" customModule="Notes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -69,11 +69,27 @@
                     <navigationItem key="navigationItem" id="yfF-wH-DTx"/>
                     <connections>
                         <outlet property="imageCollectionView" destination="Qnb-1s-7tn" id="4mx-Ht-ZpG"/>
+                        <segue destination="hoZ-j3-Zul" kind="show" identifier="showBigImage" id="4TB-6q-ybs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fum-BQ-zya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-594.39999999999998" y="-516.50246305418716"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aKc-DA-BnT">
+            <objects>
+                <viewController id="hoZ-j3-Zul" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uAg-v5-Ntn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="871-6v-OXl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H9e-Gn-66B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="252" y="-517"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="u4q-QZ-y9i">
@@ -312,7 +328,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="257" y="-1026"/>
+            <point key="canvasLocation" x="234" y="-1170"/>
         </scene>
         <!--Color PickerVC-->
         <scene sceneID="sYh-4v-v6B">
@@ -344,7 +360,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6n-8F-0ck" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="fDs-pv-g34" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="998" y="-1026"/>
+            <point key="canvasLocation" x="969" y="-1170"/>
         </scene>
         <!--Item-->
         <scene sceneID="Q1z-EH-2X5">
