@@ -11,7 +11,7 @@ import UIKit
 class GalleryViewController: UIViewController {
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
-    private var images: [String] = ["Foggy", "MilkyWay", "Rainbow", "Star", "Bridge","CityNight","CitySun"]
+    private var images: [UIImage] = [UIImage(named: "Foggy")!, UIImage(named: "MilkyWay")!, UIImage(named: "Rainbow")!, UIImage(named: "Star")!, UIImage(named: "Bridge")!, UIImage(named: "CityNight")!, UIImage(named: "CitySun")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! GalleryCollectionViewCell
-        cell.imageView.image = UIImage(named: images[indexPath.row])
+        cell.imageView.image = images[indexPath.row]
         return cell
     }
     
@@ -68,6 +68,11 @@ extension GalleryViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.editedImage] as? UIImage
+        //image.contentMode = .scaleAspectFit
+        //image.clipsToBounds = true
+        images.append(image!)
+        imageCollectionView.reloadData()
         dismiss(animated: true, completion: nil)
         
     }

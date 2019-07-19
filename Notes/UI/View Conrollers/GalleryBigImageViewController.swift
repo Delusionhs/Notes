@@ -10,7 +10,7 @@ import UIKit
 
 class GalleryBigImageViewController: UIViewController {
     
-    var images: [String]?
+    var images: [UIImage]?
     var page: Int = 0
     
     var scrollView = UIScrollView()
@@ -38,13 +38,13 @@ class GalleryBigImageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func addNewImageView(imageName: String) {
+    func addNewImageView(imageName: UIImage) {
         var imageViewRect = view.bounds
-        let image = UIImage(named: imageName)
+        let image = imageName
         
         imageViewRect.origin.x = imageViewRect.size.width * CGFloat(scrollView.subviews.count)
         
-        let imageView = newImageViewWithImage(paramImage: image!, paramFrame: imageViewRect)
+        let imageView = newImageViewWithImage(paramImage: image, paramFrame: imageViewRect)
         
         scrollView.addSubview(imageView)
     }
