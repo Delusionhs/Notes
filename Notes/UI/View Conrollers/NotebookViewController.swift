@@ -27,7 +27,6 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action:#selector(editNotebook(_:)))
         notebookTableView.tableFooterView = UIView() // not show empty cells
-        //notebookTableView.allowsSelectionDuringEditing = true
     }
     
     @objc func addNewNote(_ sender: Any) {
@@ -84,7 +83,8 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
             if tableView.isEditing {
                 return .delete
             }
-            return .none
+            return .delete
+
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -93,6 +93,7 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? NoteEditViewController {
@@ -101,5 +102,4 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
             controller.note = notebook.notes[indexPath.row]
         }
     }
-    
 }
