@@ -74,10 +74,10 @@ extension GalleryViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[.editedImage] as? UIImage
-        //image.contentMode = .scaleAspectFit
-        //image.clipsToBounds = true
-        images.append(image!)
+        if let image = info[.editedImage] as? UIImage
+        {
+            images.append(image)
+        }
         imageCollectionView.reloadData()
         dismiss(animated: true, completion: nil)
         
