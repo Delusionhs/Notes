@@ -22,10 +22,19 @@ class NoteTableViewCell: UITableViewCell {
         dataLabel.textColor = .lightGray
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        colorBox.backgroundColor = colorBox.backgroundColor
     }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        let color = colorBox.backgroundColor
+        super.setSelected(selected, animated: animated)
+        
+        if selected {
+            colorBox.backgroundColor = color
+        }
+    }
+
 }
