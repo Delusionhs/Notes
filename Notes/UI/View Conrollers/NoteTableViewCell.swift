@@ -30,7 +30,6 @@ class NoteTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         let color = colorBox.backgroundColor
-        super.setSelected(selected, animated: animated)
         
         if selected {
             colorBox.backgroundColor = color
