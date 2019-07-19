@@ -18,6 +18,8 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
         super.viewDidLoad()
         self.title = "Заметки"
         tabBarController?.tabBar.items![1].title = "Галерея" // update gallery tabbar name
+        tabBarController?.tabBar.items![0].image = UIImage(named: "TabNotes")
+        tabBarController?.tabBar.items![1].image = UIImage(named: "TabGallery")
         notebookTableView.delegate = self
         notebookTableView.dataSource = self
         notebookTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil),
