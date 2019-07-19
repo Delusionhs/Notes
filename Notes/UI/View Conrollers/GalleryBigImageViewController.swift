@@ -64,6 +64,5 @@ class GalleryBigImageViewController: UIViewController {
         frame.origin.y = 0
         self.scrollView.scrollRectToVisible(frame, animated: true)
     }
-
-
 }
+

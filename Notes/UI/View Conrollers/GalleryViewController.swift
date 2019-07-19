@@ -26,7 +26,6 @@ class GalleryViewController: UIViewController {
     
     @objc func addNewImage(_ sender: Any) {
             self.chooseImagePicker(source: .photoLibrary)
-
     }
 }
 
@@ -69,7 +68,6 @@ extension GalleryViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-      
         dismiss(animated: true, completion: nil)
         
     }
