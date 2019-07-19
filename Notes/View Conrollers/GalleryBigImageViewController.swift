@@ -36,12 +36,13 @@ class GalleryBigImageViewController: UIViewController {
         }
         
         self.scrollToPage(page: self.page)
-        
-        //scrollViewDidEndDecelerating(scrollView)
     }
     
     override func viewDidLayoutSubviews() {
-        scrollView.removeAllSubviews()
+        for subview in scrollView.subviews {
+            subview.removeFromSuperview()
+        }
+        
         let scrollViewRect = view.bounds
         
         scrollView.frame = view.frame
@@ -94,13 +95,5 @@ extension GalleryBigImageViewController: UIScrollViewDelegate {
         let pageWidth = scrollView.frame.size.width
         let page = Int(floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1)
         self.page = page
-    }
-}
-
-extension UIView {
-    func removeAllSubviews() {
-        for subview in subviews {
-            subview.removeFromSuperview()
-        }
     }
 }
