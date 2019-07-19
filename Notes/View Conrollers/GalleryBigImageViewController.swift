@@ -22,11 +22,32 @@ class GalleryBigImageViewController: UIViewController {
         let scrollViewRect = view.bounds
         
         scrollView = UIScrollView(frame: scrollViewRect)
+        scrollView.delegate = self
         scrollView.isPagingEnabled = true
         if let images = self.images {
             scrollView.contentSize = CGSize(width: scrollViewRect.size.width * CGFloat(images.count), height: scrollViewRect.size.height)
         }
         view.addSubview(scrollView)
+        
+        if let images = self.images, images.count > 0 {
+            for imageName in images {
+                addNewImageView(imageName: imageName)
+            }
+        }
+        
+        self.scrollToPage(page: self.page)
+        
+        //scrollViewDidEndDecelerating(scrollView)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        scrollView.removeAllSubviews()
+        let scrollViewRect = view.bounds
+        
+        scrollView.frame = view.frame
+        if let images = self.images {
+            scrollView.contentSize = CGSize(width: scrollViewRect.size.width * CGFloat(images.count), height: scrollViewRect.size.height)
+        }
         
         if let images = self.images, images.count > 0 {
             for imageName in images {
@@ -61,7 +82,25 @@ class GalleryBigImageViewController: UIViewController {
         var frame: CGRect = self.scrollView.frame
         frame.origin.x = frame.size.width * CGFloat(page)
         frame.origin.y = 0
-        self.scrollView.scrollRectToVisible(frame, animated: true)
+        self.scrollView.scrollRectToVisible(frame, animated: false)
+    }
+    
+
+}
+
+extension GalleryBigImageViewController: UIScrollViewDelegate {
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageWidth = scrollView.frame.size.width
+        let page = Int(floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1)
+        self.page = page
     }
 }
 
+extension UIView {
+    func removeAllSubviews() {
+        for subview in subviews {
+            subview.removeFromSuperview()
+        }
+    }
+}
