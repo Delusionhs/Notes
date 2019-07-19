@@ -80,8 +80,17 @@ class NoteEditViewController: UIViewController {
             }
         caseDefaultColor(color: note.color)
         }
-        
+        noteTitleText.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+       
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNote(_:)))
+        
+        if let rightButton = navigationItem.rightBarButtonItem {
+            if noteTitleText.text?.isEmpty == true {
+                rightButton.isEnabled = false
+            } else {
+                rightButton.isEnabled = true
+            }
+        }
     }
     
     @objc func saveNote(_ sender: Any) {
@@ -186,4 +195,14 @@ class NoteEditViewController: UIViewController {
             pickerdColor = color
         }
     }
+    
+    @objc private func textFieldChanged() {
+        if noteTitleText.text?.isEmpty == false {
+            navigationItem.rightBarButtonItem!.isEnabled = true
+        } else {
+            navigationItem.rightBarButtonItem!.isEnabled = false
+        }
+    }
 }
+
+
