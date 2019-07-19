@@ -35,7 +35,6 @@ class GalleryBigImageViewController: UIViewController {
         }
         
         self.scrollToPage(page: self.page)
-        // Do any additional setup after loading the view.
     }
     
     func addNewImageView(imageName: UIImage) {
