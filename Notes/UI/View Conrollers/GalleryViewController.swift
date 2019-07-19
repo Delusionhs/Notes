@@ -11,7 +11,13 @@ import UIKit
 class GalleryViewController: UIViewController {
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
-    private var images: [UIImage] = [UIImage(named: "Foggy")!, UIImage(named: "MilkyWay")!, UIImage(named: "Rainbow")!, UIImage(named: "Star")!, UIImage(named: "Bridge")!, UIImage(named: "CityNight")!, UIImage(named: "CitySun")!]
+    private var images: [UIImage] = [UIImage(named: "Foggy")!,
+                                     UIImage(named: "MilkyWay")!,
+                                     UIImage(named: "Rainbow")!,
+                                     UIImage(named: "Star")!,
+                                     UIImage(named: "Bridge")!,
+                                     UIImage(named: "CityNight")!,
+                                     UIImage(named: "CitySun")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()
