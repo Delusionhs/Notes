@@ -15,8 +15,7 @@ class LoadNoteOperation: AsyncOperation {
     
     private(set) var result: Bool? = false
     
-    init(note: Note,
-         notebook: FileNotebook,
+    init(notebook: FileNotebook,
          backendQueue: OperationQueue,
          dbQueue: OperationQueue) {
         self.notebook = notebook
