@@ -1,9 +1,5 @@
 import Foundation
 
-enum NetworkError {
-    case unreachable
-}
-
 enum SaveNotesBackendResult {
     case success
     case failure(NetworkError)
