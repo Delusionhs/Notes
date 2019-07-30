@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class LoadNotesDBOperation: BaseDBOperation {
+    var result: [Note]?
+    
+    override func main() {
+        result = notebook.notes
+        finish()
+    }
+}
