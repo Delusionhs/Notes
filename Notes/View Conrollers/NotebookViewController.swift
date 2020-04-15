@@ -11,6 +11,10 @@ import UIKit
 
 class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     
+    private let backendQueue = OperationQueue()
+    private let dbQueue = OperationQueue()
+    private let commonQueue = OperationQueue()
+    
     @IBOutlet weak var notebookTableView: UITableView!
     var notebook = FileNotebook.myNotebook
 
@@ -48,11 +52,18 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
         }
     }
     
-    func reviceNote(note: Note) {
-        self.notebook.add(note)
-        self.notebookTableView.reloadData()
+    func reciveNote(note: Note) {
+        let saveNoteOperation = SaveNoteOperation(note: note,
+                                                  notebook: notebook,
+                                                  backendQueue: backendQueue,
+                                                  dbQueue: dbQueue)
+        commonQueue.addOperation(saveNoteOperation)
+        saveNoteOperation.completionBlock = {
+            OperationQueue.main.addOperation {
+                self.notebookTableView.reloadData()
+            }
+        }
     }
-    
 }
 
 

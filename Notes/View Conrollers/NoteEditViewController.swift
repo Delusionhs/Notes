@@ -9,7 +9,7 @@
 import UIKit
 
 protocol NoteEditViewControllerDelegate: class {
-    func reviceNote(note: Note)
+    func reciveNote(note: Note)
 }
 
 class NoteEditViewController: UIViewController {
@@ -165,7 +165,7 @@ class NoteEditViewController: UIViewController {
                                       color: pickerdColor,
                                       importance: note.importance,
                                       selfDestructionDate: destoyDateSwitch.isOn == true ? datePicker.date : nil)
-            delegate?.reviceNote(note: newNote!)
+            delegate?.reciveNote(note: newNote!)
         } else {
             let newNote: Note? = Note(
                                       title: noteTitleText.text!,
@@ -173,7 +173,7 @@ class NoteEditViewController: UIViewController {
                                       color: pickerdColor,
                                       importance: Importance.ordinary,
                                       selfDestructionDate: destoyDateSwitch.isOn == true ? datePicker.date : nil)
-            delegate?.reviceNote(note: newNote!)
+            delegate?.reciveNote(note: newNote!)
         }
     }
     
