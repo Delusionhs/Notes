@@ -20,6 +20,12 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let loadNotesOperation = LoadNotesOperation(notebook: notebook,
+                                                    backendQueue: backendQueue,
+                                                    dbQueue: dbQueue)
+        commonQueue.addOperation(loadNotesOperation)
+        
         self.title = "Заметки"
         tabBarController?.tabBar.items![1].title = "Галерея" // update gallery tabbar name
         tabBarController?.tabBar.items![0].image = UIImage(named: "TabNotes")
