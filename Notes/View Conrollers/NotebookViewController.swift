@@ -108,8 +108,18 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete, tableView.isEditing == true {
-            notebook.notes.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            //notebook.notes.remove(at: indexPath.row)
+            let note = notebook.notes[indexPath.row]
+            let removeNotesOperation = RemoveNoteOperation(note: note,
+                                                           notebook: notebook,
+                                                           backendQueue: backendQueue,
+                                                           dbQueue: dbQueue)
+            commonQueue.addOperation(removeNotesOperation)
+            removeNotesOperation.completionBlock = {
+              DispatchQueue.main.async {
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+              }
+            }
         }
     }
 
