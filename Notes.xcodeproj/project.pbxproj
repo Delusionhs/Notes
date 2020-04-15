@@ -10,6 +10,11 @@
 		4F0BE6AD450D9F52E12BFE4E /* libPods-Notes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 536A0BFEFE2DB76A7D92D2FB /* libPods-Notes.a */; };
 		733A038F95489986B1ED7CB7 /* libPods-NotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73470CAFC2F775C4281E8C27 /* libPods-NotesTests.a */; };
 		782D772C22D41883009E31D9 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782D772B22D41883009E31D9 /* ColorPickerView.swift */; };
+		7892349C2447040A00F1F48B /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7892349B2447040A00F1F48B /* AsyncOperation.swift */; };
+		7892349F2447041A00F1F48B /* BaseBackendOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7892349D2447041A00F1F48B /* BaseBackendOperation.swift */; };
+		789234A02447041A00F1F48B /* SaveNotesBackendOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7892349E2447041A00F1F48B /* SaveNotesBackendOperation.swift */; };
+		789234A32447042D00F1F48B /* SaveNoteDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789234A12447042D00F1F48B /* SaveNoteDBOperation.swift */; };
+		789234A42447042D00F1F48B /* BaseDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789234A22447042D00F1F48B /* BaseDBOperation.swift */; };
 		789386D722DA04A800D8EFBB /* ColorPickBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789386D622DA04A800D8EFBB /* ColorPickBox.swift */; };
 		78A7E9AC22C87C2100D11AEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */; };
 		78A7E9AE22C87C2100D11AEC /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9AD22C87C2100D11AEC /* NoteEditViewController.swift */; };
@@ -47,6 +52,11 @@
 		536A0BFEFE2DB76A7D92D2FB /* libPods-Notes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Notes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73470CAFC2F775C4281E8C27 /* libPods-NotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		782D772B22D41883009E31D9 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		7892349B2447040A00F1F48B /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		7892349D2447041A00F1F48B /* BaseBackendOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBackendOperation.swift; sourceTree = "<group>"; };
+		7892349E2447041A00F1F48B /* SaveNotesBackendOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveNotesBackendOperation.swift; sourceTree = "<group>"; };
+		789234A12447042D00F1F48B /* SaveNoteDBOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveNoteDBOperation.swift; sourceTree = "<group>"; };
+		789234A22447042D00F1F48B /* BaseDBOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDBOperation.swift; sourceTree = "<group>"; };
 		789386D622DA04A800D8EFBB /* ColorPickBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickBox.swift; sourceTree = "<group>"; };
 		78A7E9A822C87C2100D11AEC /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +130,7 @@
 		788AFF9422F00B0E001A836D /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				7892349B2447040A00F1F48B /* AsyncOperation.swift */,
 				788AFFA922F01A15001A836D /* UIOperations */,
 				788AFF9A22F00B0E001A836D /* BackendOpertations */,
 				788AFF9522F00B0E001A836D /* DBOperations */,
@@ -130,6 +141,8 @@
 		788AFF9522F00B0E001A836D /* DBOperations */ = {
 			isa = PBXGroup;
 			children = (
+				789234A22447042D00F1F48B /* BaseDBOperation.swift */,
+				789234A12447042D00F1F48B /* SaveNoteDBOperation.swift */,
 			);
 			path = DBOperations;
 			sourceTree = "<group>";
@@ -137,6 +150,8 @@
 		788AFF9A22F00B0E001A836D /* BackendOpertations */ = {
 			isa = PBXGroup;
 			children = (
+				7892349D2447041A00F1F48B /* BaseBackendOperation.swift */,
+				7892349E2447041A00F1F48B /* SaveNotesBackendOperation.swift */,
 			);
 			path = BackendOpertations;
 			sourceTree = "<group>";
@@ -396,13 +411,18 @@
 				78E33D1822DCA7BC000786E5 /* NotebookViewController.swift in Sources */,
 				78F9D99022E0495200C0A2BA /* GalleryBigImageViewController.swift in Sources */,
 				78F42EDD22D75BE2008E950C /* CheckMark.swift in Sources */,
+				789234A02447041A00F1F48B /* SaveNotesBackendOperation.swift in Sources */,
 				78A7E9CF22C87C7100D11AEC /* NoteExtension.swift in Sources */,
 				782D772C22D41883009E31D9 /* ColorPickerView.swift in Sources */,
 				78F42EE322D9D4B5008E950C /* ColorPickerVC.swift in Sources */,
+				7892349F2447041A00F1F48B /* BaseBackendOperation.swift in Sources */,
 				78A7E9AC22C87C2100D11AEC /* AppDelegate.swift in Sources */,
+				789234A32447042D00F1F48B /* SaveNoteDBOperation.swift in Sources */,
 				78F9D98A22E026F000C0A2BA /* GalleryViewController.swift in Sources */,
 				78A7E9CD22C87C5800D11AEC /* Note.swift in Sources */,
+				789234A42447042D00F1F48B /* BaseDBOperation.swift in Sources */,
 				78F9D98D22E027BA00C0A2BA /* GalleryCollectionViewCell.swift in Sources */,
+				7892349C2447040A00F1F48B /* AsyncOperation.swift in Sources */,
 				78E33D8322DD7F8B000786E5 /* NoteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
