@@ -16,6 +16,8 @@
 		789234A32447042D00F1F48B /* SaveNoteDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789234A12447042D00F1F48B /* SaveNoteDBOperation.swift */; };
 		789234A42447042D00F1F48B /* BaseDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789234A22447042D00F1F48B /* BaseDBOperation.swift */; };
 		789234A624470B0D00F1F48B /* LoadNotesBackendOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789234A524470B0D00F1F48B /* LoadNotesBackendOperation.swift */; };
+		789234A8244713D000F1F48B /* LoadNotesDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789234A7244713D000F1F48B /* LoadNotesDBOperation.swift */; };
+		789234AA2447143500F1F48B /* RemoveNoteDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789234A92447143500F1F48B /* RemoveNoteDBOperation.swift */; };
 		789386D722DA04A800D8EFBB /* ColorPickBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789386D622DA04A800D8EFBB /* ColorPickBox.swift */; };
 		78A7E9AC22C87C2100D11AEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */; };
 		78A7E9AE22C87C2100D11AEC /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9AD22C87C2100D11AEC /* NoteEditViewController.swift */; };
@@ -59,6 +61,8 @@
 		789234A12447042D00F1F48B /* SaveNoteDBOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveNoteDBOperation.swift; sourceTree = "<group>"; };
 		789234A22447042D00F1F48B /* BaseDBOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDBOperation.swift; sourceTree = "<group>"; };
 		789234A524470B0D00F1F48B /* LoadNotesBackendOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadNotesBackendOperation.swift; sourceTree = "<group>"; };
+		789234A7244713D000F1F48B /* LoadNotesDBOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadNotesDBOperation.swift; sourceTree = "<group>"; };
+		789234A92447143500F1F48B /* RemoveNoteDBOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveNoteDBOperation.swift; sourceTree = "<group>"; };
 		789386D622DA04A800D8EFBB /* ColorPickBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickBox.swift; sourceTree = "<group>"; };
 		78A7E9A822C87C2100D11AEC /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				789234A22447042D00F1F48B /* BaseDBOperation.swift */,
+				789234A7244713D000F1F48B /* LoadNotesDBOperation.swift */,
+				789234A92447143500F1F48B /* RemoveNoteDBOperation.swift */,
 				789234A12447042D00F1F48B /* SaveNoteDBOperation.swift */,
 			);
 			path = DBOperations;
@@ -417,6 +423,7 @@
 				789234A02447041A00F1F48B /* SaveNotesBackendOperation.swift in Sources */,
 				78A7E9CF22C87C7100D11AEC /* NoteExtension.swift in Sources */,
 				782D772C22D41883009E31D9 /* ColorPickerView.swift in Sources */,
+				789234AA2447143500F1F48B /* RemoveNoteDBOperation.swift in Sources */,
 				78F42EE322D9D4B5008E950C /* ColorPickerVC.swift in Sources */,
 				7892349F2447041A00F1F48B /* BaseBackendOperation.swift in Sources */,
 				78A7E9AC22C87C2100D11AEC /* AppDelegate.swift in Sources */,
@@ -425,6 +432,7 @@
 				78F9D98A22E026F000C0A2BA /* GalleryViewController.swift in Sources */,
 				78A7E9CD22C87C5800D11AEC /* Note.swift in Sources */,
 				789234A42447042D00F1F48B /* BaseDBOperation.swift in Sources */,
+				789234A8244713D000F1F48B /* LoadNotesDBOperation.swift in Sources */,
 				78F9D98D22E027BA00C0A2BA /* GalleryCollectionViewCell.swift in Sources */,
 				7892349C2447040A00F1F48B /* AsyncOperation.swift in Sources */,
 				78E33D8322DD7F8B000786E5 /* NoteTableViewCell.swift in Sources */,
