@@ -10,7 +10,6 @@
 		4F0BE6AD450D9F52E12BFE4E /* libPods-Notes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 536A0BFEFE2DB76A7D92D2FB /* libPods-Notes.a */; };
 		733A038F95489986B1ED7CB7 /* libPods-NotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73470CAFC2F775C4281E8C27 /* libPods-NotesTests.a */; };
 		782D772C22D41883009E31D9 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782D772B22D41883009E31D9 /* ColorPickerView.swift */; };
-		788AFFA022F00B0E001A836D /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788AFF9922F00B0E001A836D /* AsyncOperation.swift */; };
 		789386D722DA04A800D8EFBB /* ColorPickBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789386D622DA04A800D8EFBB /* ColorPickBox.swift */; };
 		78A7E9AC22C87C2100D11AEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */; };
 		78A7E9AE22C87C2100D11AEC /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9AD22C87C2100D11AEC /* NoteEditViewController.swift */; };
@@ -48,7 +47,6 @@
 		536A0BFEFE2DB76A7D92D2FB /* libPods-Notes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Notes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73470CAFC2F775C4281E8C27 /* libPods-NotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		782D772B22D41883009E31D9 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
-		788AFF9922F00B0E001A836D /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		789386D622DA04A800D8EFBB /* ColorPickBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickBox.swift; sourceTree = "<group>"; };
 		78A7E9A822C87C2100D11AEC /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				788AFFA922F01A15001A836D /* UIOperations */,
 				788AFF9A22F00B0E001A836D /* BackendOpertations */,
 				788AFF9522F00B0E001A836D /* DBOperations */,
-				788AFF9922F00B0E001A836D /* AsyncOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -406,7 +403,6 @@
 				78F9D98A22E026F000C0A2BA /* GalleryViewController.swift in Sources */,
 				78A7E9CD22C87C5800D11AEC /* Note.swift in Sources */,
 				78F9D98D22E027BA00C0A2BA /* GalleryCollectionViewCell.swift in Sources */,
-				788AFFA022F00B0E001A836D /* AsyncOperation.swift in Sources */,
 				78E33D8322DD7F8B000786E5 /* NoteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
