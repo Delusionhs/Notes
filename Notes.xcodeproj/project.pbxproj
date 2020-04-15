@@ -15,6 +15,7 @@
 		789234A02447041A00F1F48B /* SaveNotesBackendOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7892349E2447041A00F1F48B /* SaveNotesBackendOperation.swift */; };
 		789234A32447042D00F1F48B /* SaveNoteDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789234A12447042D00F1F48B /* SaveNoteDBOperation.swift */; };
 		789234A42447042D00F1F48B /* BaseDBOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789234A22447042D00F1F48B /* BaseDBOperation.swift */; };
+		789234A624470B0D00F1F48B /* LoadNotesBackendOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789234A524470B0D00F1F48B /* LoadNotesBackendOperation.swift */; };
 		789386D722DA04A800D8EFBB /* ColorPickBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789386D622DA04A800D8EFBB /* ColorPickBox.swift */; };
 		78A7E9AC22C87C2100D11AEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */; };
 		78A7E9AE22C87C2100D11AEC /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9AD22C87C2100D11AEC /* NoteEditViewController.swift */; };
@@ -57,6 +58,7 @@
 		7892349E2447041A00F1F48B /* SaveNotesBackendOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveNotesBackendOperation.swift; sourceTree = "<group>"; };
 		789234A12447042D00F1F48B /* SaveNoteDBOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveNoteDBOperation.swift; sourceTree = "<group>"; };
 		789234A22447042D00F1F48B /* BaseDBOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDBOperation.swift; sourceTree = "<group>"; };
+		789234A524470B0D00F1F48B /* LoadNotesBackendOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadNotesBackendOperation.swift; sourceTree = "<group>"; };
 		789386D622DA04A800D8EFBB /* ColorPickBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickBox.swift; sourceTree = "<group>"; };
 		78A7E9A822C87C2100D11AEC /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				7892349D2447041A00F1F48B /* BaseBackendOperation.swift */,
+				789234A524470B0D00F1F48B /* LoadNotesBackendOperation.swift */,
 				7892349E2447041A00F1F48B /* SaveNotesBackendOperation.swift */,
 			);
 			path = BackendOpertations;
@@ -417,6 +420,7 @@
 				78F42EE322D9D4B5008E950C /* ColorPickerVC.swift in Sources */,
 				7892349F2447041A00F1F48B /* BaseBackendOperation.swift in Sources */,
 				78A7E9AC22C87C2100D11AEC /* AppDelegate.swift in Sources */,
+				789234A624470B0D00F1F48B /* LoadNotesBackendOperation.swift in Sources */,
 				789234A32447042D00F1F48B /* SaveNoteDBOperation.swift in Sources */,
 				78F9D98A22E026F000C0A2BA /* GalleryViewController.swift in Sources */,
 				78A7E9CD22C87C5800D11AEC /* Note.swift in Sources */,
