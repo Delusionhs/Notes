@@ -11,6 +11,8 @@ import UIKit
 
 class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     
+    private var token: String = "" // github OAuth token
+    
     private let backendQueue = OperationQueue()
     private let dbQueue = OperationQueue()
     private let commonQueue = OperationQueue()
@@ -41,6 +43,15 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
         notebookTableView.tableFooterView = UIView() // not show empty cells
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        guard !token.isEmpty else {
+            requestToken()
+            return
+        }
+    }
+    
     @objc func addNewNote(_ sender: Any) {
         performSegue(withIdentifier: "showNoteEdit", sender: nil)
     }
@@ -56,6 +67,12 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
             self.notebookTableView.isEditing = true
             self.navigationItem.leftBarButtonItem?.title = "Done"
         }
+    }
+    
+    private func requestToken() {
+        let requestTokenViewController = AuthViewController()
+        requestTokenViewController.delegate = self
+        present(requestTokenViewController, animated: true, completion: nil)
     }
     
     func reciveNote(note: Note) {
@@ -130,5 +147,11 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
             guard let indexPath = notebookTableView.indexPathForSelectedRow else { return }
             controller.note = notebook.notes[indexPath.row]
         }
+    }
+}
+
+extension NotebookViewController: AuthViewControllerDelegate {
+    func tokenChanged(token: String) {
+        self.token = token
     }
 }
