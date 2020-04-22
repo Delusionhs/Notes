@@ -2,10 +2,11 @@ import Foundation
 
 enum BackendResult {
     case success
-    case failure(NetworkError)
+    case failure(Error)
 }
 
-enum NetworkError {
+enum Error {
+    case dataFailure
     case unreachable
 }
 

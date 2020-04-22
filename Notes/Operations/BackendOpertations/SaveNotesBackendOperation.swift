@@ -17,11 +17,17 @@ class SaveNotesBackendOperation: BaseBackendOperation {
         components?.queryItems = [
             URLQueryItem(name: "access_token", value: self.token),
         ]
-        guard let url = components?.url else { return }
+        guard let url = components?.url else {
+            self.result = .failure(.dataFailure)
+            finish()
+            return }
         var request = URLRequest(url: url)
         request.httpMethod = "PATCH"
         
-        guard let jsonData = String(data: notebook.getDataToSave(), encoding: .utf8) else { return }
+        guard let jsonData = String(data: notebook.getDataToSave(), encoding: .utf8) else {
+            self.result = .failure(.dataFailure)
+            finish()
+            return }
         
         let inputData = Gist(files: ["ios-course-notes-db" : GistFile(content: jsonData)])
         
