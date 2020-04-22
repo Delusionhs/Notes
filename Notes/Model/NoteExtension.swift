@@ -30,6 +30,7 @@ extension Note {
         return json
     }
     
+    
     static func parse(json: [String: Any]) -> Note? {
         var uid: String
         var title: String

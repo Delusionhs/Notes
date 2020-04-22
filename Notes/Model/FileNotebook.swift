@@ -30,14 +30,14 @@ class FileNotebook {
     
     public func getDataToSave() -> Data {
         var json: Data = Data()
-        var jsonArr: [[String: Any]] = []
+        var jsonArr: [NoteCodable] = []
         
         for notes in self.notes {
-            jsonArr.append(notes.json)
+            jsonArr.append(NoteCodable(uid: notes.uid, title: notes.title, content: notes.content, color: Color(uiColor: notes.color), importance: notes.importance, selfDestructionDate: notes.selfDestructionDate))
         }
         
         do {
-            let data = try JSONSerialization.data(withJSONObject: jsonArr, options: [])
+            let data = try JSONEncoder().encode(jsonArr)
             json.append(data)
         } catch {}
         return json
