@@ -10,6 +10,7 @@
 		4F0BE6AD450D9F52E12BFE4E /* libPods-Notes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 536A0BFEFE2DB76A7D92D2FB /* libPods-Notes.a */; };
 		733A038F95489986B1ED7CB7 /* libPods-NotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73470CAFC2F775C4281E8C27 /* libPods-NotesTests.a */; };
 		782D772C22D41883009E31D9 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782D772B22D41883009E31D9 /* ColorPickerView.swift */; };
+		78816ECB24503A4F0000A3A6 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78816ECA24503A4F0000A3A6 /* AuthViewController.swift */; };
 		7892349C2447040A00F1F48B /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7892349B2447040A00F1F48B /* AsyncOperation.swift */; };
 		7892349F2447041A00F1F48B /* BaseBackendOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7892349D2447041A00F1F48B /* BaseBackendOperation.swift */; };
 		789234A02447041A00F1F48B /* SaveNotesBackendOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7892349E2447041A00F1F48B /* SaveNotesBackendOperation.swift */; };
@@ -58,6 +59,7 @@
 		536A0BFEFE2DB76A7D92D2FB /* libPods-Notes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Notes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73470CAFC2F775C4281E8C27 /* libPods-NotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		782D772B22D41883009E31D9 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		78816ECA24503A4F0000A3A6 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		7892349B2447040A00F1F48B /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		7892349D2447041A00F1F48B /* BaseBackendOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBackendOperation.swift; sourceTree = "<group>"; };
 		7892349E2447041A00F1F48B /* SaveNotesBackendOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveNotesBackendOperation.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				78E33D1722DCA7BC000786E5 /* NotebookViewController.swift */,
 				78F9D98922E026F000C0A2BA /* GalleryViewController.swift */,
 				78F9D98F22E0495200C0A2BA /* GalleryBigImageViewController.swift */,
+				78816ECA24503A4F0000A3A6 /* AuthViewController.swift */,
 			);
 			path = "View Conrollers";
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				78F42EDD22D75BE2008E950C /* CheckMark.swift in Sources */,
 				789234A02447041A00F1F48B /* SaveNotesBackendOperation.swift in Sources */,
 				78A7E9CF22C87C7100D11AEC /* NoteExtension.swift in Sources */,
+				78816ECB24503A4F0000A3A6 /* AuthViewController.swift in Sources */,
 				789234B224471D9C00F1F48B /* RemoveNoteOperation.swift in Sources */,
 				782D772C22D41883009E31D9 /* ColorPickerView.swift in Sources */,
 				789234AC244715B100F1F48B /* SaveNoteOperation.swift in Sources */,
