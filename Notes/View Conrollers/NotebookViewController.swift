@@ -18,15 +18,19 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     private let commonQueue = OperationQueue()
     
     @IBOutlet weak var notebookTableView: UITableView!
-    var notebook = FileNotebook.myNotebook
+    
+    var notebook: FileNotebook = FileNotebook() //= FileNotebook.myNotebook
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let loadNotesOperation = LoadNotesOperation(notebook: notebook,
+                                                    token: token,
                                                     backendQueue: backendQueue,
                                                     dbQueue: dbQueue)
         commonQueue.addOperation(loadNotesOperation)
+        
+        self.notebookTableView.reloadData()
         
         self.title = "Заметки"
         tabBarController?.tabBar.items![1].title = "Галерея" // update gallery tabbar name

@@ -12,7 +12,8 @@ class SaveNotesBackendOperation: BaseBackendOperation {
     }
     
     override func main() {
-
+        self.result = .failure(.unreachable)
+        
         var components = URLComponents(string: "https://api.github.com/gists/828262049b6e86cf5f97bf8ef504e2a2")
         components?.queryItems = [
             URLQueryItem(name: "access_token", value: self.token),

@@ -42,6 +42,13 @@ class FileNotebook {
         } catch {}
         return json
     }
+    
+    public func loadNotesFromCodable(notes: [NoteCodable]) {
+        self.notes = []
+        for note in notes {
+            self.add(Note(uid: note.uid, title: note.title, content: note.content, color: UIColor(red: note.color.red, green: note.color.green, blue: note.color.blue, alpha: note.color.alpha), importance: note.importance, selfDestructionDate: note.selfDestructionDate))
+        }
+    }
         
 
     public func saveToFile(fileName: String = "Notebook") {
