@@ -36,7 +36,7 @@
 		78E33D8322DD7F8B000786E5 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E33D8122DD7F8B000786E5 /* NoteTableViewCell.swift */; };
 		78E33D8422DD7F8B000786E5 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E33D8222DD7F8B000786E5 /* NoteTableViewCell.xib */; };
 		78F42EDD22D75BE2008E950C /* CheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F42EDC22D75BE2008E950C /* CheckMark.swift */; };
-		78F42EE322D9D4B5008E950C /* ColorPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F42EE222D9D4B5008E950C /* ColorPickerVC.swift */; };
+		78F42EE322D9D4B5008E950C /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F42EE222D9D4B5008E950C /* ColorPickerViewController.swift */; };
 		78F9D98A22E026F000C0A2BA /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F9D98922E026F000C0A2BA /* GalleryViewController.swift */; };
 		78F9D98D22E027BA00C0A2BA /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F9D98B22E027BA00C0A2BA /* GalleryCollectionViewCell.swift */; };
 		78F9D98E22E027BA00C0A2BA /* GalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78F9D98C22E027BA00C0A2BA /* GalleryCollectionViewCell.xib */; };
@@ -89,7 +89,7 @@
 		78E33D8122DD7F8B000786E5 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		78E33D8222DD7F8B000786E5 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
 		78F42EDC22D75BE2008E950C /* CheckMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMark.swift; sourceTree = "<group>"; };
-		78F42EE222D9D4B5008E950C /* ColorPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerVC.swift; sourceTree = "<group>"; };
+		78F42EE222D9D4B5008E950C /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		78F9D98922E026F000C0A2BA /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		78F9D98B22E027BA00C0A2BA /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		78F9D98C22E027BA00C0A2BA /* GalleryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				78A7E9AD22C87C2100D11AEC /* NoteEditViewController.swift */,
-				78F42EE222D9D4B5008E950C /* ColorPickerVC.swift */,
+				78F42EE222D9D4B5008E950C /* ColorPickerViewController.swift */,
 				78E33D1722DCA7BC000786E5 /* NotebookViewController.swift */,
 				78F9D98922E026F000C0A2BA /* GalleryViewController.swift */,
 				78F9D98F22E0495200C0A2BA /* GalleryBigImageViewController.swift */,
@@ -439,7 +439,7 @@
 				782D772C22D41883009E31D9 /* ColorPickerView.swift in Sources */,
 				789234AC244715B100F1F48B /* SaveNoteOperation.swift in Sources */,
 				789234AA2447143500F1F48B /* RemoveNoteDBOperation.swift in Sources */,
-				78F42EE322D9D4B5008E950C /* ColorPickerVC.swift in Sources */,
+				78F42EE322D9D4B5008E950C /* ColorPickerViewController.swift in Sources */,
 				7892349F2447041A00F1F48B /* BaseBackendOperation.swift in Sources */,
 				789234AE24471BEA00F1F48B /* LoadNotesOperation.swift in Sources */,
 				78A7E9AC22C87C2100D11AEC /* AppDelegate.swift in Sources */,

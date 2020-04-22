@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ColorPickerVC: UIViewController {
+class ColorPickerViewController: UIViewController {
     
     @IBOutlet weak var colorPickerView: ColorPickerView!
     var sendedColor:UIColor = .white

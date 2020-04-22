@@ -34,7 +34,7 @@ class NoteEditViewController: UIViewController {
     
     @IBAction func unwindToDataScreen (segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToData" else { return }
-        guard let svc = segue.source as? ColorPickerVC else { return }
+        guard let svc = segue.source as? ColorPickerViewController else { return }
         colorPickBox.defaultColor = svc.colorPickerView.pickedColor
         pickerdColor = svc.colorPickerView.pickedColor
     }
@@ -123,7 +123,7 @@ class NoteEditViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowColorPickerSegue",
-            let destinationVC = segue.destination as? ColorPickerVC {
+            let destinationVC = segue.destination as? ColorPickerViewController {
             if let color = colorPickBox.defaultColor {
                 destinationVC.sendedColor = color
             }
