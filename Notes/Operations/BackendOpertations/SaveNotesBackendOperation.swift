@@ -12,8 +12,7 @@ class SaveNotesBackendOperation: BaseBackendOperation {
     }
     
     override func main() {
-        result = .failure(.unreachable)
-        
+
         var components = URLComponents(string: "https://api.github.com/gists/828262049b6e86cf5f97bf8ef504e2a2")
         components?.queryItems = [
             URLQueryItem(name: "access_token", value: self.token),
@@ -34,7 +33,14 @@ class SaveNotesBackendOperation: BaseBackendOperation {
         
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let response = response { print (response) }
+            if let response = response as? HTTPURLResponse {
+                switch response.statusCode {
+                case 200..<300:
+                    self.result = .success
+                default:
+                    self.result = .failure(.unreachable)
+                }
+            }
         }.resume()
         
         finish()
