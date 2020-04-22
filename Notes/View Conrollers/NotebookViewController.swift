@@ -78,6 +78,7 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     func reciveNote(note: Note) {
         let saveNoteOperation = SaveNoteOperation(note: note,
                                                   notebook: notebook,
+                                                  token: self.token,
                                                   backendQueue: backendQueue,
                                                   dbQueue: dbQueue)
         commonQueue.addOperation(saveNoteOperation)
@@ -129,6 +130,7 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
             let note = notebook.notes[indexPath.row]
             let removeNotesOperation = RemoveNoteOperation(note: note,
                                                            notebook: notebook,
+                                                           token: self.token,
                                                            backendQueue: backendQueue,
                                                            dbQueue: dbQueue)
             commonQueue.addOperation(removeNotesOperation)

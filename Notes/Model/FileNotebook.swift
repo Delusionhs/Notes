@@ -28,7 +28,7 @@ class FileNotebook {
         }
     }
     
-    public func saveToFile(fileName: String = "Notebook") {
+    public func getDataToSave() -> Data {
         var json: Data = Data()
         var jsonArr: [[String: Any]] = []
         
@@ -40,6 +40,24 @@ class FileNotebook {
             let data = try JSONSerialization.data(withJSONObject: jsonArr, options: [])
             json.append(data)
         } catch {}
+        return json
+    }
+        
+
+    public func saveToFile(fileName: String = "Notebook") {
+//        var json: Data = Data()
+//        var jsonArr: [[String: Any]] = []
+//
+//        for notes in self.notes {
+//            jsonArr.append(notes.json)
+//        }
+//
+//        do {
+//            let data = try JSONSerialization.data(withJSONObject: jsonArr, options: [])
+//            json.append(data)
+//        } catch {}
+        
+        let json = getDataToSave()
         
         let path = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
         let dirBooks = path!.appendingPathComponent("Notebooks")

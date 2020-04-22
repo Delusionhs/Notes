@@ -2,8 +2,10 @@ import Foundation
 
 class SaveNotesBackendOperation: BaseBackendOperation {
     var result: BackendResult?
+    var token: String = ""
     
-    init(notes: [Note]) {
+    init(notes: [Note], token: String) {
+        self.token = token
         super.init()
     }
     
