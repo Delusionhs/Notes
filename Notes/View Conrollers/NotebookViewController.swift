@@ -24,17 +24,7 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let loadNotesOperation = LoadNotesOperation(notebook: notebook,
-                                                    token: token,
-                                                    backendQueue: backendQueue,
-                                                    dbQueue: dbQueue)
-        commonQueue.addOperation(loadNotesOperation)
-        
-        loadNotesOperation.completionBlock = {
-            OperationQueue.main.addOperation {
-                self.notebookTableView.reloadData()
-            }
-        }
+        updateNotesData()
         
         self.title = "Заметки"
         tabBarController?.tabBar.items![1].title = "Галерея" // update gallery tabbar name
@@ -49,6 +39,25 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action:#selector(editNotebook(_:)))
         notebookTableView.tableFooterView = UIView() // not show empty cells
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(updateNotesData), for: .valueChanged)
+        notebookTableView.refreshControl = refreshControl
+    }
+
+        
+    @objc private func updateNotesData() {
+        let loadNotesOperation = LoadNotesOperation(notebook: notebook,
+                                                    token: token,
+                                                    backendQueue: backendQueue,
+                                                    dbQueue: dbQueue)
+        commonQueue.addOperation(loadNotesOperation)
+        
+        loadNotesOperation.completionBlock = {
+            OperationQueue.main.addOperation {
+                self.notebookTableView.refreshControl?.endRefreshing()
+                self.notebookTableView.reloadData()
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
