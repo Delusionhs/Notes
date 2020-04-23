@@ -1,9 +1,11 @@
 import Foundation
 
+
 class SaveNotesBackendOperation: BaseBackendOperation {
     var result: BackendResult?
     var token: String = ""
     var notebook: FileNotebook
+    let filename = "ios-course-notes-db"
     
     init(notebook: FileNotebook, token: String) {
         self.token = token
@@ -30,7 +32,7 @@ class SaveNotesBackendOperation: BaseBackendOperation {
             finish()
             return }
         
-        let inputData = Gist(files: ["ios-course-notes-db" : GistFile(content: jsonData)])
+        let inputData = Gist(url: nil, files: [filename : GistFile(filename: nil, content: jsonData)])
         
         do {
             request.httpBody = try JSONEncoder().encode(inputData)
@@ -53,3 +55,4 @@ class SaveNotesBackendOperation: BaseBackendOperation {
         finish()
     }
 }
+

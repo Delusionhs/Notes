@@ -9,11 +9,12 @@
 import Foundation
 
 struct Gist: Codable {
+    let url: String?
     let files: [String: GistFile]
 }
 
 struct GistFile: Codable {
-    //let filename: String
+    let filename: String?
     let content: String
 
 }
