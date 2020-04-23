@@ -41,9 +41,6 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
         notebookTableView.refreshControl = refreshControl
         
         self.notebookTableView.refreshControl?.beginRefreshing()
-        
-        updateNotesData()
-        
     }
 
         
@@ -173,5 +170,6 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
 extension NotebookViewController: AuthViewControllerDelegate {
     func tokenChanged(token: String) {
         self.token = token
+        updateNotesData()
     }
 }
