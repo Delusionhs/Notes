@@ -23,9 +23,6 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        updateNotesData()
-        
         self.title = "Заметки"
         tabBarController?.tabBar.items![1].title = "Галерея" // update gallery tabbar name
         tabBarController?.tabBar.items![0].image = UIImage(named: "TabNotes")
@@ -42,6 +39,11 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(updateNotesData), for: .valueChanged)
         notebookTableView.refreshControl = refreshControl
+        
+        self.notebookTableView.refreshControl?.beginRefreshing()
+        
+        updateNotesData()
+        
     }
 
         
@@ -143,7 +145,6 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete, tableView.isEditing == true {
-            //notebook.notes.remove(at: indexPath.row)
             let note = notebook.notes[indexPath.row]
             let removeNotesOperation = RemoveNoteOperation(note: note,
                                                            notebook: notebook,

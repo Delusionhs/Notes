@@ -54,9 +54,6 @@ class LoadNotesBackendOperation: BaseBackendOperation {
 
             self.finish()
         }.resume()
-        
-       //print(self.result!)
-    
     }
     
     func getGistID (token: String) -> String {

@@ -20,7 +20,6 @@ class LoadNotesOperation: AsyncOperation {
         loadFromDb.completionBlock = {
             let loadFromBackend = LoadNotesBackendOperation(notebook: notebook, token: token)
             loadFromBackend.completionBlock = {
-                print(loadFromBackend.result!)
                 switch loadFromBackend.result! {
                 case .success:
                     self.result = true
