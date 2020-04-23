@@ -14,8 +14,7 @@ class LoadNotesBackendOperation: BaseBackendOperation {
   
     override func main() {
         result = .failure(.unreachable)
-        
-        //let id = getGistID(token: token)
+        //result = .success
         
         var components = URLComponents(string: "https://api.github.com/gists/828262049b6e86cf5f97bf8ef504e2a2")
         components?.queryItems = [
@@ -34,10 +33,10 @@ class LoadNotesBackendOperation: BaseBackendOperation {
                 switch response.statusCode {
                 case 200..<300:
                     if let data = data {
-                    guard let gist =  try? JSONDecoder().decode(Gist.self, from: data) else {
-                        print("Can't parse")
-                        return
-                        }
+                        guard let gist =  try? JSONDecoder().decode(Gist.self, from: data) else {
+                            print("Can't parse")
+                            return
+                            }
                         if let content = gist.files[self.filename]?.content {
                             let data = Data()
                             guard let notes = try? JSONDecoder().decode([NoteCodable].self, from: content.data(using: .utf8) ?? data) else {
@@ -49,13 +48,15 @@ class LoadNotesBackendOperation: BaseBackendOperation {
                     }
                     self.result = .success
                 default:
-                    print("ne nice")
                     self.result = .failure(.unreachable)
                 }
             }
+
+            self.finish()
         }.resume()
+        
+       //print(self.result!)
     
-        finish()
     }
     
     func getGistID (token: String) -> String {

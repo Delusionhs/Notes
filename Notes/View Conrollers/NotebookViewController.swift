@@ -30,7 +30,11 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
                                                     dbQueue: dbQueue)
         commonQueue.addOperation(loadNotesOperation)
         
-        self.notebookTableView.reloadData()
+        loadNotesOperation.completionBlock = {
+            OperationQueue.main.addOperation {
+                self.notebookTableView.reloadData()
+            }
+        }
         
         self.title = "Заметки"
         tabBarController?.tabBar.items![1].title = "Галерея" // update gallery tabbar name
