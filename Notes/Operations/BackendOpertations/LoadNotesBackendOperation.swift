@@ -13,20 +13,12 @@ class LoadNotesBackendOperation: BaseBackendOperation {
     }
   
     override func main() {
-        result = .failure(.unreachable)
-        //result = .success
         
-        var components = URLComponents(string: "https://api.github.com/gists/828262049b6e86cf5f97bf8ef504e2a2")
-        components?.queryItems = [
-            URLQueryItem(name: "access_token", value: self.token),
-        ]
         
-        guard let url = components?.url else {
-            self.result = .failure(.dataFailure)
-            finish()
-            return }
-        
-        let request = URLRequest(url: url)
+        guard let request = getRequestWithToken(urlString: "https://api.github.com/gists/828262049b6e86cf5f97bf8ef504e2a2") else {             self.result = .failure(.dataFailure)
+        finish()
+        return}
+    
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let response = response as? HTTPURLResponse {
@@ -54,6 +46,21 @@ class LoadNotesBackendOperation: BaseBackendOperation {
 
             self.finish()
         }.resume()
+    }
+    
+    func getRequestWithToken(urlString: String) -> URLRequest? {
+        var components = URLComponents(string: urlString)
+        components?.queryItems = [
+            URLQueryItem(name: "access_token", value: self.token),
+        ]
+        
+        guard let url = components?.url else {
+            self.result = .failure(.dataFailure)
+            finish()
+            return nil }
+        
+        let request = URLRequest(url: url)
+        return request
     }
     
     func getGistID (token: String) -> String {
