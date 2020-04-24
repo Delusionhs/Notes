@@ -83,30 +83,4 @@ class LoadNotesBackendOperation: BaseBackendOperation {
         return request
     }
     
-    func getGistID (token: String) -> String {
-        var components = URLComponents(string: "https://api.github.com/gists")
-        components?.queryItems = [
-            URLQueryItem(name: "access_token", value: token)
-        ]
-        guard let url = components?.url else { return "" }
-        let request = URLRequest(url: url)
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-                   if let data = data {
-                    print(String(data: data, encoding: .utf8)!)
-                       guard let gists =  try? JSONDecoder().decode([Gist].self, from: data) else {
-                           print("Can't parse")
-                           return
-                       }
-                       for gist  in gists {
-                           for (key,_) in gist.files {
-                               if key == "ios-course-notes-db"{
-                                   print("LEL")}
-                           }
-                    }
-                   }
-               }.resume()
-        
-        return ""
-    }
 }
