@@ -14,6 +14,8 @@ class LoadNotesBackendOperation: BaseBackendOperation {
   
     override func main() {
         
+        // TODO: Delete Pyramide of doom, sync tasks
+        
         guard let requestGistID = getRequestWithToken(urlString: "https://api.github.com/gists") else {
             self.result = .failure(.dataFailure)
             finish()
