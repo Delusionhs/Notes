@@ -30,7 +30,7 @@ class SaveNotesBackendOperation: BaseBackendOperation {
             finish()
             return }
         
-        let inputData = Gist(url: nil, files: [filename : GistFile(filename: nil, content: jsonData)])
+        let inputData = Gist(id: nil, files: [filename : GistFile(filename: nil, content: jsonData)])
         
         do {
             request.httpBody = try JSONEncoder().encode(inputData)

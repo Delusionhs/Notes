@@ -14,10 +14,25 @@ class LoadNotesBackendOperation: BaseBackendOperation {
   
     override func main() {
         
+        guard let requestGistList = getRequestWithToken(urlString: "https://api.github.com/gists") else {
+            self.result = .failure(.dataFailure)
+            finish()
+            return }
         
-        guard let request = getRequestWithToken(urlString: "https://api.github.com/gists/828262049b6e86cf5f97bf8ef504e2a2") else {             self.result = .failure(.dataFailure)
-        finish()
-        return}
+        URLSession.shared.dataTask(with: requestGistList) { (data, response, error) in
+            if let data = data {
+                guard let gists =  try? JSONDecoder().decode([Gist].self, from: data) else  { return }
+                for gist in gists {
+                    for (key,_) in gist.files {
+                        if key == "ios-course-notes-db" {
+                            guard let id = gist.id else { return }
+            }}}}}.resume()
+        
+
+        guard let request = getRequestWithToken(urlString: "https://api.github.com/gists/828262049b6e86cf5f97bf8ef504e2a2") else {
+            self.result = .failure(.dataFailure)
+            finish()
+            return }
     
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
