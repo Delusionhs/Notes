@@ -1,23 +1,23 @@
 import Foundation
 
 class RemoveNoteOperation: AsyncOperation {
-    
+
   private let removeFromDb: RemoveNoteDBOperation
   private let dbQueue: OperationQueue
-  
+
   private(set) var result: Bool? = false
-  
+
   init(note: Note,
        notebook: FileNotebook,
        token: String,
        backendQueue: OperationQueue,
        dbQueue: OperationQueue) {
-    
+
     removeFromDb = RemoveNoteDBOperation(note: note, notebook: notebook)
     self.dbQueue = dbQueue
-    
+
     super.init()
-    
+
     removeFromDb.completionBlock = {
       let saveToBackend = SaveNotesBackendOperation(notebook: notebook, token: token)
       saveToBackend.completionBlock = {
@@ -32,7 +32,7 @@ class RemoveNoteOperation: AsyncOperation {
       backendQueue.addOperation(saveToBackend)
     }
   }
-  
+
   override func main() {
     dbQueue.addOperation(removeFromDb)
   }

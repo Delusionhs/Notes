@@ -10,7 +10,7 @@ import XCTest
 @testable import Notes
 
 class NotesTests: XCTestCase {
-    
+
     private var note: Note!
     private var notebook: FileNotebook!
 
@@ -27,23 +27,23 @@ class NotesTests: XCTestCase {
     func testNoteInit() {
         XCTAssertNotNil(note)
     }
-    
+
     func testParseEmptyDict() {
-        XCTAssertNil(Note.parse(json:[:]))
+        XCTAssertNil(Note.parse(json: [:]))
     }
-    
+
     func testFileNotebookNotebookIsEmpty() {
         XCTAssertTrue(notebook.notes.isEmpty)
     }
-    
+
     func testFileNotebookAddNote() {
         notebook.add(note)
         XCTAssertEqual(notebook.notes[0].uid, note.uid)
-        
+
         notebook.add(note)
         XCTAssertEqual(notebook.notes.count, 1)
     }
-    
+
     func testPerformanceExample() {
     // This is an example of a performance test case.
         self.measure {

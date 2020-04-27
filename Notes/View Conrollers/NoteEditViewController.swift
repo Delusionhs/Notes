@@ -13,9 +13,9 @@ protocol NoteEditViewControllerDelegate: class {
 }
 
 class NoteEditViewController: UIViewController {
-    
+
     weak var delegate: NoteEditViewControllerDelegate?
-    
+
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var destoyDateSwitch: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -24,47 +24,47 @@ class NoteEditViewController: UIViewController {
     @IBOutlet weak var whiteBox: ColorPickBox!
     @IBOutlet weak var redBox: ColorPickBox!
     @IBOutlet weak var greenBox: ColorPickBox!
-    
+
     @IBOutlet weak var noteTitleText: UITextField!
     @IBOutlet weak var noteTextView: UITextView!
-    
+
     var note: Note?
-    
+
     var pickerdColor: UIColor = .white
-    
+
     @IBAction func unwindToDataScreen (segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToData" else { return }
         guard let svc = segue.source as? ColorPickerViewController else { return }
         colorPickBox.defaultColor = svc.colorPickerView.pickedColor
         pickerdColor = svc.colorPickerView.pickedColor
     }
-    
+
     @IBAction func destroyDateValueChange(_ sender: UISwitch) {
         view.endEditing(true)
         pickerChangeVisible()
     }
-    
+
     @IBAction func longPressCPButton(_ sender: UILongPressGestureRecognizer) {
-        if (sender.state == .ended) {
-        } else if (sender.state == .began) {
+        if sender.state == .ended {
+        } else if sender.state == .began {
             performSegue(withIdentifier: "ShowColorPickerSegue", sender: self)
             clearMarks()
             colorPickBox.checkMarkAdd()
         }
     }
-    
+
     @IBAction func greenBoxTapped(_ sender: UITapGestureRecognizer) {
         caseDefaultColor(color: .green)
     }
-    
+
     @IBAction func whiteBoxTapped(_ sender: UITapGestureRecognizer) {
         caseDefaultColor(color: .white)
     }
-    
+
     @IBAction func redBoxTapped(_ sender: UITapGestureRecognizer) {
         caseDefaultColor(color: .red)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker.isHidden = true
@@ -81,9 +81,9 @@ class NoteEditViewController: UIViewController {
         caseDefaultColor(color: note.color)
         }
         noteTitleText.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
-       
+
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNote(_:)))
-        
+
         if let rightButton = navigationItem.rightBarButtonItem {
             if noteTitleText.text?.isEmpty == true {
                 rightButton.isEnabled = false
@@ -92,31 +92,31 @@ class NoteEditViewController: UIViewController {
             }
         }
     }
-    
+
     @objc func saveNote(_ sender: Any) {
         saveNote()
         navigationController?.popViewController(animated: true)
     }
-    
+
     private func pickerChangeVisible() {
         datePicker.isHidden = !datePicker.isHidden
         changePickerHeight()
     }
-    
+
     private func changePickerHeight() {
         if datePickerHeight.constant != 0 {
             datePickerHeight.constant = 0
         } else {
-            let dataPickerHeight:CGFloat = 216.0
+            let dataPickerHeight: CGFloat = 216.0
             datePickerHeight.constant = dataPickerHeight
         }
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         registerNotifications()
     }
-    
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         unregisterNotifications()
@@ -129,34 +129,34 @@ class NoteEditViewController: UIViewController {
             }
         }
     }
-    
+
     private func registerNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+
     private func unregisterNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         scrollView.contentInset.bottom = 0
     }
-    
-    @objc private func keyboardWillShow(notification: NSNotification){
+
+    @objc private func keyboardWillShow(notification: NSNotification) {
         guard let keyboardFrame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
         scrollView.contentInset.bottom = view.convert(keyboardFrame.cgRectValue, from: nil).size.height
     }
-    
-    @objc private func keyboardWillHide(notification: NSNotification){
+
+    @objc private func keyboardWillHide(notification: NSNotification) {
         scrollView.contentInset.bottom = 0
     }
-    
+
     private func clearMarks() {
         redBox.deleteCheckMark()
         greenBox.deleteCheckMark()
         whiteBox.deleteCheckMark()
         colorPickBox.deleteCheckMark()
     }
-    
+
     private func saveNote() {
         if let note = self.note {
             let newNote: Note? = Note(uid: note.uid,
@@ -176,7 +176,7 @@ class NoteEditViewController: UIViewController {
             delegate?.reciveNote(note: newNote!)
         }
     }
-    
+
     private func caseDefaultColor (color: UIColor) {
         clearMarks()
         switch color {
@@ -195,7 +195,7 @@ class NoteEditViewController: UIViewController {
             pickerdColor = color
         }
     }
-    
+
     @objc private func textFieldChanged() {
         if noteTitleText.text?.isEmpty == false {
             navigationItem.rightBarButtonItem!.isEnabled = true
@@ -204,5 +204,3 @@ class NoteEditViewController: UIViewController {
         }
     }
 }
-
-

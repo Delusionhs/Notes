@@ -2,18 +2,18 @@ import UIKit
 //import CocoaLumberjack
 
 class FileNotebook {
-    
+
     /*private(set)*/ var notes: [Note] = []
-    
+
     init() {
         //DDLog.add(DDOSLogger.sharedInstance)
         //DDLogInfo("Init")
     }
-    
+
     init(withNotes: [Note]) {
         self.notes = withNotes
     }
-    
+
     public func add(_ note: Note) {
         if let noteOffset = self.notes.firstIndex(where: {$0.uid == note.uid}) {
             self.notes[noteOffset] = note
@@ -21,35 +21,34 @@ class FileNotebook {
             self.notes.append(note)
         }
     }
-    
+
     public func remove(with uid: String) {
         if let noteOffset = self.notes.firstIndex(where: {$0.uid == uid}) {
             self.notes.remove(at: noteOffset)
         }
     }
-    
+
     public func getDataToSave() -> Data {
         var json: Data = Data()
         var jsonArr: [NoteCodable] = []
-        
+
         for notes in self.notes {
             jsonArr.append(NoteCodable(uid: notes.uid, title: notes.title, content: notes.content, color: Color(uiColor: notes.color), importance: notes.importance, selfDestructionDate: notes.selfDestructionDate))
         }
-        
+
         do {
             let data = try JSONEncoder().encode(jsonArr)
             json.append(data)
         } catch {}
         return json
     }
-    
+
     public func loadNotesFromCodable(notes: [NoteCodable]) {
         self.notes = []
         for note in notes {
             self.add(Note(uid: note.uid, title: note.title, content: note.content, color: UIColor(red: note.color.red, green: note.color.green, blue: note.color.blue, alpha: note.color.alpha), importance: note.importance, selfDestructionDate: note.selfDestructionDate))
         }
     }
-        
 
     public func saveToFile(fileName: String = "Notebook") {
 //        var json: Data = Data()
@@ -63,12 +62,12 @@ class FileNotebook {
 //            let data = try JSONSerialization.data(withJSONObject: jsonArr, options: [])
 //            json.append(data)
 //        } catch {}
-        
+
         let json = getDataToSave()
-        
+
         let path = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
         let dirBooks = path!.appendingPathComponent("Notebooks")
-        
+
         var isDir: ObjCBool = false
         if !FileManager.default.fileExists(atPath: dirBooks.path, isDirectory: &isDir), !isDir.boolValue {
             do {
@@ -78,9 +77,9 @@ class FileNotebook {
         } else {
             //DDLogWarn("Directory already exists")
         }
-    
+
         let filepath = dirBooks.appendingPathComponent(fileName, isDirectory: false)
-        
+
         if !FileManager.default.fileExists(atPath: filepath.path, isDirectory: &isDir) {
             FileManager.default.createFile(atPath: filepath.path, contents: json, attributes: nil)
         } else {
@@ -88,13 +87,13 @@ class FileNotebook {
             return
         }
     }
-    
+
     public func loadFromFile(fileName: String = "Notebook") {
         let path = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
         let dirBooks = path!.appendingPathComponent("Notebooks")
         let filepath = dirBooks.appendingPathComponent(fileName, isDirectory: false)
         let url = URL(fileURLWithPath: filepath.path)
-        
+
         var isDir: ObjCBool = false
         if FileManager.default.fileExists(atPath: filepath.path, isDirectory: &isDir) {
             do {
@@ -143,10 +142,9 @@ extension FileNotebook {
     }
 }
 
-
 extension Date {
     static var yesterday: Date { return Date().dayBefore }
-    static var tomorrow:  Date { return Date().dayAfter }
+    static var tomorrow: Date { return Date().dayAfter }
     var dayBefore: Date {
         return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
     }
@@ -157,7 +155,7 @@ extension Date {
         return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
     }
     var month: Int {
-        return Calendar.current.component(.month,  from: self)
+        return Calendar.current.component(.month, from: self)
     }
     var isLastDayOfMonth: Bool {
         return dayAfter.month != month

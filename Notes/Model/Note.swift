@@ -6,14 +6,14 @@ enum Importance: String, Codable {
     case unimportant
 }
 
-struct Color : Codable {
-    var red : CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
+struct Color: Codable {
+    var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
 
-    var uiColor : UIColor {
+    var uiColor: UIColor {
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
 
-    init(uiColor : UIColor) {
+    init(uiColor: UIColor) {
         uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
     }
 }
@@ -25,7 +25,7 @@ struct NoteCodable: Codable {
     let color: Color
     let importance: Importance
     let selfDestructionDate: Date?
-    
+
     init(uid: String = UUID().uuidString,
          title: String,
          content: String,
@@ -48,7 +48,7 @@ struct Note {
     let color: UIColor
     let importance: Importance
     let selfDestructionDate: Date?
-        
+
     init(uid: String = UUID().uuidString,
          title: String,
          content: String,
