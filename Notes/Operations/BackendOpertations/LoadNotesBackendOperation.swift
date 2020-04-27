@@ -21,7 +21,7 @@ class LoadNotesBackendOperation: BaseBackendOperation {
             finish()
             return }
 
-        URLSession.shared.dataTask(with: requestGistID ) { (data, response, error) in
+        URLSession.shared.dataTask(with: requestGistID ) { (data, response, _) in
             if let data = data {
                 guard let gists =  try? JSONDecoder().decode([Gist].self, from: data) else {
                     self.result = .failure(.dataFailure)
