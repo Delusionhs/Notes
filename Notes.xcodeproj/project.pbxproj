@@ -10,6 +10,7 @@
 		4F0BE6AD450D9F52E12BFE4E /* libPods-Notes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 536A0BFEFE2DB76A7D92D2FB /* libPods-Notes.a */; };
 		733A038F95489986B1ED7CB7 /* libPods-NotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73470CAFC2F775C4281E8C27 /* libPods-NotesTests.a */; };
 		780E7D84245A26A30087ADE2 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780E7D83245A26A30087ADE2 /* CoreDataStack.swift */; };
+		780E7D87245A26CC0087ADE2 /* NoteModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 780E7D85245A26CC0087ADE2 /* NoteModel.xcdatamodeld */; };
 		782D772C22D41883009E31D9 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782D772B22D41883009E31D9 /* ColorPickerView.swift */; };
 		78816ECB24503A4F0000A3A6 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78816ECA24503A4F0000A3A6 /* AuthViewController.swift */; };
 		78816ECD24507E640000A3A6 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78816ECC24507E640000A3A6 /* Gist.swift */; };
@@ -61,6 +62,7 @@
 		536A0BFEFE2DB76A7D92D2FB /* libPods-Notes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Notes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73470CAFC2F775C4281E8C27 /* libPods-NotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		780E7D83245A26A30087ADE2 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		780E7D86245A26CC0087ADE2 /* NoteModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoteModel.xcdatamodel; sourceTree = "<group>"; };
 		782D772B22D41883009E31D9 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		78816ECA24503A4F0000A3A6 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		78816ECC24507E640000A3A6 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				78A7E9CC22C87C5800D11AEC /* Note.swift */,
 				78816ECC24507E640000A3A6 /* Gist.swift */,
 				780E7D83245A26A30087ADE2 /* CoreDataStack.swift */,
+				780E7D85245A26CC0087ADE2 /* NoteModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				789234AA2447143500F1F48B /* RemoveNoteDBOperation.swift in Sources */,
 				78F42EE322D9D4B5008E950C /* ColorPickerViewController.swift in Sources */,
 				7892349F2447041A00F1F48B /* BaseBackendOperation.swift in Sources */,
+				780E7D87245A26CC0087ADE2 /* NoteModel.xcdatamodeld in Sources */,
 				789234AE24471BEA00F1F48B /* LoadNotesOperation.swift in Sources */,
 				78A7E9AC22C87C2100D11AEC /* AppDelegate.swift in Sources */,
 				789234A624470B0D00F1F48B /* LoadNotesBackendOperation.swift in Sources */,
@@ -830,6 +834,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		780E7D85245A26CC0087ADE2 /* NoteModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				780E7D86245A26CC0087ADE2 /* NoteModel.xcdatamodel */,
+			);
+			currentVersion = 780E7D86245A26CC0087ADE2 /* NoteModel.xcdatamodel */;
+			path = NoteModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 78A7E9A022C87C2100D11AEC /* Project object */;
 }
