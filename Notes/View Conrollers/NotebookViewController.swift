@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
 
@@ -15,6 +16,7 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     private let backendQueue = OperationQueue()
     private let dbQueue = OperationQueue()
     private let commonQueue = OperationQueue()
+    var backgroundContext: NSManagedObjectContext! = CoreDataStack.instance.getBackgroundContext()
 
     @IBOutlet weak var notebookTableView: UITableView!
 
@@ -91,7 +93,8 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
                                                   notebook: notebook,
                                                   token: self.token,
                                                   backendQueue: backendQueue,
-                                                  dbQueue: dbQueue)
+                                                  dbQueue: dbQueue,
+                                                  backgroundContext: backgroundContext)
         commonQueue.addOperation(saveNoteOperation)
         saveNoteOperation.completionBlock = {
             OperationQueue.main.addOperation {
@@ -141,7 +144,8 @@ extension NotebookViewController: UITableViewDataSource, UITableViewDelegate {
                                                            notebook: notebook,
                                                            token: self.token,
                                                            backendQueue: backendQueue,
-                                                           dbQueue: dbQueue)
+                                                           dbQueue: dbQueue,
+                                                           backgroundContext: backgroundContext)
             commonQueue.addOperation(removeNotesOperation)
             removeNotesOperation.completionBlock = {
               DispatchQueue.main.async {

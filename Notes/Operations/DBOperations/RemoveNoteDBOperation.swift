@@ -14,6 +14,24 @@ class RemoveNoteDBOperation: BaseDBOperation {
     }
 
     override func main() {
+        let fetchRequest = NSFetchRequest<NoteEntity>(entityName: "NoteEntity")
+        fetchRequest.predicate = NSPredicate(format: "uid == %@", note.uid)
+        do {
+            let fetchedObjects = try backgroundContext.fetch(fetchRequest)
+            if fetchedObjects.isEmpty {
+            } else {
+                backgroundContext.delete(fetchedObjects[0])
+                backgroundContext.performAndWait {
+                    do {
+                        try backgroundContext.save()
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+        } catch {
+            print(error)
+        }
         notebook.remove(with: note.uid)
         //notebook.saveToFile()
         finish()

@@ -32,7 +32,7 @@ class SaveNoteDBOperation: BaseDBOperation {
                 
                 backgroundContext.performAndWait {
                     do {
-                        try self.backgroundContext.save()
+                        try backgroundContext.save()
                     } catch {
                         print(error)
                     }
@@ -49,21 +49,18 @@ class SaveNoteDBOperation: BaseDBOperation {
                 
                 backgroundContext.performAndWait {
                     do {
-                        try self.backgroundContext.save()
+                        try backgroundContext.save()
                     } catch {
                         print(error)
                     }
                 }
             }
-            
         } catch {
             print("Error")
         }
         
-        notebook.add(self.note)
+        notebook.add(note)
         
-        
-    
         finish()
     }
 }
