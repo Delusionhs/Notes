@@ -13,7 +13,6 @@ class LoadNotesDBOperation: BaseDBOperation {
     }
     
     override func main() {
-    //notebook.loadFromFile()
         let fetchRequest = NSFetchRequest<NoteEntity>(entityName: "NoteEntity")
         do {
             let fetchResults = try self.backgroundContext.fetch(fetchRequest)
@@ -22,8 +21,6 @@ class LoadNotesDBOperation: BaseDBOperation {
                                     green: CGFloat(object.colorGreen),
                                     blue: CGFloat(object.colorBlue),
                                     alpha: CGFloat(object.colorAlpha))
-                
-                
                 let note = Note(uid: object.uid!,
                                             title: object.title!,
                                             content: object.content!,
