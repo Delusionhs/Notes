@@ -2,14 +2,14 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="NoteEntity" representedClassName="NoteEntity" syncable="YES" codeGenerationType="class">
         <attribute name="colorAlpha" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="colorBlue" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="colorGreen" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="colorRed" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="colorBlue" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="colorGreen" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="colorRed" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="content" attributeType="String"/>
         <attribute name="destructionDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="importance" optional="YES" attributeType="String"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="uid" optional="YES" attributeType="String"/>
+        <attribute name="importance" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="uid" attributeType="String"/>
     </entity>
     <elements>
         <element name="NoteEntity" positionX="-54" positionY="-9" width="128" height="178"/>

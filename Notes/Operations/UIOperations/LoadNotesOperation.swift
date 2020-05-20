@@ -1,4 +1,5 @@
 import Foundation
+import CoreData
 
 class LoadNotesOperation: AsyncOperation {
 
@@ -10,9 +11,10 @@ class LoadNotesOperation: AsyncOperation {
     init(notebook: FileNotebook,
          token: String,
          backendQueue: OperationQueue,
-         dbQueue: OperationQueue) {
+         dbQueue: OperationQueue,
+         backgroundContext: NSManagedObjectContext) {
 
-        loadFromDb = LoadNotesDBOperation(notebook: notebook)
+        loadFromDb = LoadNotesDBOperation(notesbook: notebook, backgroundContext: backgroundContext)
         self.dbQueue = dbQueue
 
         super.init()

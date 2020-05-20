@@ -42,13 +42,28 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
         notebookTableView.refreshControl = refreshControl
 
         self.notebookTableView.refreshControl?.beginRefreshing()
+        
+        let fetchRequest = NSFetchRequest<NoteEntity>(entityName: "NoteEntity")
+       // fetchRequest.predicate = NSPredicate(format: "uid == %@", note.uid)
+        do {
+            let fetchedObjects = try backgroundContext.fetch(fetchRequest)
+            if fetchedObjects.isEmpty {
+                                print("huy")
+            } else {
+                print(fetchedObjects.count)
+                }
+            }
+     catch {
+            print(error)
+        }
     }
 
     @objc private func updateNotesData() {
         let loadNotesOperation = LoadNotesOperation(notebook: notebook,
                                                     token: token,
                                                     backendQueue: backendQueue,
-                                                    dbQueue: dbQueue)
+                                                    dbQueue: dbQueue,
+                                                    backgroundContext: backgroundContext)
         commonQueue.addOperation(loadNotesOperation)
 
         loadNotesOperation.completionBlock = {
