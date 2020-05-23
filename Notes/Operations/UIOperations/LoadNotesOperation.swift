@@ -24,6 +24,24 @@ class LoadNotesOperation: AsyncOperation {
                 return }
             let loadFromBackend = LoadNotesBackendOperation(notebook: notebook, token: token)
             loadFromBackend.completionBlock = {
+                
+                let fetchRequest = NSFetchRequest<NoteEntity>(entityName: "NoteEntity")
+                do {
+                    let fetchedObjects = try backgroundContext.fetch(fetchRequest)
+                    for object in fetchedObjects {
+                        backgroundContext.delete(object)
+                        try backgroundContext.save()
+                    }
+                } catch {
+                    print(error)
+                }
+                
+                let emptyNotebook = FileNotebook()
+                
+                for note in notebook.notes {
+                    backendQueue.addOperation(SaveNoteDBOperation(note: note, notebook: emptyNotebook, backgroundContext: backgroundContext))
+                }
+
                 switch loadFromBackend.result! {
                 case .success:
                     self.result = true
