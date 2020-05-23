@@ -19,6 +19,9 @@ class LoadNotesOperation: AsyncOperation {
 
         super.init()
         loadFromDb.completionBlock = {
+            guard NetworkLayer.instance.isConnectedToNetwork() else {
+                self.finish()
+                return }
             let loadFromBackend = LoadNotesBackendOperation(notebook: notebook, token: token)
             loadFromBackend.completionBlock = {
                 switch loadFromBackend.result! {

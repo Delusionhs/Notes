@@ -84,6 +84,9 @@ class NotebookViewController: UIViewController, NoteEditViewControllerDelegate {
     }
 
     private func requestToken() {
+        guard NetworkLayer.instance.isConnectedToNetwork() else {
+            tokenChanged(token: "")
+            return }
         let requestTokenViewController = AuthViewController()
         requestTokenViewController.delegate = self
         present(requestTokenViewController, animated: true, completion: nil)

@@ -15,7 +15,6 @@ class ColorPickerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //colorPickerView.doneButton.addTarget(self, action: #selector(doneButtonAction), for: .touchUpInside)
         colorPickerView.updatePickedColor(sendedColor)
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonAction))
     }
