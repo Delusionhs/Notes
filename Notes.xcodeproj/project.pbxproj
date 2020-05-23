@@ -26,6 +26,7 @@
 		789234AE24471BEA00F1F48B /* LoadNotesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789234AD24471BEA00F1F48B /* LoadNotesOperation.swift */; };
 		789234B224471D9C00F1F48B /* RemoveNoteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789234B124471D9C00F1F48B /* RemoveNoteOperation.swift */; };
 		789386D722DA04A800D8EFBB /* ColorPickBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789386D622DA04A800D8EFBB /* ColorPickBox.swift */; };
+		78A1D714247900EF00D014DA /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A1D713247900EF00D014DA /* NetworkLayer.swift */; };
 		78A7E9AC22C87C2100D11AEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */; };
 		78A7E9AE22C87C2100D11AEC /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A7E9AD22C87C2100D11AEC /* NoteEditViewController.swift */; };
 		78A7E9B122C87C2100D11AEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A7E9AF22C87C2100D11AEC /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 		789234AD24471BEA00F1F48B /* LoadNotesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadNotesOperation.swift; sourceTree = "<group>"; };
 		789234B124471D9C00F1F48B /* RemoveNoteOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveNoteOperation.swift; sourceTree = "<group>"; };
 		789386D622DA04A800D8EFBB /* ColorPickBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickBox.swift; sourceTree = "<group>"; };
+		78A1D713247900EF00D014DA /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		78A7E9A822C87C2100D11AEC /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78A7E9AD22C87C2100D11AEC /* NoteEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				78E33D8822DDA14B000786E5 /* Views */,
 				78A7E9CB22C87C2B00D11AEC /* Model */,
 				78A7E9AB22C87C2100D11AEC /* AppDelegate.swift */,
+				78A1D713247900EF00D014DA /* NetworkLayer.swift */,
 				78A7E9AF22C87C2100D11AEC /* Main.storyboard */,
 				78A7E9B222C87C2200D11AEC /* Assets.xcassets */,
 				78A7E9B422C87C2200D11AEC /* LaunchScreen.storyboard */,
@@ -453,6 +456,7 @@
 				78F42EE322D9D4B5008E950C /* ColorPickerViewController.swift in Sources */,
 				7892349F2447041A00F1F48B /* BaseBackendOperation.swift in Sources */,
 				780E7D87245A26CC0087ADE2 /* NoteModel.xcdatamodeld in Sources */,
+				78A1D714247900EF00D014DA /* NetworkLayer.swift in Sources */,
 				789234AE24471BEA00F1F48B /* LoadNotesOperation.swift in Sources */,
 				78A7E9AC22C87C2100D11AEC /* AppDelegate.swift in Sources */,
 				789234A624470B0D00F1F48B /* LoadNotesBackendOperation.swift in Sources */,
