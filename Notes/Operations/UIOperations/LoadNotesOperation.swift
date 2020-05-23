@@ -36,12 +36,27 @@ class LoadNotesOperation: AsyncOperation {
                     print(error)
                 }
                 
-                let emptyNotebook = FileNotebook()
-                
                 for note in notebook.notes {
-                    backendQueue.addOperation(SaveNoteDBOperation(note: note, notebook: emptyNotebook, backgroundContext: backgroundContext))
+                    let noteEntity = NoteEntity(context: backgroundContext)
+                    noteEntity.uid = note.uid
+                    noteEntity.title = note.title
+                    noteEntity.content = note.content
+                    noteEntity.importance = note.importance.rawValue
+                    noteEntity.destructionDate = note.selfDestructionDate
+                    noteEntity.colorRed = Float(Color(uiColor: note.color).red)
+                    noteEntity.colorGreen = Float(Color(uiColor: note.color).green)
+                    noteEntity.colorBlue = Float(Color(uiColor: note.color).blue)
+                    noteEntity.colorAlpha = Float(Color(uiColor: note.color).alpha)
+                                 
+                    backgroundContext.performAndWait {
+                        do {
+                            try backgroundContext.save()
+                                     } catch {
+                                         print(error)
+                                     }
+                            }
                 }
-
+                
                 switch loadFromBackend.result! {
                 case .success:
                     self.result = true
