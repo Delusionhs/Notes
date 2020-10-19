@@ -3,7 +3,7 @@
 Приложение для ведения и хранения заметок. 
 Разрабатывалось в рамках прохождения курсов Академии Яндекса: "Разработка под iOS. Начинаем" и "Разработка под iOS. Взлетаем" на платформе [Stepik](https://stepik.org/)
 
-MVC, NSOperation, CoreData, GitHub Gists 
+MVC, NSOperation, CoreData, URLSession, GitHub Gists 
 
 [Сертификат](https://stepik.org/cert/209797) 
 
